@@ -1,0 +1,145 @@
+@import "../../../../assets/styles/abstracts/variables";
+
+.footer {
+  background: #111011;
+  color: white;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  &__left {
+  }
+
+  &__logo {
+    width: 100%;
+  }
+
+  &__right {
+  }
+
+  &__details {
+    display: flex;
+
+    &-item {
+      margin-right: 55px;
+    }
+  }
+
+  &__contacts {
+    &-item {
+      display: inline-flex;
+      align-items: center;
+      width: 100%;
+      max-width: 260px;
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-icon {
+      margin-right: 26px;
+      width: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-height: 14px;
+    }
+  }
+
+  &__links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 80px;
+    ul {
+      li {
+        margin-bottom: 15px;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        color: #fff;
+        cursor: pointer;
+        &:hover {
+          color: #f37221;
+        }
+      }
+    }
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    &-wrap {
+      display: flex;
+    }
+    &-item {
+      margin-left: 12px;
+      transition: 0.3s;
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 991px) {
+  .footer__logo {
+  }
+
+  .footer__inner {
+    flex-direction: column;
+  }
+
+  .footer__left {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .footer {
+    &__links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .footer {
+    &__links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+  }
+}
+@media (max-width: 330px) {
+  .footer {
+    &__links {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+}

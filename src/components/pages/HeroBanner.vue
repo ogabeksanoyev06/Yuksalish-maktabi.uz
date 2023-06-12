@@ -1,0 +1,326 @@
+<template>
+  <div class="hero-banner">
+    <div class="container">
+      <div class="hero-banner__inner">
+        <div class="hero-banner__content">
+          <h1 class="hero-banner__title">
+            Yuksalish maktabi - ta’lim va tarbiy birlashgan dargoh
+            <svg
+              width="52"
+              height="52"
+              viewBox="0 0 52 52"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              v-if="!isMobileSmall"
+            >
+              <path
+                opacity="0.7"
+                d="M28.8166 17.5717L31.6767 23.2917C32.0667 24.0717 33.1066 24.8517 33.9733 24.9817L39.1517 25.8483C42.4667 26.4117 43.2466 28.795 40.8633 31.1783L36.8333 35.2083C36.1617 35.88 35.7716 37.2017 35.9883 38.155L37.1367 43.16C38.0467 47.1033 35.945 48.6417 32.4567 46.5833L27.6033 43.7017C26.715 43.1817 25.285 43.1817 24.3967 43.7017L19.5433 46.5833C16.055 48.6417 13.9533 47.1033 14.8633 43.16L16.0117 38.155C16.2284 37.2233 15.8383 35.9017 15.1667 35.2083L11.1367 31.1783C8.75336 28.795 9.53332 26.39 12.8483 25.8483L18.0267 24.9817C18.8933 24.83 19.9333 24.0717 20.3233 23.2917L23.1834 17.5717C24.7217 14.4733 27.2783 14.4733 28.8166 17.5717Z"
+                fill="black"
+              />
+              <path
+                opacity="0.4"
+                d="M13 21.125C12.1117 21.125 11.375 20.3883 11.375 19.5V4.33333C11.375 3.44499 12.1117 2.70833 13 2.70833C13.8883 2.70833 14.625 3.44499 14.625 4.33333V19.5C14.625 20.3883 13.8883 21.125 13 21.125Z"
+                fill="#292D32"
+              />
+              <path
+                opacity="0.4"
+                d="M39 21.125C38.1117 21.125 37.375 20.3883 37.375 19.5V4.33333C37.375 3.44499 38.1117 2.70833 39 2.70833C39.8883 2.70833 40.625 3.44499 40.625 4.33333V19.5C40.625 20.3883 39.8883 21.125 39 21.125Z"
+                fill="#292D32"
+              />
+              <path
+                opacity="0.4"
+                d="M26 10.2917C25.1117 10.2917 24.375 9.55499 24.375 8.66666V4.33333C24.375 3.44499 25.1117 2.70833 26 2.70833C26.8883 2.70833 27.625 3.44499 27.625 4.33333V8.66666C27.625 9.55499 26.8883 10.2917 26 10.2917Z"
+                fill="#292D32"
+              />
+            </svg>
+          </h1>
+          <div class="hero-banner__cta">
+            <div class="hero-banner__info">
+              <app-text
+                :size="isMobileSmall ? '14' : '18'"
+                :line-height="isMobileSmall ? '20' : '26'"
+                weight="400"
+                maxWidth="490"
+                class="mb-30"
+              >
+                Bizning vazifamiz - intellektual va tandiqiy fikrovchi, o‘zini
+                namoyon qila oladigan yoshlarni tayyorlash
+              </app-text>
+              <div class="d-flex flex-wrap">
+                <AppButton
+                  theme="main"
+                  :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
+                  :sides="isMobileSmall ? '15' : '20'"
+                  class="mr-10 mb-10 d-flex align-center"
+                  :height="isMobileSmall ? '40' : '50'"
+                >
+                  <span :class="isMobileSmall ? '' : 'mr-10'">
+                    ONLAYN QABUL
+                  </span>
+                  <img
+                    src="/icons/angle-right.svg"
+                    alt=""
+                    v-if="!isMobileSmall"
+                  />
+                </AppButton>
+                <AppButton
+                  theme="transparent"
+                  :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
+                  :sides="isMobileSmall ? '15' : '20'"
+                  class="mb-10"
+                  :height="isMobileSmall ? '40' : '50'"
+                >
+                  <span>BEPUL KONSULTATSIYA</span>
+                </AppButton>
+              </div>
+            </div>
+            <div class="hero-banner__photo">
+              <div class="cards">
+                <div class="cards__item">
+                  <video
+                    loop
+                    muted
+                    style="width: 100%; height: 100%; object-fit: cover"
+                    id="videoPlayerOne"
+                  >
+                    <source src="@/assets/header.mp4" type="video/mp4" />
+                  </video>
+                  <div class="cards__item-icon" @click="togglePlayOne">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0.666626 10V5.84667C0.666626 0.690004 4.31829 -1.42166 8.78663 1.15667L12.3916 3.23334L15.9966 5.31C20.465 7.88834 20.465 12.1117 15.9966 14.69L12.3916 16.7667L8.78663 18.8433C4.31829 21.4217 0.666626 19.31 0.666626 14.1533V10Z"
+                        fill="#F47820"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="cards__item">
+                  <video
+                    loop
+                    muted
+                    style="width: 100%; height: 100%; object-fit: cover"
+                    id="videoPlayerTwo"
+                  >
+                    <source src="@/assets/header.mp4" type="video/mp4" />
+                  </video>
+                  <div class="cards__item-icon" @click="togglePlayTwo">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0.666626 10V5.84667C0.666626 0.690004 4.31829 -1.42166 8.78663 1.15667L12.3916 3.23334L15.9966 5.31C20.465 7.88834 20.465 12.1117 15.9966 14.69L12.3916 16.7667L8.78663 18.8433C4.31829 21.4217 0.666626 19.31 0.666626 14.1533V10Z"
+                        fill="#F47820"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import AppButton from "../shared-components/AppButton.vue";
+
+export default {
+  name: "HeroBanner",
+  components: { AppButton },
+  data() {
+    return {
+      search: "",
+      isPlayingOne: false,
+      isPlayingTwo: false,
+    };
+  },
+  methods: {
+    togglePlayOne() {
+      const video = document.getElementById("videoPlayerOne");
+      if (this.isPlayingOne) {
+        video.pause();
+      } else {
+        video.play();
+      }
+      this.isPlayingOne = !this.isPlayingOne;
+    },
+    togglePlayTwo() {
+      const video = document.getElementById("videoPlayerTwo");
+      if (this.isPlayingTwo) {
+        video.pause();
+      } else {
+        video.play();
+      }
+      this.isPlayingTwo = !this.isPlayingTwo;
+    },
+  },
+};
+</script>
+
+<style lang="scss">
+.hero-banner {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    min-height: calc(100vh - 120px);
+    width: 100%;
+    padding: 30px 0;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 78px;
+    margin-bottom: 30px;
+    max-width: 810px;
+    width: 100%;
+  }
+
+  &__content {
+    width: 100%;
+  }
+
+  &__photo {
+    .cards {
+      display: flex;
+      &__item {
+        width: 300px;
+        height: 450px;
+        border-radius: 24px;
+        margin-right: 20px;
+        transition: 0.3s;
+        overflow: hidden;
+        position: relative;
+        &-icon {
+          position: absolute;
+          top: 24px;
+          right: 24px;
+          width: 44px;
+          height: 44px;
+          background-color: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+        &:last-child {
+          margin-top: -250px;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &__cta {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 1300px) {
+  .hero-banner {
+    &__photo {
+      .cards {
+        display: flex;
+        &__item {
+          width: 300px;
+          height: 450px;
+          border-radius: 24px;
+          margin-right: 20px;
+          transition: 0.3s;
+          &:last-child {
+            margin-top: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1150px) {
+  .hero-banner {
+    &__title {
+      font-size: 52px;
+      line-height: 64px;
+    }
+  }
+}
+
+@media (max-width: 876px) {
+  .hero-banner__inner {
+    flex-wrap: wrap;
+    justify-content: unset;
+  }
+  .hero-banner__title {
+    font-size: 36px;
+    line-height: 42px;
+    max-width: 100%;
+  }
+
+  .hero-banner__content {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-banner__cta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-banner__photo {
+    .cards {
+      flex-wrap: wrap;
+      justify-content: center;
+      &__item {
+        width: 300px;
+        height: 450px;
+        background-color: #d9d9d9;
+        border-radius: 24px;
+        margin-right: 20px;
+        transition: 0.3s;
+        &:last-child {
+          margin-top: 0px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    .hero-banner__info {
+      margin-bottom: 30px;
+    }
+    .hero-banner {
+      &__title {
+        font-size: 24px;
+        line-height: 30px;
+      }
+      &__photo {
+        .cards {
+          &__item {
+            margin-right: 0;
+            margin-bottom: 20px;
+            height: 300px;
+          }
+        }
+      }
+
+      &__cta {
+      }
+    }
+  }
+}
+</style>
