@@ -1,23 +1,36 @@
 <template>
   <section>
     <div class="slider">
-      <swiper :modules="modules" :pagination="{ clickable: true }">
+      <swiper class="swiper" :options="swiperOptions">
+        <swiper-slide>
+          1111<img
+            data-v-46bd6466=""
+            src="https://images.uzum.uz/chmi07l6sfhndlbmppv0/main_page_banner.jpg"
+            alt="Uzum aksiyalari, mahsulotlar termasi va xabarlari"
+            style="width: 100%; height: auto"
+          />
+        </swiper-slide>
         <swiper-slide
-          >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum
-          itaque ratione et eius obcaecati, ipsa dolor odit facilis cum,
-          eligendi quidem accusamus tempora fugit. Aliquid recusandae quas id
-          dolorum sit minima soluta debitis cum cupiditate aperiam quae
-          voluptatum dicta sequi eum earum odit commodi, est dolore illum
-          aliquam. Molestias vitae, ipsam officia voluptatem aut nemo laborum
-          excepturi reprehenderit optio accusamus veritatis consequuntur et
-          dolores ducimus minus nobis aspernatur necessitatibus, doloribus dicta
-          fuga sequi asperiores fugit animi laudantium. Assumenda eos labore
-          dolorum, fugit necessitatibus odit voluptas, eum asperiores placeat
-          natus minima, illum enim commodi pariatur harum nisi adipisci dicta.
-          Illo, provident!</swiper-slide
-        >
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
+          >2222<img
+            data-v-46bd6466=""
+            src="https://images.uzum.uz/chmi07l6sfhndlbmppv0/main_page_banner.jpg"
+            alt="Uzum aksiyalari, mahsulotlar termasi va xabarlari"
+            style="width: 100%; height: auto"
+        /></swiper-slide>
+        <swiper-slide
+          >3333<img
+            data-v-46bd6466=""
+            src="https://images.uzum.uz/chmi07l6sfhndlbmppv0/main_page_banner.jpg"
+            alt="Uzum aksiyalari, mahsulotlar termasi va xabarlari"
+            style="width: 100%; height: auto"
+        /></swiper-slide>
+        <swiper-slide
+          >4444<img
+            data-v-46bd6466=""
+            src="https://images.uzum.uz/chmi07l6sfhndlbmppv0/main_page_banner.jpg"
+            alt="Uzum aksiyalari, mahsulotlar termasi va xabarlari"
+            style="width: 100%; height: auto"
+        /></swiper-slide>
       </swiper>
     </div>
   </section>
@@ -31,8 +44,48 @@ export default {
     SwiperSlide,
   },
   data() {
-    return {};
+    return {
+      swiperOptions: {
+        // autoplay: {
+        //   delay: 4000,
+        //   disableOnInteraction: false,
+        // },
+
+        // Slaydlarni chiziq bilan aylantirish mumkinligini yoqish
+        grabCursor: true,
+
+        // Slaydlarni bo'sh joyga tushirish
+        centeredSlides: true,
+
+        // Davomiy charka (loop) imkoniyatini yoqish
+        loop: true,
+
+        // Sliderdagi slaydlarni bir marta yoki bir necha marta ko'rsatish (integer)
+        slidesPerView: 1,
+
+        // Slide o'rtasida joylashtirilgan slayd (center slide)
+        initialSlide: 0,
+
+        // Slaydlarni yonaltirish (vertical) holatda aylantirish
+        direction: "horizontal",
+
+        // Sliderda chiqqan slaydlarni bosib o'tish uchun joyni aniqlash
+        spaceBetween: 20,
+
+        // Slider tugmasi (navigatsiya)
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      },
+    };
   },
 };
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss">
+.swiper-slide {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  width: 90% !important;
+}
+</style>

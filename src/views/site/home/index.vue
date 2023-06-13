@@ -153,7 +153,7 @@
             </router-link>
           </div>
         </div>
-        <custom-slider />
+        <!-- <custom-slider /> -->
       </div>
     </div>
     <!--  -->
@@ -312,10 +312,10 @@ import HeroBanner from "@/components/pages/HeroBanner.vue";
 import AppButton from "@/components/shared-components/AppButton.vue";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
-import CustomSlider from "@/components/pages/CustomSlider.vue";
+// import CustomSlider from "@/components/pages/CustomSlider.vue";
 export default {
   name: "AppHome",
-  components: { HeroBanner, AppButton, Swiper, SwiperSlide, CustomSlider },
+  components: { HeroBanner, AppButton, Swiper, SwiperSlide },
   data() {
     return {
       mySwiper: null,
