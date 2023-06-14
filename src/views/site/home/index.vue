@@ -1,6 +1,7 @@
 <template>
   <section class="section py-30">
     <hero-banner />
+    <!--  -->
     <div class="py-60 course">
       <div class="container">
         <div class="section__top mb-30">
@@ -13,7 +14,6 @@
             Qoshimcha kurs va <br />
             to‘garaklarimiz
           </app-text>
-
           <div class="section__top-details">
             <app-text
               :size="isMobile ? 14 : 18"
@@ -116,6 +116,7 @@
         </swiper>
       </div>
     </div>
+    <!--  -->
     <div class="py-60">
       <div class="container">
         <div class="section__top mb-30">
@@ -153,8 +154,8 @@
             </router-link>
           </div>
         </div>
-        <!-- <custom-slider /> -->
       </div>
+      <custom-slider />
     </div>
     <!--  -->
     <div class="py-60" style="background-color: #091f00">
@@ -304,6 +305,46 @@
         </div>
       </div>
     </div>
+    <!--  -->
+    <motiovation-video />
+    <div
+      :class="isMobile ? 'py-30' : 'py-60'"
+      style="background-color: #130024"
+    >
+      <div class="container">
+        <div class="d-flex flex-column justify-content-center align-center">
+          <app-text
+            :size="isMobile ? 20 : 30"
+            :line-height="isMobile ? 26 : 36"
+            class="color-violet text-center mb-20"
+            weight="500"
+          >
+            Savollarinigiz bormi?
+          </app-text>
+          <app-text
+            :size="isMobile ? 16 : 24"
+            :line-height="isMobile ? 22 : 32"
+            class="color-violet text-center"
+            weight="400"
+            maxWidth="700"
+            :class="isMobile ? 'mb-20' : 'mb-40'"
+          >
+            Ozingizni qiziqtirgan savollar bolsa quydagi formani toldiring va
+            operatorlarimiz siz bilan tezda aloqaga chiqishadi
+          </app-text>
+          <AppButton
+            theme="main"
+            :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
+            sides="20"
+            class="mb-10"
+            :height="isMobileSmall ? '40' : '50'"
+          >
+            <span class="mr-10">FORMANI TO'LDIRISH</span>
+            <img src="/icons/angle-right.svg" alt="" />
+          </AppButton>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -312,10 +353,18 @@ import HeroBanner from "@/components/pages/HeroBanner.vue";
 import AppButton from "@/components/shared-components/AppButton.vue";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
-// import CustomSlider from "@/components/pages/CustomSlider.vue";
+import CustomSlider from "@/components/pages/CustomSlider.vue";
+import MotiovationVideo from "@/components/pages/MotiovationVideo.vue";
 export default {
   name: "AppHome",
-  components: { HeroBanner, AppButton, Swiper, SwiperSlide },
+  components: {
+    HeroBanner,
+    AppButton,
+    Swiper,
+    SwiperSlide,
+    CustomSlider,
+    MotiovationVideo,
+  },
   data() {
     return {
       mySwiper: null,
@@ -337,17 +386,12 @@ export default {
             slidesPerView: 3,
           },
           990: {
-            slidesPerView: 3,
+            slidesPerView: 2.4,
           },
           1200: {
-            slidesPerView: 4,
+            slidesPerView: 3.4,
           },
         },
-        spaceBetween: 30,
-      },
-      swiperOptions1: {
-        speed: 500,
-        slidesPerView: 1,
         spaceBetween: 30,
       },
     };

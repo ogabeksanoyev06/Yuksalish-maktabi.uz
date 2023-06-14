@@ -111,7 +111,6 @@ export default {
     },
     listeners() {
       if (this.disabled) return {};
-
       return {
         click: (event) => this.$emit("click", event),
       };

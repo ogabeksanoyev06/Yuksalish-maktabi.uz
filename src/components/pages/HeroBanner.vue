@@ -199,7 +199,7 @@ export default {
     .cards {
       display: flex;
       &__item {
-        width: 300px;
+        width: 280px;
         height: 450px;
         border-radius: 24px;
         margin-right: 20px;

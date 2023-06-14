@@ -1,15 +1,15 @@
 .d-flex {
   display: flex;
 }
-
 .justify-space-between {
   justify-content: space-between;
 }
-
 .justify-content-center {
   justify-content: center;
 }
-
+.flex-column {
+  flex-direction: column;
+}
 .justify-content-left {
   justify-content: flex-start;
 }
