@@ -1,8 +1,48 @@
 <template>
-  <section class="">
+  <section :class="bgGreen ? 'bgGreen' : ''" class="py-60 customSlider">
+    <div class="container" v-if="topLink">
+      <div class="section__top mb-30">
+        <app-text
+          :size="isMobile ? 24 : 30"
+          :line-height="isMobile ? 28 : 36"
+          :class="bgGreen ? 'color-green' : ''"
+          weight="400"
+        >
+          Qoshimcha kurs va <br />
+          to‘garaklarimiz
+        </app-text>
+        <div class="section__top-details">
+          <app-text
+            :size="isMobile ? 16 : 18"
+            :line-height="isMobile ? 24 : 26"
+            class="mb-20"
+            :class="bgGreen ? 'color-green' : ''"
+            weight="400"
+            max-width="500"
+          >
+            Maktabimizlarimiz bino, xona, bolalar o‘quv jarayonidan, turli xil
+            sport musobaqalardan olingan rasimlar.
+          </app-text>
+          <router-link class="section__top-link" to="/">
+            <AppButton
+              theme="main"
+              :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
+              sides="20"
+              class="mb-10"
+              :height="isMobileSmall ? '40' : '50'"
+            >
+              <span class="mr-10">MAKTAB HAQIDA BATAFSIL</span>
+            </AppButton>
+          </router-link>
+        </div>
+      </div>
+    </div>
     <div class="slider" style="position: relative">
       <div class="navigation" v-if="!isDesktopSmall">
-        <div class="slider-button swiper-button-prev prev">
+        <div
+          class="slider-button swiper-button-prev prev"
+          :class="bgGreen ? 'bgGreen' : ''"
+        >
           <svg
             width="32"
             height="32"
@@ -28,7 +68,10 @@
             />
           </svg>
         </div>
-        <div class="slider-button swiper-button-next next">
+        <div
+          class="slider-button swiper-button-next next"
+          :class="bgGreen ? 'bgGreen' : ''"
+        >
           <svg
             width="32"
             height="32"
@@ -70,7 +113,9 @@
             :size="isMobileSmall ? '16' : '24'"
             :line-height="isMobileSmall ? '20' : '32'"
             weight="500"
-            :class="isMobile ? 'mb-5' : 'mb-20'"
+            :class="
+              (isMobile ? 'mb-5' : 'mb-20', bgGreen ? 'color-green-1' : '')
+            "
           >
             Maktab binosi
           </app-text>
@@ -78,6 +123,7 @@
             :size="isMobileSmall ? '14' : '20'"
             :line-height="isMobileSmall ? '20' : '26'"
             weight="400"
+            :class="bgGreen ? 'color-green-1' : ''"
           >
             Matkabimizning binosining tashqi korinishi
           </app-text>
@@ -88,19 +134,29 @@
 </template>
 <script>
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+import AppButton from "../shared-components/AppButton.vue";
 export default {
   name: "AppSlider",
   components: {
     Swiper,
     SwiperSlide,
+    AppButton,
+  },
+  props: {
+    topLink: Boolean,
+    bgGreen: Boolean,
+    content: String,
+    photo: String,
+    link: String,
+    buttonText: String,
   },
   data() {
     return {
       swiperOptions: {
-        // autoplay: {
-        //   delay: 4000,
-        //   disableOnInteraction: false,
-        // },
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
         grabCursor: true,
         centeredSlides: true,
         loop: true,
@@ -118,9 +174,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  content: "";
+.bgGreen {
+  background-color: #091f00;
 }
 .custom__slide {
   position: relative;
@@ -162,6 +217,15 @@ export default {
     align-items: center;
     justify-content: center;
     border-radius: 56px !important;
+    &.bgGreen {
+      background-color: #091f00;
+      border-color: (177, 255, 157, 0.1);
+      svg {
+        path {
+          stroke: #b1ff9d;
+        }
+      }
+    }
     &.prev {
       left: 20px;
     }
@@ -170,6 +234,7 @@ export default {
     }
   }
 }
+
 @media (max-width: 991px) {
   .custom__slide {
     &-item {

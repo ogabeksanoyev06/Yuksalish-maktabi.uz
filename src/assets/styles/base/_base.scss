@@ -19,6 +19,25 @@
 .color-text {
   color: $color-text;
 }
+.color-gradient {
+  background: linear-gradient(
+    89.38deg,
+    #289fb1 -17.16%,
+    #5c9da9 -15.82%,
+    #4a91d8 32.58%,
+    #6d69cb 64.28%,
+    #ed389b 86.61%,
+    #b1ff9d 141.56%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: "" !important;
+}
 .science-categories {
   .app-card {
     display: flex;
