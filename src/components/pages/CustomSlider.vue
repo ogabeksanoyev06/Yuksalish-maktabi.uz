@@ -70,6 +70,8 @@
           class="custom__slide-item"
           v-for="(item, i) in 10"
           :key="i"
+          data-aos="fade-up"
+          :data-aos-duration="(i + 1) * 500"
         >
           <img src="/images/girls.png" :class="isMobile ? 'mb-10' : 'mb-20'" />
           <app-text
@@ -79,6 +81,8 @@
             :class="
               (isMobile ? 'mb-5' : 'mb-20', bgGreen ? 'color-green-1' : '')
             "
+            data-aos="fade-up"
+            data-aos-duration="500"
           >
             Maktab binosi
           </app-text>
@@ -87,6 +91,8 @@
             :line-height="isMobileSmall ? '20' : '26'"
             weight="400"
             :class="bgGreen ? 'color-green-1' : ''"
+            data-aos="fade-up"
+            data-aos-duration="700"
           >
             Matkabimizning binosining tashqi korinishi
           </app-text>

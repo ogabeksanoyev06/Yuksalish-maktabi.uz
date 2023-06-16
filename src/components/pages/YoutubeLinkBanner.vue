@@ -1,41 +1,6 @@
 <template>
-  <div class="py-60" :class="bgGreen ? 'bgGreen' : ''">
+  <div data-aos="fade-up" data-aos-duration="500">
     <div class="container">
-      <div class="section__top mb-30" v-if="topLink">
-        <app-text
-          :size="isMobile ? 24 : 30"
-          :line-height="isMobile ? 28 : 36"
-          class="color-green"
-          weight="400"
-          data-aos="fade-up"
-        >
-          Qoshimcha kurs va <br />
-          to‘garaklarimiz
-        </app-text>
-        <div class="section__top-details" data-aos="fade-up">
-          <app-text
-            :size="isMobile ? 16 : 18"
-            :line-height="isMobile ? 24 : 26"
-            class="mb-20 color-green"
-            weight="400"
-            max-width="500"
-          >
-            Maktabimizlarimiz bino, xona, bolalar o‘quv jarayonidan, turli xil
-            sport musobaqalardan olingan rasimlar.
-          </app-text>
-          <router-link class="section__top-link" to="/">
-            <app-button
-              theme="main"
-              :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
-              sides="20"
-              class="mb-10"
-              :height="isMobileSmall ? '40' : '50'"
-            >
-              <span class="mr-10">MAKTAB HAQIDA BATAFSIL</span>
-            </app-button>
-          </router-link>
-        </div>
-      </div>
       <div class="excursion">
         <img
           src="/images/girls.png"
@@ -65,10 +30,10 @@
   </div>
 </template>
 <script>
-import AppButton from "../shared-components/AppButton.vue";
+// import AppButton from "../shared-components/AppButton.vue";
 export default {
   name: "YoutubeLinkBanner",
-  components: { AppButton },
+  components: {},
   props: {
     topLink: Boolean,
     bgGreen: Boolean,

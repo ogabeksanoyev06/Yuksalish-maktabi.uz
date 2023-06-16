@@ -1,5 +1,5 @@
 <template>
-  <section class="section py-30">
+  <section class="section py-60">
     <hero-banner />
     <!--  -->
     <div class="py-60 course">
@@ -23,8 +23,8 @@
               weight="400"
               max-width="500"
             >
-              Maktabimizlarimiz bino, xona, bolalar o‘quv jarayonidan, turli xil
-              sport musobaqalardan olingan rasimlar.
+              Biz bolalarni rivojlantirish uchun DTS darslilardan tashqari
+              qo'shimcha fanlar va sport to'garaklarimiz ham mavjud.
             </app-text>
             <router-link class="section__top-link" to="/">
               <AppButton
@@ -34,7 +34,7 @@
                 class="mb-10"
                 :height="isMobileSmall ? '40' : '50'"
               >
-                <span class="mr-10">ONLAYN QABUL</span>
+                <span class="mr-10">TO'LIQ TANISHISH</span>
                 <img src="/icons/angle-right.svg" alt="" />
               </AppButton>
             </router-link>
@@ -49,8 +49,8 @@
               <p class="item__title">IXTISOSLASHGAN FANLAR</p>
               <div class="item__info">
                 <app-text
-                  :size="isMobile ? '18' : '24'"
-                  :line-height="isMobile ? '24' : '30'"
+                  :size="isMobile ? '16' : '20'"
+                  :line-height="isMobile ? '20' : '24'"
                   weight="400"
                   class="color-white mb-10"
                 >
@@ -127,8 +127,8 @@
             weight="400"
             data-aos="fade-up"
           >
-            Qoshimcha kurs va <br />
-            to‘garaklarimiz
+            Maktabimizdan <br />
+            fotogalereya
           </app-text>
           <div class="section__top-details" data-aos="fade-up">
             <app-text
@@ -138,8 +138,8 @@
               weight="400"
               max-width="500"
             >
-              Maktabimizlarimiz bino, xona, bolalar o‘quv jarayonidan, turli xil
-              sport musobaqalardan olingan rasimlar.
+              Maktablarimiz bino, xona, bolalar o‘quv jarayonidan, turli xil
+              sport musobaqalardan olingan rasmlar.
             </app-text>
             <router-link class="section__top-link" to="/">
               <AppButton
@@ -158,7 +158,48 @@
       <custom-slider :topLink="true" :bgGreen="false" />
     </div>
     <!--  -->
-    <youtube-link-banner :topLink="true" :bgGreen="true" />
+    <div
+      style="background-color: #091f00"
+      :class="isMobileSmall ? 'py-30' : 'py-60'"
+    >
+      <div class="container">
+        <div class="section__top mb-30">
+          <app-text
+            :size="isMobile ? 24 : 30"
+            :line-height="isMobile ? 28 : 36"
+            class="color-green"
+            weight="400"
+            data-aos="fade-up"
+          >
+            Maktabga ekskursiya
+          </app-text>
+          <div class="section__top-details" data-aos="fade-up">
+            <app-text
+              :size="isMobile ? 16 : 18"
+              :line-height="isMobile ? 24 : 26"
+              class="mb-20 color-green"
+              weight="400"
+              max-width="500"
+            >
+              Yuksalish maktablariga tashrif buyuring. Maktab faoliyati va o'quv
+              sharoiti bilan yaqindan tanishing.
+            </app-text>
+            <router-link class="section__top-link" to="/">
+              <app-button
+                theme="main"
+                :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
+                sides="20"
+                class="mb-10"
+                :height="isMobileSmall ? '40' : '50'"
+              >
+                <span class="mr-10">EKSKURSIYAGA YOZILISH</span>
+              </app-button>
+            </router-link>
+          </div>
+        </div>
+      </div>
+      <youtube-link-banner :topLink="true" :bgGreen="true" />
+    </div>
     <!--  -->
     <div class="py-60">
       <div class="container">
@@ -170,8 +211,8 @@
             weight="400"
             data-aos="fade-up"
           >
-            Qoshimcha kurs va <br />
-            to‘garaklarimiz
+            Chegirma va <br />
+            imkoniyatlar
           </app-text>
           <div class="section__top-details" data-aos="fade-up">
             <app-text
@@ -181,8 +222,8 @@
               weight="400"
               max-width="500"
             >
-              Maktabimizlarimiz bino, xona, bolalar o‘quv jarayonidan, turli xil
-              sport musobaqalardan olingan rasimlar.
+              Bizning chegirma va imtiyozlarimiz yoshlarga motivatsiya bo'la
+              oladi.
             </app-text>
             <router-link class="section__top-link" to="/">
               <AppButton
@@ -192,7 +233,7 @@
                 class="mb-10"
                 :height="isMobileSmall ? '40' : '50'"
               >
-                <span class="mr-10">MAKTAB HAQIDA BATAFSIL</span>
+                <span class="mr-10">KONSULTATSIYA OLISH</span>
               </AppButton>
             </router-link>
           </div>
@@ -252,52 +293,54 @@
     </div>
     <!--  -->
     <motiovation-video />
-    <div class="container">
-      <div
-        style="
-          background-color: #130024;
-          border-radius: 24px;
-          padding-left: 10px;
-          padding-right: 10px;
-        "
-        :class="isMobile ? 'py-30' : 'py-60'"
-      >
-        <div class="d-flex flex-column justify-content-center align-center">
-          <app-text
-            :size="isMobile ? 20 : 30"
-            :line-height="isMobile ? 26 : 36"
-            class="color-violet text-center mb-20"
-            weight="500"
-            data-aos="fade-up"
-            data-aos-duration="500"
-          >
-            Savollarinigiz bormi?
-          </app-text>
-          <app-text
-            :size="isMobile ? 16 : 24"
-            :line-height="isMobile ? 22 : 32"
-            class="color-violet text-center"
-            weight="400"
-            maxWidth="700"
-            :class="isMobile ? 'mb-20' : 'mb-40'"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
-            Ozingizni qiziqtirgan savollar bolsa quydagi formani toldiring va
-            operatorlarimiz siz bilan tezda aloqaga chiqishadi
-          </app-text>
-          <AppButton
-            theme="main"
-            :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
-            sides="20"
-            class="mb-10"
-            :height="isMobileSmall ? '40' : '50'"
-            data-aos="fade-up"
-            data-aos-duration="1500"
-          >
-            <span class="mr-10">FORMANI TO'LDIRISH</span>
-            <img src="/icons/angle-right.svg" alt="" />
-          </AppButton>
+    <div style="background-color: #fff; border-radius: 0px 0px 16px 16px">
+      <div class="container">
+        <div
+          style="
+            background-color: #130024;
+            border-radius: 24px;
+            padding-left: 10px;
+            padding-right: 10px;
+          "
+          :class="isMobile ? 'py-30' : 'py-60'"
+        >
+          <div class="d-flex flex-column justify-content-center align-center">
+            <app-text
+              :size="isMobile ? 20 : 30"
+              :line-height="isMobile ? 26 : 36"
+              class="color-violet text-center mb-20"
+              weight="500"
+              data-aos="fade-up"
+              data-aos-duration="500"
+            >
+              Savollarinigiz bormi?
+            </app-text>
+            <app-text
+              :size="isMobile ? 16 : 24"
+              :line-height="isMobile ? 22 : 32"
+              class="color-violet text-center"
+              weight="400"
+              maxWidth="700"
+              :class="isMobile ? 'mb-20' : 'mb-40'"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              Ozingizni qiziqtirgan savollar bolsa quydagi formani toldiring va
+              operatorlarimiz siz bilan tezda aloqaga chiqishadi
+            </app-text>
+            <div data-aos="fade-up" data-aos-duration="1000">
+              <AppButton
+                theme="main"
+                :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
+                sides="20"
+                class="mb-10"
+                :height="isMobileSmall ? '40' : '50'"
+              >
+                <span class="mr-10">ALOQAGA CHIQISH</span>
+                <img src="/icons/angle-right.svg" alt="" />
+              </AppButton>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -365,7 +408,7 @@ export default {
       position: relative;
       max-width: 350px;
       width: 100%;
-      height: 480px;
+      height: 400px;
       &__photo {
         width: 100%;
         height: 100%;
@@ -377,8 +420,8 @@ export default {
         }
       }
       &__title {
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 14px;
+        line-height: 20px;
         text-transform: uppercase;
         position: absolute;
         top: 16px;

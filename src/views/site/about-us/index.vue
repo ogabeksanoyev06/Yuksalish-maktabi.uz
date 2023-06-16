@@ -8,6 +8,8 @@
           weight="500"
           class="mb-30 mx-auto text-center"
           maxWidth="680"
+          data-aos="fade-up"
+          data-aos-duration="500"
         >
           O‘zbekistondagi sifatli hususiy maktab
         </app-text>
@@ -17,20 +19,24 @@
           weight="200"
           class="mb-30 mx-auto text-center"
           maxWidth="470"
+          data-aos="fade-up"
+          data-aos-duration="700"
         >
           Maktabimiz haqida barcha ma’lumotlar, maktabga ekskursiyalar vva
           boshqalar bilan tanishing
         </app-text>
-        <AppButton
-          theme="main"
-          :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
-          :sides="isMobileSmall ? '15' : '20'"
-          class="mb-10 mx-auto d-flex align-center"
-          :height="isMobileSmall ? '40' : '50'"
-        >
-          <span :class="isMobileSmall ? '' : 'mr-10'"> ONLAYN QABUL </span>
-          <img src="/icons/angle-right.svg" alt="" v-if="!isMobileSmall" />
-        </AppButton>
+        <div data-aos="fade-up" data-aos-duration="900">
+          <AppButton
+            theme="main"
+            :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
+            :sides="isMobileSmall ? '15' : '20'"
+            class="mb-30 mx-auto d-flex align-center"
+            :height="isMobileSmall ? '40' : '50'"
+          >
+            <span :class="isMobileSmall ? '' : 'mr-10'"> MAKTAB HAQIDA </span>
+            <img src="/icons/angle-right.svg" alt="" v-if="!isMobileSmall" />
+          </AppButton>
+        </div>
       </div>
       <YoutubeLinkBanner :topLink="false" :bgGreen="false" />
     </div>
@@ -47,8 +53,7 @@
             weight="400"
             data-aos="fade-up"
           >
-            Qoshimcha kurs va <br />
-            to‘garaklarimiz
+            Maktabimiz haqida
           </app-text>
           <div class="section__top-details" data-aos="fade-up">
             <app-text
@@ -58,8 +63,8 @@
               weight="400"
               max-width="500"
             >
-              Maktabimizlarimiz bino, xona, bolalar o‘quv jarayonidan, turli xil
-              sport musobaqalardan olingan rasimlar.
+              Yuksalish maktabi 2022 - yilda ochilgan bo'lib, uning bosh
+              asoschisi Muhammadali Eshonqulov.
             </app-text>
             <router-link class="section__top-link" to="/">
               <AppButton
@@ -69,7 +74,7 @@
                 class="mb-10"
                 :height="isMobileSmall ? '40' : '50'"
               >
-                <span class="mr-10">MAKTAB HAQIDA BATAFSIL</span>
+                <span class="mr-10">BEPUL KONSULTATSIYA OLISH</span>
               </AppButton>
             </router-link>
           </div>
@@ -88,11 +93,19 @@
           weight="500"
           class="mb-30 color-gradient"
           maxWidth="620"
+          data-aos="fade-up"
+          data-aos-duration="500"
         >
           Maktabimiz zamon talablarga javob beradigan o‘qitish tizimiga ega
         </app-text>
         <div class="items">
-          <div class="item" v-for="(item, i) in 3" :key="i">
+          <div
+            class="item"
+            v-for="(item, i) in 3"
+            :key="i"
+            data-aos="fade-up"
+            data-aos-duration="500"
+          >
             <svg
               width="30"
               height="29"
@@ -143,7 +156,13 @@
           "
         />
         <div class="items mb-60">
-          <div class="item" v-for="(item, i) in 3" :key="i">
+          <div
+            class="item"
+            v-for="(item, i) in 3"
+            :key="i"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             <svg
               width="30"
               height="29"
@@ -192,11 +211,18 @@
           class="color-gradient"
           maxWidth="758"
           :class="isDesktopSmall ? 'mb-30' : ' mb-40'"
+          data-aos="fade-up"
+          data-aos-duration="500"
         >
           Zamonaviy jihozlar bilan jihozlangan sinfxonalarimiz bilan tanishing
         </app-text>
         <div :class="isDesktopSmall ? '' : 'pb-120'" style="position: relative">
-          <swiper class="swiper" ref="mySwiper" :options="swiperOptions">
+          <swiper
+            class="swiper"
+            :options="swiperOptions"
+            data-aos="fade-up"
+            data-aos-duration="500"
+          >
             <swiper-slide v-for="(item, index) in 10" :key="index">
               <div class="swiper__item">
                 <div class="swiper__item-photo mb-10">
@@ -286,7 +312,7 @@
               data-aos="fade-up"
             >
               Maktabimizning <br />
-              afkaliklari
+              afzalliklari
             </app-text>
             <div class="section__top-details" data-aos="fade-up">
               <app-text
@@ -296,12 +322,18 @@
                 max-width="600"
               >
                 Bizning maxsus chegirmalar va imtiyozlarimiz oilangiz byudjetiga
-                foyda va yoshlarga mativatsiya bola oladi
+                foyda va yoshlarga motivatsiya bo'la oladi.
               </app-text>
             </div>
           </div>
           <div class="imkoniyat">
-            <div class="imkoniyat__item" v-for="item in 4" :key="item">
+            <div
+              class="imkoniyat__item"
+              v-for="item in 4"
+              :key="item"
+              data-aos="zoom-in"
+              :data-aos-duration="(i + 1) * 3000"
+            >
               <div
                 style="
                   background: #ebedeb;
@@ -358,7 +390,7 @@
             data-aos="fade-up"
           >
             Soglom ovqatlanish <br />
-            ilimga quvvatdir
+            ilmga quvvatdir
           </app-text>
           <div class="section__top-details" data-aos="fade-up">
             <app-text
@@ -369,8 +401,8 @@
               max-width="500"
             >
               Maktabimizda bolalarimiz 3 mahal ovqatlanish imkoniyatiga ega
-              boladi. Unda bolalar issiq ovqatm, shirinlik va ichimliklarni
-              turli xili turlari bilan ovqatlanishligi mumkin
+              bo'ladi. Unda bolalar issiq ovqat, shirinlik va ichimliklarni
+              turli xilli turlari bilan ovqatlanishlari mumkin.
             </app-text>
             <router-link class="section__top-link" to="/">
               <AppButton
@@ -562,7 +594,10 @@
                 mutloq bepul bo‘ladi va har kuni istalgancha shug’ilanishligi
                 mumkin
               </app-text>
-              <div class="d-flex flex-wrap" :style="isMobileSmall ? 'gap: 20px':'gap: 40px'">
+              <div
+                class="d-flex flex-wrap"
+                :style="isMobileSmall ? 'gap: 20px' : 'gap: 40px'"
+              >
                 <div style="max-width: 210px" v-for="(item, i) in 3" :key="i">
                   <app-text
                     :size="isMobileSmall ? '16' : '30'"
