@@ -1,42 +1,5 @@
 <template>
-  <section :class="bgGreen ? 'bgGreen' : ''" class="py-60 customSlider">
-    <div class="container" v-if="topLink">
-      <div class="section__top mb-30">
-        <app-text
-          :size="isMobile ? 24 : 30"
-          :line-height="isMobile ? 28 : 36"
-          :class="bgGreen ? 'color-green' : ''"
-          weight="400"
-        >
-          Qoshimcha kurs va <br />
-          to‘garaklarimiz
-        </app-text>
-        <div class="section__top-details">
-          <app-text
-            :size="isMobile ? 16 : 18"
-            :line-height="isMobile ? 24 : 26"
-            class="mb-20"
-            :class="bgGreen ? 'color-green' : ''"
-            weight="400"
-            max-width="500"
-          >
-            Maktabimizlarimiz bino, xona, bolalar o‘quv jarayonidan, turli xil
-            sport musobaqalardan olingan rasimlar.
-          </app-text>
-          <router-link class="section__top-link" to="/">
-            <AppButton
-              theme="main"
-              :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
-              sides="20"
-              class="mb-10"
-              :height="isMobileSmall ? '40' : '50'"
-            >
-              <span class="mr-10">MAKTAB HAQIDA BATAFSIL</span>
-            </AppButton>
-          </router-link>
-        </div>
-      </div>
-    </div>
+  <section :class="bgGreen ? 'bgGreen' : ''" class="customSlider">
     <div class="slider" style="position: relative">
       <div class="navigation" v-if="!isDesktopSmall">
         <div
@@ -134,13 +97,12 @@
 </template>
 <script>
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
-import AppButton from "../shared-components/AppButton.vue";
+// import AppButton from "../shared-components/AppButton.vue";
 export default {
   name: "AppSlider",
   components: {
     Swiper,
     SwiperSlide,
-    AppButton,
   },
   props: {
     topLink: Boolean,

@@ -2,7 +2,11 @@
   <div class="hero-banner">
     <div class="container">
       <div class="hero-banner__inner">
-        <div class="hero-banner__content">
+        <div
+          class="hero-banner__content"
+          data-aos="fade-up"
+          data-aos-duration="500"
+        >
           <h1 class="hero-banner__title">
             Yuksalish maktabi - ta’lim va tarbiy birlashgan dargoh
             <svg
@@ -77,7 +81,11 @@
             </div>
             <div class="hero-banner__photo">
               <div class="cards">
-                <div class="cards__item">
+                <div
+                  class="cards__item"
+                  data-aos="fade-up"
+                  data-aos-duration="600"
+                >
                   <video
                     loop
                     muted
@@ -102,7 +110,11 @@
                     </svg>
                   </div>
                 </div>
-                <div class="cards__item">
+                <div
+                  class="cards__item"
+                  data-aos="fade-up"
+                  data-aos-duration="700"
+                >
                   <video
                     loop
                     muted

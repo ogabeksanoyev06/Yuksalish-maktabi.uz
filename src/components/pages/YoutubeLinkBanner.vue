@@ -7,11 +7,12 @@
           :line-height="isMobile ? 28 : 36"
           class="color-green"
           weight="400"
+          data-aos="fade-up"
         >
           Qoshimcha kurs va <br />
           to‘garaklarimiz
         </app-text>
-        <div class="section__top-details">
+        <div class="section__top-details" data-aos="fade-up">
           <app-text
             :size="isMobile ? 16 : 18"
             :line-height="isMobile ? 24 : 26"

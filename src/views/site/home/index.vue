@@ -10,11 +10,12 @@
             :line-height="isMobile ? 26 : 36"
             class="color-violet"
             weight="400"
+            data-aos="fade-up"
           >
             Qoshimcha kurs va <br />
             to‘garaklarimiz
           </app-text>
-          <div class="section__top-details">
+          <div class="section__top-details" data-aos="fade-up">
             <app-text
               :size="isMobile ? 14 : 18"
               :line-height="isMobile ? 20 : 26"
@@ -118,7 +119,43 @@
     </div>
     <!--  -->
     <div class="py-60">
-      <custom-slider :topLink="true" :bgGreen="false"/>
+      <div class="container">
+        <div class="section__top mb-30">
+          <app-text
+            :size="isMobile ? 24 : 30"
+            :line-height="isMobile ? 28 : 36"
+            weight="400"
+            data-aos="fade-up"
+          >
+            Qoshimcha kurs va <br />
+            to‘garaklarimiz
+          </app-text>
+          <div class="section__top-details" data-aos="fade-up">
+            <app-text
+              :size="isMobile ? 16 : 18"
+              :line-height="isMobile ? 24 : 26"
+              class="mb-20"
+              weight="400"
+              max-width="500"
+            >
+              Maktabimizlarimiz bino, xona, bolalar o‘quv jarayonidan, turli xil
+              sport musobaqalardan olingan rasimlar.
+            </app-text>
+            <router-link class="section__top-link" to="/">
+              <AppButton
+                theme="main"
+                :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
+                sides="20"
+                class="mb-10"
+                :height="isMobileSmall ? '40' : '50'"
+              >
+                <span class="mr-10">MAKTAB HAQIDA BATAFSIL</span>
+              </AppButton>
+            </router-link>
+          </div>
+        </div>
+      </div>
+      <custom-slider :topLink="true" :bgGreen="false" />
     </div>
     <!--  -->
     <youtube-link-banner :topLink="true" :bgGreen="true" />
@@ -131,11 +168,12 @@
             :line-height="isMobile ? 28 : 36"
             class=""
             weight="400"
+            data-aos="fade-up"
           >
             Qoshimcha kurs va <br />
             to‘garaklarimiz
           </app-text>
-          <div class="section__top-details">
+          <div class="section__top-details" data-aos="fade-up">
             <app-text
               :size="isMobile ? 16 : 18"
               :line-height="isMobile ? 24 : 26"
@@ -161,7 +199,13 @@
         </div>
         <div class="reliefs">
           <div class="items">
-            <div class="item" v-for="(item, i) in 6" :key="i">
+            <div
+              class="item"
+              v-for="(item, i) in 6"
+              :key="i"
+              data-aos="zoom-in"
+              :data-aos-duration="(i + 1) * 2000"
+            >
               <svg
                 width="30"
                 height="29"
@@ -224,6 +268,8 @@
             :line-height="isMobile ? 26 : 36"
             class="color-violet text-center mb-20"
             weight="500"
+            data-aos="fade-up"
+            data-aos-duration="500"
           >
             Savollarinigiz bormi?
           </app-text>
@@ -234,6 +280,8 @@
             weight="400"
             maxWidth="700"
             :class="isMobile ? 'mb-20' : 'mb-40'"
+            data-aos="fade-up"
+            data-aos-duration="1000"
           >
             Ozingizni qiziqtirgan savollar bolsa quydagi formani toldiring va
             operatorlarimiz siz bilan tezda aloqaga chiqishadi
@@ -244,6 +292,8 @@
             sides="20"
             class="mb-10"
             :height="isMobileSmall ? '40' : '50'"
+            data-aos="fade-up"
+            data-aos-duration="1500"
           >
             <span class="mr-10">FORMANI TO'LDIRISH</span>
             <img src="/icons/angle-right.svg" alt="" />

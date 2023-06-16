@@ -87,7 +87,7 @@
         </swiper>
       </div>
       <div class="animation-video">
-        <div class="animation-video__item">
+        <div class="animation-video__item" data-aos="fade-up">
           <video
             loop
             muted
@@ -115,7 +115,7 @@
             Matkabimizning binosining tashqi korinishi
           </app-text>
         </div>
-        <div class="animation-video__item">
+        <div class="animation-video__item" data-aos="fade-up" data-aos-duration="900">
           <video
             loop
             muted
@@ -143,7 +143,7 @@
             Matkabimizning binosining tashqi korinishi
           </app-text>
         </div>
-        <div class="animation-video__item">
+        <div class="animation-video__item" data-aos="fade-up" data-aos-duration="1200">
           <video
             loop
             muted
@@ -222,12 +222,10 @@ export default {
       const video = this.videos[index];
       video.pause();
       video.currentTime = 0; // Videoni boshidan boshlash uchun
-      console.log(index, video.currentTime);
     },
   },
   mounted() {
     this.videos = [this.$refs.video1, this.$refs.video2, this.$refs.video3];
-    console.log(this.videos);
   },
 };
 </script>

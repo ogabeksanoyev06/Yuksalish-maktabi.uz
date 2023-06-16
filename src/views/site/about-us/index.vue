@@ -1,41 +1,83 @@
 <template>
-  <section class="about-us section py-60">
-    <div class="container">
-      <app-text
-        :size="isMobile ? 26 : 64"
-        :line-height="isMobile ? 30 : 78"
-        weight="500"
-        class="mb-30 mx-auto text-center"
-        maxWidth="680"
-      >
-        O‘zbekistondagi sifatli hususiy maktab
-      </app-text>
-      <app-text
-        :size="isMobile ? 16 : 20"
-        :line-height="isMobile ? 22 : 32"
-        weight="200"
-        class="mb-30 mx-auto text-center"
-        maxWidth="470"
-      >
-        Maktabimiz haqida barcha ma’lumotlar, maktabga ekskursiyalar vva
-        boshqalar bilan tanishing
-      </app-text>
-      <AppButton
-        theme="main"
-        :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
-        :sides="isMobileSmall ? '15' : '20'"
-        class="mb-10 mx-auto d-flex align-center"
-        :height="isMobileSmall ? '40' : '50'"
-      >
-        <span :class="isMobileSmall ? '' : 'mr-10'"> ONLAYN QABUL </span>
-        <img src="/icons/angle-right.svg" alt="" v-if="!isMobileSmall" />
-      </AppButton>
+  <section class="about-us section">
+    <div style="background-color: #fff" class="py-60">
+      <div class="container">
+        <app-text
+          :size="isMobile ? 26 : 64"
+          :line-height="isMobile ? 30 : 78"
+          weight="500"
+          class="mb-30 mx-auto text-center"
+          maxWidth="680"
+        >
+          O‘zbekistondagi sifatli hususiy maktab
+        </app-text>
+        <app-text
+          :size="isMobile ? 16 : 20"
+          :line-height="isMobile ? 22 : 32"
+          weight="200"
+          class="mb-30 mx-auto text-center"
+          maxWidth="470"
+        >
+          Maktabimiz haqida barcha ma’lumotlar, maktabga ekskursiyalar vva
+          boshqalar bilan tanishing
+        </app-text>
+        <AppButton
+          theme="main"
+          :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
+          :sides="isMobileSmall ? '15' : '20'"
+          class="mb-10 mx-auto d-flex align-center"
+          :height="isMobileSmall ? '40' : '50'"
+        >
+          <span :class="isMobileSmall ? '' : 'mr-10'"> ONLAYN QABUL </span>
+          <img src="/icons/angle-right.svg" alt="" v-if="!isMobileSmall" />
+        </AppButton>
+      </div>
+      <YoutubeLinkBanner :topLink="false" :bgGreen="false" />
     </div>
-    <YoutubeLinkBanner :topLink="false" :bgGreen="false" />
-    <div class="py-30">
+    <div
+      class="py-60"
+      style="background-color: #091f00; border-radius: 0px 0px 16px 16px"
+    >
+      <div class="container">
+        <div class="section__top mb-30">
+          <app-text
+            :size="isMobile ? 24 : 30"
+            :line-height="isMobile ? 28 : 36"
+            class="color-green"
+            weight="400"
+            data-aos="fade-up"
+          >
+            Qoshimcha kurs va <br />
+            to‘garaklarimiz
+          </app-text>
+          <div class="section__top-details" data-aos="fade-up">
+            <app-text
+              :size="isMobile ? 16 : 18"
+              :line-height="isMobile ? 24 : 26"
+              class="mb-20 color-green"
+              weight="400"
+              max-width="500"
+            >
+              Maktabimizlarimiz bino, xona, bolalar o‘quv jarayonidan, turli xil
+              sport musobaqalardan olingan rasimlar.
+            </app-text>
+            <router-link class="section__top-link" to="/">
+              <AppButton
+                theme="main"
+                :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
+                sides="20"
+                class="mb-10"
+                :height="isMobileSmall ? '40' : '50'"
+              >
+                <span class="mr-10">MAKTAB HAQIDA BATAFSIL</span>
+              </AppButton>
+            </router-link>
+          </div>
+        </div>
+      </div>
       <custom-slider :topLink="true" :bgGreen="true" />
     </div>
-    <div style="background-color: #1e1d1e">
+    <div style="background-color: #1e1d1e; border-radius: 0px 0px 16px 16px">
       <div class="py-60">
         <div class="container">
           <app-text
@@ -98,7 +140,7 @@
               width: 100%;
             "
           />
-          <div class="items mb-30">
+          <div class="items mb-60">
             <div class="item" v-for="(item, i) in 3" :key="i">
               <svg
                 width="30"
@@ -147,10 +189,14 @@
             weight="500"
             class="color-gradient"
             maxWidth="758"
+            :class="isDesktopSmall ? 'mb-30' : ' mb-40'"
           >
             Zamonaviy jihozlar bilan jihozlangan sinfxonalarimiz bilan tanishing
           </app-text>
-          <div class="py-60" style="position: relative">
+          <div
+            :class="isDesktopSmall ? '' : 'pb-120'"
+            style="position: relative"
+          >
             <swiper class="swiper" ref="mySwiper" :options="swiperOptions">
               <swiper-slide v-for="(item, index) in 10" :key="index">
                 <div class="swiper__item">
@@ -226,6 +272,197 @@
         </div>
       </div>
     </div>
+    <div
+      style="
+        background-color: rgba(244, 242, 247, 1);
+        border-radius: 0px 0px 16px 16px;
+      "
+    >
+      <div class="py-60">
+        <div class="container">
+          <div class="section__top" :class="isMobileSmall ? 'mb-30' : 'mb-60'">
+            <app-text
+              :size="isMobile ? 24 : 32"
+              :line-height="isMobile ? 28 : 44"
+              weight="500"
+              data-aos="fade-up"
+            >
+              Maktabimizning <br />
+              afkaliklari
+            </app-text>
+            <div class="section__top-details" data-aos="fade-up">
+              <app-text
+                :size="isMobile ? 16 : 24"
+                :line-height="isMobile ? 24 : 32"
+                weight="400"
+                max-width="600"
+              >
+                Bizning maxsus chegirmalar va imtiyozlarimiz oilangiz byudjetiga
+                foyda va yoshlarga mativatsiya bola oladi
+              </app-text>
+            </div>
+          </div>
+          <div class="imkoniyat">
+            <div class="imkoniyat__item" v-for="item in 4" :key="item">
+              <div
+                style="
+                  background: #ebedeb;
+                  backdrop-filter: blur(12px);
+                  border-radius: 32px;
+                  display: inline-flex;
+                  flex-direction: row;
+                  align-items: flex-start;
+                  padding: 8px 16px;
+                "
+                :class="isMobileSmall ? 'mb-20' : 'mb-30'"
+              >
+                <app-text
+                  :size="isMobile ? 14 : 16"
+                  :line-height="isMobile ? 20 : 24"
+                  weight="400"
+                >
+                  Imkoniyatlar
+                </app-text>
+              </div>
+              <app-text
+                :size="isMobile ? 16 : 24"
+                :line-height="isMobile ? 22 : 32"
+                class="mb-15"
+                weight="500"
+              >
+                Qoshimcha togaraklar
+              </app-text>
+              <app-text
+                :size="isMobile ? 14 : 18"
+                :line-height="isMobile ? 20 : 24"
+                class=""
+                weight="400"
+              >
+                DTS darslaridan song biz farzandlaringiz rivoji uchun qoshimcha
+                tograklar ham tashkil etganmiz
+              </app-text>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style="background-color: #1e1d1e; border-radius: 0px 0px 16px 16px"
+      :class="isMobileSmall ? 'py-30' : 'py-60'"
+    >
+      <div class="container">
+        <div class="section__top mb-30">
+          <app-text
+            :size="isMobile ? 24 : 30"
+            :line-height="isMobile ? 28 : 36"
+            class="color-white"
+            weight="400"
+            data-aos="fade-up"
+          >
+            Soglom ovqatlanish <br />
+            ilimga quvvatdir
+          </app-text>
+          <div class="section__top-details" data-aos="fade-up">
+            <app-text
+              :size="isMobile ? 16 : 18"
+              :line-height="isMobile ? 24 : 26"
+              class="mb-20 color-white"
+              weight="400"
+              max-width="500"
+            >
+              Maktabimizda bolalarimiz 3 mahal ovqatlanish imkoniyatiga ega
+              boladi. Unda bolalar issiq ovqatm, shirinlik va ichimliklarni
+              turli xili turlari bilan ovqatlanishligi mumkin
+            </app-text>
+            <router-link class="section__top-link" to="/">
+              <AppButton
+                theme="white"
+                :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
+                sides="20"
+                class="mb-10"
+                :height="isMobileSmall ? '40' : '50'"
+              >
+                <span class="mr-10">KONSULTATSIYAGA YOZILING</span>
+              </AppButton>
+            </router-link>
+          </div>
+        </div>
+        <div :class="isDesktopSmall ? '' : 'pb-120'" style="position: relative">
+          <swiper class="swiper" :options="swiperOptions2">
+            <swiper-slide
+              v-for="(item, index) in 10"
+              :key="index"
+              style="height: 300px; width: 250px"
+            >
+              <img
+                src="/images/girls.png"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 16px;
+                "
+                class="mb-10"
+              />
+            </swiper-slide>
+          </swiper>
+          <div class="navigation" v-if="!isDesktopSmall">
+            <div class="slider-button swiper-button-prev prev">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.76 7.90662L4.66667 16L12.76 24.0933"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M27.3333 16H4.89334"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div class="slider-button swiper-button-next next">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19.24 7.90662L27.3334 16L19.24 24.0933"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M4.66669 16H27.1067"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 <script>
@@ -275,6 +512,36 @@ export default {
           prevEl: ".swiper-button-prev",
         },
       },
+      swiperOptions2: {
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        speed: 500,
+        grabCursor: true,
+        breakpoints: {
+          400: {
+            slidesPerView: 1,
+          },
+          576: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 2.1,
+          },
+          990: {
+            slidesPerView: 2.4,
+          },
+          1200: {
+            slidesPerView: 2.4,
+          },
+        },
+        spaceBetween: 12,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      },
     };
   },
 };
@@ -282,6 +549,7 @@ export default {
 
 <style lang="scss" scoped>
 .about-us {
+  background-color: #1e1d1e;
   .items {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -311,7 +579,7 @@ export default {
   }
   .navigation {
     position: absolute;
-    bottom: 0;
+    bottom: 60px;
     right: 100px;
     width: 100%;
     z-index: 2;
@@ -362,6 +630,17 @@ export default {
     }
   }
 }
+.imkoniyat {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  &__item {
+    background: #fffdff;
+    border-radius: 16px;
+    padding: 24px;
+    min-height: 288px;
+  }
+}
 
 @media (max-width: 991px) {
   .about-us {
@@ -374,6 +653,9 @@ export default {
       }
     }
   }
+  .imkoniyat {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media (max-width: 576px) {
   .about-us {
@@ -384,6 +666,12 @@ export default {
       .item {
         min-height: 220px;
       }
+    }
+  }
+  .imkoniyat {
+    grid-template-columns: 1fr;
+    &__item {
+      min-height: 220px;
     }
   }
 }
