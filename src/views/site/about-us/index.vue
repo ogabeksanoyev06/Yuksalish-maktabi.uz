@@ -77,196 +77,194 @@
       </div>
       <custom-slider :topLink="true" :bgGreen="true" />
     </div>
-    <div style="background-color: #1e1d1e; border-radius: 0px 0px 16px 16px">
-      <div class="py-60">
-        <div class="container">
-          <app-text
-            :size="isMobile ? 22 : 44"
-            :line-height="isMobile ? 30 : 52"
-            weight="500"
-            class="mb-30 color-gradient"
-            maxWidth="620"
-          >
-            Maktabimiz zamon talablarga javob beradigan o‘qitish tizimiga ega
-          </app-text>
-          <div class="items">
-            <div class="item" v-for="(item, i) in 3" :key="i">
-              <svg
-                width="30"
-                height="29"
-                viewBox="0 0 30 29"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+    <div
+      style="background-color: #1e1d1e; border-radius: 0px 0px 16px 16px"
+      :class="isMobileSmall ? 'py-30' : 'py-60'"
+    >
+      <div class="container">
+        <app-text
+          :size="isMobile ? 22 : 44"
+          :line-height="isMobile ? 30 : 52"
+          weight="500"
+          class="mb-30 color-gradient"
+          maxWidth="620"
+        >
+          Maktabimiz zamon talablarga javob beradigan o‘qitish tizimiga ega
+        </app-text>
+        <div class="items">
+          <div class="item" v-for="(item, i) in 3" :key="i">
+            <svg
+              width="30"
+              height="29"
+              viewBox="0 0 30 29"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4.33329 10.9668H1.66667C0.75 10.9668 0 11.7168 0 12.6335V27.0001C0 27.9168 0.75 28.6668 1.66667 28.6668H4.33329C5.24996 28.6668 5.99996 27.9168 5.99996 27.0001V12.6335C5.99996 11.7001 5.24996 10.9668 4.33329 10.9668Z"
+                fill="#F37221"
+              />
+              <path
+                d="M16.3333 5.65039H13.6667C12.75 5.65039 12 6.40039 12 7.31706V27.0004C12 27.9171 12.75 28.6671 13.6667 28.6671H16.3333C17.25 28.6671 18 27.9171 18 27.0004V7.31706C18 6.40039 17.25 5.65039 16.3333 5.65039Z"
+                fill="#F37221"
+              />
+              <path
+                d="M28.3333 0.333496H25.6667C24.75 0.333496 24 1.0835 24 2.00016V27.0002C24 27.9168 24.75 28.6668 25.6667 28.6668H28.3333C29.25 28.6668 30 27.9168 30 27.0002V2.00016C30 1.0835 29.25 0.333496 28.3333 0.333496Z"
+                fill="#F37221"
+              />
+            </svg>
+            <div class="item__content">
+              <app-text
+                :size="isMobile ? 18 : 24"
+                :line-height="isMobile ? 24 : 32"
+                class="mb-10"
+                weight="500"
               >
-                <path
-                  d="M4.33329 10.9668H1.66667C0.75 10.9668 0 11.7168 0 12.6335V27.0001C0 27.9168 0.75 28.6668 1.66667 28.6668H4.33329C5.24996 28.6668 5.99996 27.9168 5.99996 27.0001V12.6335C5.99996 11.7001 5.24996 10.9668 4.33329 10.9668Z"
-                  fill="#F37221"
-                />
-                <path
-                  d="M16.3333 5.65039H13.6667C12.75 5.65039 12 6.40039 12 7.31706V27.0004C12 27.9171 12.75 28.6671 13.6667 28.6671H16.3333C17.25 28.6671 18 27.9171 18 27.0004V7.31706C18 6.40039 17.25 5.65039 16.3333 5.65039Z"
-                  fill="#F37221"
-                />
-                <path
-                  d="M28.3333 0.333496H25.6667C24.75 0.333496 24 1.0835 24 2.00016V27.0002C24 27.9168 24.75 28.6668 25.6667 28.6668H28.3333C29.25 28.6668 30 27.9168 30 27.0002V2.00016C30 1.0835 29.25 0.333496 28.3333 0.333496Z"
-                  fill="#F37221"
-                />
-              </svg>
-              <div class="item__content">
-                <app-text
-                  :size="isMobile ? 18 : 24"
-                  :line-height="isMobile ? 24 : 32"
-                  class="mb-10"
-                  weight="500"
-                >
-                  Chorak reyting boyicha
-                </app-text>
-                <app-text
-                  :size="isMobile ? 14 : 18"
-                  :line-height="isMobile ? 20 : 24"
-                  class=""
-                  weight="400"
-                >
-                  Har chorak reytingida eng yuqori natija korsatgan oquvchilar
-                  uchun 50% chegirma
-                </app-text>
-              </div>
+                Chorak reyting boyicha
+              </app-text>
+              <app-text
+                :size="isMobile ? 14 : 18"
+                :line-height="isMobile ? 20 : 24"
+                class=""
+                weight="400"
+              >
+                Har chorak reytingida eng yuqori natija korsatgan oquvchilar
+                uchun 50% chegirma
+              </app-text>
             </div>
           </div>
-          <div
-            style="
-              background-color: rgba(255, 255, 255, 0.4);
-              margin: 30px 0;
-              height: 0.5px;
-              width: 100%;
-            "
-          />
-          <div class="items mb-60">
-            <div class="item" v-for="(item, i) in 3" :key="i">
-              <svg
-                width="30"
-                height="29"
-                viewBox="0 0 30 29"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+        </div>
+        <div
+          style="
+            background-color: rgba(255, 255, 255, 0.4);
+            margin: 30px 0;
+            height: 0.5px;
+            width: 100%;
+          "
+        />
+        <div class="items mb-60">
+          <div class="item" v-for="(item, i) in 3" :key="i">
+            <svg
+              width="30"
+              height="29"
+              viewBox="0 0 30 29"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4.33329 10.9668H1.66667C0.75 10.9668 0 11.7168 0 12.6335V27.0001C0 27.9168 0.75 28.6668 1.66667 28.6668H4.33329C5.24996 28.6668 5.99996 27.9168 5.99996 27.0001V12.6335C5.99996 11.7001 5.24996 10.9668 4.33329 10.9668Z"
+                fill="#F37221"
+              />
+              <path
+                d="M16.3333 5.65039H13.6667C12.75 5.65039 12 6.40039 12 7.31706V27.0004C12 27.9171 12.75 28.6671 13.6667 28.6671H16.3333C17.25 28.6671 18 27.9171 18 27.0004V7.31706C18 6.40039 17.25 5.65039 16.3333 5.65039Z"
+                fill="#F37221"
+              />
+              <path
+                d="M28.3333 0.333496H25.6667C24.75 0.333496 24 1.0835 24 2.00016V27.0002C24 27.9168 24.75 28.6668 25.6667 28.6668H28.3333C29.25 28.6668 30 27.9168 30 27.0002V2.00016C30 1.0835 29.25 0.333496 28.3333 0.333496Z"
+                fill="#F37221"
+              />
+            </svg>
+            <div class="item__content">
+              <app-text
+                :size="isMobile ? 18 : 24"
+                :line-height="isMobile ? 24 : 32"
+                class="mb-10"
+                weight="500"
               >
-                <path
-                  d="M4.33329 10.9668H1.66667C0.75 10.9668 0 11.7168 0 12.6335V27.0001C0 27.9168 0.75 28.6668 1.66667 28.6668H4.33329C5.24996 28.6668 5.99996 27.9168 5.99996 27.0001V12.6335C5.99996 11.7001 5.24996 10.9668 4.33329 10.9668Z"
-                  fill="#F37221"
-                />
-                <path
-                  d="M16.3333 5.65039H13.6667C12.75 5.65039 12 6.40039 12 7.31706V27.0004C12 27.9171 12.75 28.6671 13.6667 28.6671H16.3333C17.25 28.6671 18 27.9171 18 27.0004V7.31706C18 6.40039 17.25 5.65039 16.3333 5.65039Z"
-                  fill="#F37221"
-                />
-                <path
-                  d="M28.3333 0.333496H25.6667C24.75 0.333496 24 1.0835 24 2.00016V27.0002C24 27.9168 24.75 28.6668 25.6667 28.6668H28.3333C29.25 28.6668 30 27.9168 30 27.0002V2.00016C30 1.0835 29.25 0.333496 28.3333 0.333496Z"
-                  fill="#F37221"
-                />
-              </svg>
-              <div class="item__content">
-                <app-text
-                  :size="isMobile ? 18 : 24"
-                  :line-height="isMobile ? 24 : 32"
-                  class="mb-10"
-                  weight="500"
-                >
-                  Chorak reyting boyicha
-                </app-text>
-                <app-text
-                  :size="isMobile ? 14 : 18"
-                  :line-height="isMobile ? 20 : 24"
-                  class=""
-                  weight="400"
-                >
-                  Har chorak reytingida eng yuqori natija korsatgan oquvchilar
-                  uchun 50% chegirma
-                </app-text>
-              </div>
+                Chorak reyting boyicha
+              </app-text>
+              <app-text
+                :size="isMobile ? 14 : 18"
+                :line-height="isMobile ? 20 : 24"
+                class=""
+                weight="400"
+              >
+                Har chorak reytingida eng yuqori natija korsatgan oquvchilar
+                uchun 50% chegirma
+              </app-text>
             </div>
           </div>
-          <app-text
-            :size="isMobile ? 22 : 44"
-            :line-height="isMobile ? 30 : 52"
-            weight="500"
-            class="color-gradient"
-            maxWidth="758"
-            :class="isDesktopSmall ? 'mb-30' : ' mb-40'"
-          >
-            Zamonaviy jihozlar bilan jihozlangan sinfxonalarimiz bilan tanishing
-          </app-text>
-          <div
-            :class="isDesktopSmall ? '' : 'pb-120'"
-            style="position: relative"
-          >
-            <swiper class="swiper" ref="mySwiper" :options="swiperOptions">
-              <swiper-slide v-for="(item, index) in 10" :key="index">
-                <div class="swiper__item">
-                  <div class="swiper__item-photo mb-10">
-                    <img src="/images/girls.png" alt="" />
-                  </div>
-                  <app-text
-                    :size="isMobile ? 16 : 24"
-                    :line-height="isMobile ? 20 : 32"
-                    weight="500"
-                    class="color-white"
-                  >
-                    Kimyo xonasi
-                  </app-text>
+        </div>
+        <app-text
+          :size="isMobile ? 22 : 44"
+          :line-height="isMobile ? 30 : 52"
+          weight="500"
+          class="color-gradient"
+          maxWidth="758"
+          :class="isDesktopSmall ? 'mb-30' : ' mb-40'"
+        >
+          Zamonaviy jihozlar bilan jihozlangan sinfxonalarimiz bilan tanishing
+        </app-text>
+        <div :class="isDesktopSmall ? '' : 'pb-120'" style="position: relative">
+          <swiper class="swiper" ref="mySwiper" :options="swiperOptions">
+            <swiper-slide v-for="(item, index) in 10" :key="index">
+              <div class="swiper__item">
+                <div class="swiper__item-photo mb-10">
+                  <img src="/images/girls.png" alt="" />
                 </div>
-              </swiper-slide>
-            </swiper>
-            <div class="navigation" v-if="!isDesktopSmall">
-              <div class="slider-button swiper-button-prev prev">
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                <app-text
+                  :size="isMobile ? 16 : 24"
+                  :line-height="isMobile ? 20 : 32"
+                  weight="500"
+                  class="color-white"
                 >
-                  <path
-                    d="M12.76 7.90662L4.66667 16L12.76 24.0933"
-                    stroke="black"
-                    stroke-width="2"
-                    stroke-miterlimit="10"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M27.3333 16H4.89334"
-                    stroke="black"
-                    stroke-width="2"
-                    stroke-miterlimit="10"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+                  Kimyo xonasi
+                </app-text>
               </div>
-              <div class="slider-button swiper-button-next next">
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M19.24 7.90662L27.3334 16L19.24 24.0933"
-                    stroke="black"
-                    stroke-width="2"
-                    stroke-miterlimit="10"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M4.66669 16H27.1067"
-                    stroke="black"
-                    stroke-width="2"
-                    stroke-miterlimit="10"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </div>
+            </swiper-slide>
+          </swiper>
+          <div class="navigation" v-if="!isDesktopSmall">
+            <div class="slider-button swiper-button-prev prev">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.76 7.90662L4.66667 16L12.76 24.0933"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M27.3333 16H4.89334"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div class="slider-button swiper-button-next next">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19.24 7.90662L27.3334 16L19.24 24.0933"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M4.66669 16H27.1067"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </div>
           </div>
         </div>
@@ -461,6 +459,22 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div
+      style="background-color: #fff; border-radius: 0px 0px 16px 16px"
+      :class="isMobileSmall ? 'py-30' : 'py-60'"
+    >
+      <div class="container">
+        <app-text
+          :size="isMobile ? 22 : 44"
+          :line-height="isMobile ? 30 : 52"
+          class="color-gradient"
+          weight="500"
+          maxWidth="422"
+        >
+          Kitob bilim bulogi - oquvchiningg ortogi
+        </app-text>
       </div>
     </div>
   </section>
