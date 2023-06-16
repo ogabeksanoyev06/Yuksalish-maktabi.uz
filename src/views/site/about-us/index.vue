@@ -472,9 +472,119 @@
           class="color-gradient"
           weight="500"
           maxWidth="422"
+          :class="isMobileSmall ? 'mb-30' : 'mb-60'"
         >
           Kitob bilim bulogi - oquvchiningg ortogi
         </app-text>
+      </div>
+      <div style="position: relative">
+        <!-- <div class="navigation light" v-if="!isDesktopSmall">
+          <div class="slider-button swiper-button-prev prev">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.76 7.90662L4.66667 16L12.76 24.0933"
+                stroke="black"
+                stroke-width="2"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M27.3333 16H4.89334"
+                stroke="black"
+                stroke-width="2"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div class="slider-button swiper-button-next next">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.24 7.90662L27.3334 16L19.24 24.0933"
+                stroke="black"
+                stroke-width="2"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M4.66669 16H27.1067"
+                stroke="black"
+                stroke-width="2"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </div> -->
+        <swiper class="swiper" :options="swiperOptions3">
+          <swiper-slide
+            v-for="(item, i) in 10"
+            :key="i"
+            class="d-flex flex-column light"
+          >
+            <img
+              src="/images/girls.png"
+              :class="isMobile ? 'mb-20' : 'mb-30'"
+              class="mx-auto"
+              style="
+                max-width: 1008px;
+                width: 100%;
+                height: auto;
+                border-radius: 24px;
+              "
+            />
+            <div style="max-width: 1008px; width: 100%" class="mx-auto">
+              <app-text
+                :size="isMobileSmall ? '16' : '30'"
+                :line-height="isMobileSmall ? '20' : '42'"
+                weight="500"
+                max-width="730"
+                :class="isMobileSmall ? 'mb-20' : 'mb-40'"
+                class="color-trans-04"
+              >
+                Maktabimizda kutubxona mavjud bo‘lib, unda bolalar foydalanishi
+                mutloq bepul bo‘ladi va har kuni istalgancha shug’ilanishligi
+                mumkin
+              </app-text>
+              <div class="d-flex flex-wrap" :style="isMobileSmall ? 'gap: 20px':'gap: 40px'">
+                <div style="max-width: 210px" v-for="(item, i) in 3" :key="i">
+                  <app-text
+                    :size="isMobileSmall ? '16' : '30'"
+                    :line-height="isMobileSmall ? '20' : '42'"
+                    weight="600"
+                    class="mb-10"
+                  >
+                    50 dan ortiq
+                  </app-text>
+                  <app-text
+                    :size="isMobileSmall ? '14' : '20'"
+                    :line-height="isMobileSmall ? '18' : '28'"
+                    weight="500"
+                    class="color-trans-04"
+                  >
+                    Darslik va adabiyotga oid kitoblar
+                  </app-text>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+        </swiper>
       </div>
     </div>
   </section>
@@ -551,6 +661,23 @@ export default {
           },
         },
         spaceBetween: 12,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      },
+      swiperOptions3: {
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        grabCursor: true,
+        centeredSlides: true,
+        loop: true,
+        slidesPerView: 1.3,
+        spaceBetween: 12,
+        initialSlide: 0,
+        direction: "horizontal",
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -643,6 +770,49 @@ export default {
       }
     }
   }
+}
+.navigation.light {
+  max-width: 1160px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  .slider-button {
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: #fff;
+    transition: all 0.3s ease-in-out;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 56px !important;
+    svg {
+      path {
+        stroke: #000;
+      }
+    }
+
+    &.prev {
+      left: 0px !important;
+    }
+    &.next {
+      right: 0px !important;
+    }
+  }
+}
+.swiper-slide.light {
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+}
+.swiper-slide-active.light {
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
 }
 .imkoniyat {
   display: grid;
