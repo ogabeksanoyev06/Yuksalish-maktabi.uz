@@ -1,6 +1,9 @@
 <template>
   <section class="about-us section">
-    <div style="background-color: #fff" class="py-60">
+    <div
+      style="background-color: #fff; border-radius: 0px 0px 16px 16px"
+      class="py-60"
+    >
       <div class="container">
         <app-text
           :size="isMobile ? 26 : 64"
@@ -331,8 +334,8 @@
               class="imkoniyat__item"
               v-for="(item, i) in 4"
               :key="i"
-              data-aos="zoom-in"
-              :data-aos-duration="(i + 1) * 3000"
+              data-aos="fade-right"
+              :data-aos-duration="(i + 1) * 500"
             >
               <div
                 style="
@@ -633,7 +636,7 @@
       </div>
     </div>
     <div
-      style="background-color: #130024; border-radius: 0px 0px 16px 16px"
+      style="background-color: #130024"
       :class="isMobileSmall ? 'py-30' : 'py-60'"
     >
       <div class="container">
@@ -653,11 +656,147 @@
               :line-height="isMobile ? 24 : 32"
               weight="400"
               max-width="600"
-              class="color-violet"
+              class="color-violet mb-20"
             >
               Maktabimizda tez-tez tajribali ustozlar ishtirokida bolalar uchun
               ham mahorat darslari bo‘lib turadi.
             </app-text>
+            <router-link class="section__top-link" to="/">
+              <AppButton
+                theme="cyan"
+                :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
+                sides="20"
+                class="mb-10"
+                :height="isMobileSmall ? '40' : '50'"
+              >
+                <span class="mr-10">KONSULTATSIYAGA YOZILING</span>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.43 5.92999L20.5 12L14.43 18.07"
+                    stroke="#130024"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M3.5 12H20.33"
+                    stroke="#130024"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </AppButton>
+            </router-link>
+          </div>
+        </div>
+        <swiper class="swiper" :options="swiperOptions4">
+          <swiper-slide
+            v-for="(item, i) in 10"
+            :key="i"
+            class="d-flex flex-column"
+            data-aos="fade-up"
+            :data-aos-duration="(i + 1) * 500"
+          >
+            <div
+              :style="isMobileSmall ? 'height:auto' : 'height: 341px'"
+              :class="isMobile ? 'mb-10' : 'mb-20'"
+            >
+              <img
+                src="/images/girls.png"
+                class="mx-auto"
+                style="width: 100%; object-fit: cover; border-radius: 16px"
+                :style="isMobileSmall ? 'height:auto' : 'height: 100%;'"
+              />
+            </div>
+            <app-text
+              :size="isMobile ? 16 : 18"
+              :line-height="isMobile ? 22 : 26"
+              weight="400"
+              max-width="420"
+              class="color-violet"
+            >
+              DTS va qo'shimcha to'garaklardan fizika, kimyo, matematika,
+              robototexnika kabi fanlarda amaliy va og'zaki mahorat darslari
+              bo'lib o'tadi.
+            </app-text>
+          </swiper-slide>
+        </swiper>
+      </div>
+    </div>
+    <div
+      style="background-color: #660448; border-radius: 0px 0px 16px 16px"
+      :class="isMobileSmall ? 'py-30' : isMobile ? 'py-60' : 'py-100'"
+    >
+      <div class="container">
+        <div class="section__top">
+          <app-text
+            :size="isMobile ? 24 : 32"
+            :line-height="isMobile ? 28 : 44"
+            weight="500"
+            max-width="330"
+            class="color-red"
+            data-aos="fade-up"
+          >
+            Biz haqimizda ko‘proq ma’lumot
+          </app-text>
+          <div class="section__top-details" data-aos="fade-up">
+            <app-text
+              :size="isMobile ? 16 : 24"
+              :line-height="isMobile ? 24 : 32"
+              weight="400"
+              max-width="550"
+              class="color-red mb-20"
+            >
+              Maktab haqida barcha ma’lumotlarni pdf katalog orqali oling
+            </app-text>
+            <router-link class="section__top-link" to="/">
+              <AppButton
+                theme="red"
+                :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
+                sides="20"
+                :height="isMobileSmall ? '40' : '50'"
+              >
+                <span class="mr-10">PDF KATALOG</span>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.44 8.8999C20.04 9.2099 21.51 11.0599 21.51 15.1099V15.2399C21.51 19.7099 19.72 21.4999 15.25 21.4999H8.73998C4.26998 21.4999 2.47998 19.7099 2.47998 15.2399V15.1099C2.47998 11.0899 3.92998 9.2399 7.46998 8.9099"
+                    stroke="#660448"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12 2V14.88"
+                    stroke="#660448"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M15.3499 12.6499L11.9999 15.9999L8.6499 12.6499"
+                    stroke="#660448"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </AppButton>
+            </router-link>
           </div>
         </div>
       </div>
@@ -757,6 +896,23 @@ export default {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
+      },
+      swiperOptions4: {
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        grabCursor: true,
+        loop: true,
+        breakpoints: {
+          576: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+        },
+        spaceBetween: 12,
       },
     };
   },

@@ -12,7 +12,7 @@
         <div></div>
       </div>
     </div>
-    <div v-if="!loading">
+    <div v-else>
       <AppHeader />
 
       <div class="page__wrap">
