@@ -54,6 +54,7 @@
     &-link {
       &.router-link-exact-active {
         color: $color-main;
+        font-weight: 500;
       }
     }
   }
