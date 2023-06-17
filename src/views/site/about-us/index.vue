@@ -329,8 +329,8 @@
           <div class="imkoniyat">
             <div
               class="imkoniyat__item"
-              v-for="item in 4"
-              :key="item"
+              v-for="(item, i) in 4"
+              :key="i"
               data-aos="zoom-in"
               :data-aos-duration="(i + 1) * 3000"
             >
@@ -632,6 +632,36 @@
         </swiper>
       </div>
     </div>
+    <div
+      style="background-color: #130024; border-radius: 0px 0px 16px 16px"
+      :class="isMobileSmall ? 'py-30' : 'py-60'"
+    >
+      <div class="container">
+        <div class="section__top" :class="isMobileSmall ? 'mb-30' : 'mb-60'">
+          <app-text
+            :size="isMobile ? 24 : 32"
+            :line-height="isMobile ? 28 : 44"
+            weight="500"
+            class="color-violet"
+            data-aos="fade-up"
+          >
+            Mahorat darslari
+          </app-text>
+          <div class="section__top-details" data-aos="fade-up">
+            <app-text
+              :size="isMobile ? 16 : 24"
+              :line-height="isMobile ? 24 : 32"
+              weight="400"
+              max-width="600"
+              class="color-violet"
+            >
+              Maktabimizda tez-tez tajribali ustozlar ishtirokida bolalar uchun
+              ham mahorat darslari bo‘lib turadi.
+            </app-text>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 <script>
@@ -801,7 +831,6 @@ export default {
   &__item {
     &-photo {
       max-width: 380px;
-      max-height: 240px;
       width: 100%;
       height: 100%;
       margin-left: auto;
