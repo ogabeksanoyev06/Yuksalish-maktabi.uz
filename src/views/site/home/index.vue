@@ -28,14 +28,37 @@
             </app-text>
             <router-link class="section__top-link" to="/">
               <AppButton
-                theme="main"
+                theme="cyan"
                 :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
                 sides="20"
                 class="mb-10"
                 :height="isMobileSmall ? '40' : '50'"
               >
                 <span class="mr-10">TO'LIQ TANISHISH</span>
-                <img src="/icons/angle-right.svg" alt="" />
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.43 5.92999L20.5 12L14.43 18.07"
+                    stroke="#130024"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M3.5 12H20.33"
+                    stroke="#130024"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
               </AppButton>
             </router-link>
           </div>
@@ -186,7 +209,7 @@
             </app-text>
             <router-link class="section__top-link" to="/">
               <app-button
-                theme="main"
+                theme="green"
                 :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
                 sides="20"
                 class="mb-10"

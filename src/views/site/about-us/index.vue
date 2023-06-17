@@ -68,7 +68,7 @@
             </app-text>
             <router-link class="section__top-link" to="/">
               <AppButton
-                theme="main"
+                theme="green"
                 :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
                 sides="20"
                 class="mb-10"
@@ -505,6 +505,8 @@
           weight="500"
           maxWidth="422"
           :class="isMobileSmall ? 'mb-30' : 'mb-60'"
+          data-aos="fade-up"
+          data-aos-duration="500"
         >
           Kitob bilim bulogi - oquvchiningg ortogi
         </app-text>
@@ -569,6 +571,8 @@
             v-for="(item, i) in 10"
             :key="i"
             class="d-flex flex-column light"
+            data-aos="fade-up"
+            :data-aos-duration="(i + 1) * 500"
           >
             <img
               src="/images/girls.png"
@@ -589,6 +593,8 @@
                 max-width="730"
                 :class="isMobileSmall ? 'mb-20' : 'mb-40'"
                 class="color-trans-04"
+                data-aos="fade-up"
+                data-aos-duration="500"
               >
                 Maktabimizda kutubxona mavjud bo‘lib, unda bolalar foydalanishi
                 mutloq bepul bo‘ladi va har kuni istalgancha shug’ilanishligi
@@ -604,6 +610,8 @@
                     :line-height="isMobileSmall ? '20' : '42'"
                     weight="600"
                     class="mb-10"
+                    data-aos="fade-up"
+                    data-aos-duration="700"
                   >
                     50 dan ortiq
                   </app-text>
@@ -612,6 +620,8 @@
                     :line-height="isMobileSmall ? '18' : '28'"
                     weight="500"
                     class="color-trans-04"
+                    data-aos="fade-up"
+                    data-aos-duration="900"
                   >
                     Darslik va adabiyotga oid kitoblar
                   </app-text>
