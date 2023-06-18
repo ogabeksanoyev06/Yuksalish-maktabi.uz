@@ -1,6 +1,9 @@
 <template>
   <div>
-    <header class="header">
+    <header
+      class="header"
+      :style="$route.path === '/' ? '' : 'margin-top:30px'"
+    >
       <div class="container">
         <div class="header__inner">
           <div class="header__left">
@@ -92,6 +95,21 @@ export default {
         {
           id: 3,
           title: "O'quv dasturi",
+          link: "/study-program",
+        },
+        {
+          id: 3,
+          title: "O'qituvchilar",
+          link: "/study-program",
+        },
+        {
+          id: 3,
+          title: "Media",
+          link: "/study-program",
+        },
+        {
+          id: 3,
+          title: "Yangiliklar",
           link: "/study-program",
         },
         {

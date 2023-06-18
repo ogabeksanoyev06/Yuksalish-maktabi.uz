@@ -1,12 +1,26 @@
 <template>
   <div class="hero-banner">
+    <!-- <div
+      style="
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        background: #000;
+        opacity: 0.3;
+        z-index: -1;
+      "
+    ></div> -->
+    <app-header />
     <div class="container">
-      <div class="hero-banner__inner">
+      <div class="hero-banner__inner py-30">
         <div
           class="hero-banner__content"
           data-aos="fade-up"
           data-aos-duration="500"
         >
+          <!-- :class="isMobile ? '' : 'color-white'" -->
           <h1 class="hero-banner__title">
             Yuksalish maktabi - ta’lim va tarbiya birlashgan dargoh
             <svg
@@ -15,6 +29,7 @@
               viewBox="0 0 52 52"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              v-if="!isMobile"
             >
               <path
                 d="M28.8166 17.5717L31.6767 23.2917C32.0667 24.0717 33.1066 24.8517 33.9733 24.9817L39.1517 25.8483C42.4667 26.4117 43.2466 28.795 40.8633 31.1783L36.8333 35.2083C36.1617 35.88 35.7716 37.2017 35.9883 38.155L37.1367 43.16C38.0467 47.1033 35.945 48.6417 32.4567 46.5833L27.6033 43.7017C26.715 43.1817 25.285 43.1817 24.3967 43.7017L19.5433 46.5833C16.055 48.6417 13.9533 47.1033 14.8633 43.16L16.0117 38.155C16.2284 37.2233 15.8383 35.9017 15.1667 35.2083L11.1367 31.1783C8.75336 28.795 9.53332 26.39 12.8483 25.8483L18.0267 24.9817C18.8933 24.83 19.9333 24.0717 20.3233 23.2917L23.1834 17.5717C24.7217 14.4733 27.2783 14.4733 28.8166 17.5717Z"
@@ -55,33 +70,20 @@
                 Bizning vazifamiz - intellektual va tandiqiy fikrovchi, o‘zini
                 namoyon qila oladigan yoshlarni tayyorlash
               </app-text>
-              <div class="d-flex flex-wrap">
-                <AppButton
-                  theme="main"
-                  :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
-                  :sides="isMobileSmall ? '15' : '20'"
-                  class="mr-10 mb-10 d-flex align-center"
-                  :height="isMobileSmall ? '40' : '50'"
-                >
-                  <span :class="isMobileSmall ? '' : 'mr-10'">
-                    ONLAYN QABUL
-                  </span>
-                  <img
-                    src="/icons/angle-right.svg"
-                    alt=""
-                    v-if="!isMobileSmall"
-                  />
-                </AppButton>
-                <AppButton
-                  theme="transparent"
-                  :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
-                  :sides="isMobileSmall ? '15' : '20'"
-                  class="mb-10"
-                  :height="isMobileSmall ? '40' : '50'"
-                >
-                  <span>BEPUL KONSULTATSIYA</span>
-                </AppButton>
-              </div>
+              <!-- :class="isMobile ? '' : 'color-white'" -->
+
+              <AppButton
+                theme="main"
+                :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
+                :sides="isMobileSmall ? '15' : '20'"
+                class="mr-10 mb-10 d-flex align-center"
+                :height="isMobileSmall ? '40' : '50'"
+              >
+                <span :class="isMobileSmall ? '' : 'mr-10'">
+                  ONLAYN QABUL
+                </span>
+                <img src="/icons/angle-right.svg" alt="" />
+              </AppButton>
             </div>
             <div class="hero-banner__photo">
               <div class="cards">
@@ -91,13 +93,11 @@
                   data-aos-duration="600"
                 >
                   <video
-                    loop
-                    muted
-                    playsinline
+                    :controls="false"
                     style="width: 100%; height: 100%; object-fit: cover"
                     id="videoPlayerOne"
                   >
-                    <source src="@/assets/header.mp4" type="video/mp4" />
+                    <source src="@/assets/maktab.mp4" type="video/mp4" />
                   </video>
                   <div class="cards__item-icon" @click="togglePlayOne">
                     <svg
@@ -120,9 +120,7 @@
                   data-aos-duration="700"
                 >
                   <video
-                    loop
-                    muted
-                    playsinline
+                    :controls="false"
                     style="width: 100%; height: 100%; object-fit: cover"
                     id="videoPlayerTwo"
                   >
@@ -153,11 +151,12 @@
 </template>
 
 <script>
+import AppHeader from "../layouts/default/app-header/AppHeader.vue";
 import AppButton from "../shared-components/AppButton.vue";
 
 export default {
   name: "HeroBanner",
-  components: { AppButton },
+  components: { AppButton, AppHeader },
   data() {
     return {
       search: "",
@@ -188,14 +187,35 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .hero-banner {
+  background-color: #fff;
+  // background-image: url("@/assets/home.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: calc(100vh - 0px);
+  padding: 30px 0;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 1;
+
+  // &::before {
+  //   content: "";
+  //   background: #000;
+  //   position: absolute;
+  //   top: 0px;
+  //   right: 0px;
+  //   bottom: 0px;
+  //   left: 0px;
+  //   opacity: 0.2;
+  //   z-index: 1;
+  // }
   &__inner {
     display: flex;
     justify-content: space-between;
-    min-height: calc(100vh - 120px);
+    align-items: center;
     width: 100%;
-    padding: 30px 0;
+    z-index: 99;
   }
 
   &__title {
@@ -222,6 +242,7 @@ export default {
         transition: 0.3s;
         overflow: hidden;
         position: relative;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 1px 10px 0px;
         &-icon {
           position: absolute;
           top: 24px;
@@ -316,7 +337,22 @@ export default {
       }
     }
   }
+  @media (max-width: 801px) {
+    .hero-banner {
+      background-color: #fff;
+      background-image: none;
+      padding: 30px 0;
+      height: auto;
+      &__inner {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        min-height: calc(100vh - 0px);
 
+        padding: 30px 0;
+      }
+    }
+  }
   @media (max-width: 500px) {
     .hero-banner__info {
       margin-bottom: 30px;

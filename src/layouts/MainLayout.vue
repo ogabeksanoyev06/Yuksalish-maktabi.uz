@@ -13,7 +13,7 @@
       </div>
     </div>
     <div v-else>
-      <AppHeader />
+      <AppHeader v-if="$route.path !== '/'" />
 
       <div class="page__wrap">
         <router-view />
@@ -50,9 +50,7 @@ export default {
     this.$nextTick(() => {
       // DOM elementlari yuklandi
       console.log("DOM elementlari yuklandi");
-      setTimeout(() => {
-        this.loading = false;
-      }, 1000);
+      this.loading = false;
     });
   },
   beforeDestroy() {
@@ -65,7 +63,6 @@ export default {
 .page {
   &__wrap {
     min-height: calc(100vh - 402px);
-    margin-top: 80px;
   }
 }
 .preloader {

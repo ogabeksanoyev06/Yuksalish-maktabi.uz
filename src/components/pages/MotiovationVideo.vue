@@ -91,7 +91,6 @@
           <video
             loop
             muted
-            playsinline
             @mouseover="playVideo(0)"
             @mouseleave="stopVideo(0)"
             ref="video1"
@@ -115,11 +114,15 @@
             Matkabimizning binosining tashqi korinishi
           </app-text>
         </div>
-        <div class="animation-video__item" data-aos="fade-up" data-aos-duration="900">
+        <div
+          class="animation-video__item"
+          data-aos="fade-up"
+          data-aos-duration="900"
+        >
           <video
             loop
             muted
-            playsinline
+            
             @mouseover="playVideo(1)"
             @mouseleave="stopVideo(1)"
             ref="video2"
@@ -143,11 +146,15 @@
             Matkabimizning binosining tashqi korinishi
           </app-text>
         </div>
-        <div class="animation-video__item" data-aos="fade-up" data-aos-duration="1200">
+        <div
+          class="animation-video__item"
+          data-aos="fade-up"
+          data-aos-duration="1200"
+        >
           <video
             loop
             muted
-            playsinline
+            
             @mouseover="playVideo(2)"
             @mouseleave="stopVideo(2)"
             ref="video3"

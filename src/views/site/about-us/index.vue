@@ -53,7 +53,7 @@
             :size="isMobile ? 24 : 30"
             :line-height="isMobile ? 28 : 36"
             class="color-green"
-            weight="400"
+            weight="500"
             data-aos="fade-up"
           >
             Maktabimiz haqida
@@ -384,12 +384,12 @@
       :class="isMobileSmall ? 'py-30' : 'py-60'"
     >
       <div class="container">
-        <div class="section__top mb-30">
+        <div class="section__top" :class="isMobile ? 'mb-30' : 'mb-60'">
           <app-text
             :size="isMobile ? 24 : 30"
             :line-height="isMobile ? 28 : 36"
             class="color-white"
-            weight="400"
+            weight="500"
             data-aos="fade-up"
           >
             Soglom ovqatlanish <br />
@@ -399,7 +399,7 @@
             <app-text
               :size="isMobile ? 16 : 18"
               :line-height="isMobile ? 24 : 26"
-              class="mb-20 color-white"
+              class="color-white"
               weight="400"
               max-width="500"
             >
@@ -407,17 +407,6 @@
               bo'ladi. Unda bolalar issiq ovqat, shirinlik va ichimliklarni
               turli xilli turlari bilan ovqatlanishlari mumkin.
             </app-text>
-            <router-link class="section__top-link" to="/">
-              <AppButton
-                theme="white"
-                :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
-                sides="20"
-                class="mb-10"
-                :height="isMobileSmall ? '40' : '50'"
-              >
-                <span class="mr-10">KONSULTATSIYAGA YOZILING</span>
-              </AppButton>
-            </router-link>
           </div>
         </div>
         <div :class="isDesktopSmall ? '' : 'pb-120'" style="position: relative">
@@ -656,51 +645,16 @@
               :line-height="isMobile ? 24 : 32"
               weight="400"
               max-width="600"
-              class="color-violet mb-20"
+              class="color-violet"
             >
               Maktabimizda tez-tez tajribali ustozlar ishtirokida bolalar uchun
               ham mahorat darslari bo‘lib turadi.
             </app-text>
-            <router-link class="section__top-link" to="/">
-              <AppButton
-                theme="cyan"
-                :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
-                sides="20"
-                class="mb-10"
-                :height="isMobileSmall ? '40' : '50'"
-              >
-                <span class="mr-10">KONSULTATSIYAGA YOZILING</span>
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14.43 5.92999L20.5 12L14.43 18.07"
-                    stroke="#130024"
-                    stroke-width="1.5"
-                    stroke-miterlimit="10"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M3.5 12H20.33"
-                    stroke="#130024"
-                    stroke-width="1.5"
-                    stroke-miterlimit="10"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </AppButton>
-            </router-link>
           </div>
         </div>
         <swiper class="swiper" :options="swiperOptions4">
           <swiper-slide
-            v-for="(item, i) in 10"
+            v-for="(item, i) in 2"
             :key="i"
             class="d-flex flex-column"
             data-aos="fade-up"
@@ -709,6 +663,8 @@
             <div
               :style="isMobileSmall ? 'height:auto' : 'height: 341px'"
               :class="isMobile ? 'mb-10' : 'mb-20'"
+              style="max-width: 586px; width: 100%"
+              class="mx-auto"
             >
               <img
                 src="/images/girls.png"
@@ -717,17 +673,54 @@
                 :style="isMobileSmall ? 'height:auto' : 'height: 100%;'"
               />
             </div>
-            <app-text
-              :size="isMobile ? 16 : 18"
-              :line-height="isMobile ? 22 : 26"
-              weight="400"
-              max-width="420"
-              class="color-violet"
-            >
-              DTS va qo'shimcha to'garaklardan fizika, kimyo, matematika,
-              robototexnika kabi fanlarda amaliy va og'zaki mahorat darslari
-              bo'lib o'tadi.
-            </app-text>
+            <div
+              style="
+                max-width: 586px;
+                width: 100%;
+                height: 2.5px;
+                background-color: #c8a5f1;
+              "
+              :style="isMobile ? 'margin: 15px auto' : 'margin: 30px auto'"
+            ></div>
+            <div class="d-flex" :class="isMobile ? 'flex-column' : ''">
+              <svg
+                width="44"
+                height="44"
+                viewBox="0 0 44 44"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                :class="isMobile ? 'mb-10' : 'mr-30'"
+                style="flex: none"
+              >
+                <path
+                  d="M6.73063 5.19238C6.72944 5.19238 6.72811 5.19238 6.72692 5.19238C6.31077 5.19238 5.91937 5.35461 5.62381 5.64942C5.32499 5.9475 5.1604 6.34439 5.1604 6.76691V30.3766C5.1604 31.2424 5.86751 31.9485 6.73685 31.9507C10.4018 31.9594 16.5419 32.7233 20.7778 37.156V12.4478C20.7778 12.1543 20.7028 11.8786 20.5613 11.6505C17.0847 6.05164 10.4038 5.20098 6.73063 5.19238Z"
+                  fill="#C8A5F1"
+                />
+                <path
+                  d="M38.8396 30.3768V6.76691C38.8396 6.34439 38.6751 5.9475 38.3762 5.64942C38.0807 5.35461 37.689 5.19238 37.2733 5.19238C37.2719 5.19238 37.2706 5.19238 37.2694 5.19238C33.5964 5.20112 26.9155 6.05179 23.4387 11.6506C23.2972 11.8788 23.2224 12.1545 23.2224 12.448V37.156C27.4583 32.7233 33.5984 31.9594 37.2633 31.9507C38.1325 31.9485 38.8396 31.2424 38.8396 30.3768Z"
+                  fill="#C8A5F1"
+                />
+                <path
+                  d="M42.4257 10.6372H41.2841V30.3767C41.2841 32.5872 39.4831 34.3897 37.2691 34.3952C34.1605 34.4026 29.0349 35.0105 25.4048 38.4462C31.683 36.909 38.3014 37.9083 42.0733 38.7678C42.5443 38.8751 43.0309 38.7643 43.4083 38.4635C43.7843 38.1635 44 37.7151 44 37.2337V12.2114C44.0001 11.3434 43.2937 10.6372 42.4257 10.6372Z"
+                  fill="#C8A5F1"
+                />
+                <path
+                  d="M2.71586 30.3767V10.6372H1.57423C0.706373 10.6372 0 11.3434 0 12.2114V37.2333C0 37.7148 0.215704 38.1631 0.591706 38.4631C0.968744 38.7637 1.45497 38.8749 1.92667 38.7674C5.69854 37.9077 12.3171 36.9086 18.595 38.4457C14.9651 35.0102 9.83944 34.4025 6.73084 34.3951C4.51705 34.3897 2.71586 32.5872 2.71586 30.3767Z"
+                  fill="#C8A5F1"
+                />
+              </svg>
+              <app-text
+                :size="isMobile ? 16 : 18"
+                :line-height="isMobile ? 22 : 26"
+                weight="400"
+                max-width="470"
+                class="color-violet"
+              >
+                DTS va qo'shimcha to'garaklardan fizika, kimyo, matematika,
+                robototexnika kabi fanlarda amaliy va og'zaki mahorat darslari
+                bo'lib o'tadi.
+              </app-text>
+            </div>
           </swiper-slide>
         </swiper>
       </div>
@@ -903,7 +896,7 @@ export default {
           disableOnInteraction: false,
         },
         grabCursor: true,
-        loop: true,
+        loop: false,
         breakpoints: {
           576: {
             slidesPerView: 1,
