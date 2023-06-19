@@ -205,8 +205,11 @@
     </div>
     <div class="py-60" style="background-color: #1e1d1e">
       <div class="container">
-        <div class="d-flex justify-space-between">
-          <div>
+        <div
+          class="d-flex justify-space-between"
+          :class="isDesktopMedium ? 'flex-column' : ''"
+        >
+          <div :class="isDesktopMedium ? 'mb-30 text-center' : ''">
             <app-text
               :size="isMobile ? 22 : 32"
               :line-height="isMobile ? 28 : 44"
@@ -230,27 +233,35 @@
               </AppButton>
             </router-link>
           </div>
-          <div style="position: relative" class="pb-60">
+          <div
+            style="position: relative; max-width: 750px; width: 100%"
+            class="pb-60"
+          >
             <swiper class="swiper" :options="swiperOptions">
               <swiper-slide
-                v-for="(item, i) in 2"
+                v-for="(item, i) in 5"
                 :key="i"
                 data-aos="fade-up"
                 :data-aos-duration="(i + 1) * 500"
               >
                 <div
-                  style="max-width: 350px; height: 547px; width: 100%"
+                  style="max-width: 350px; width: 100%"
+                  :style="isMobileSmall ? 'height:auto' : 'height: 547px;'"
                   class="mx-auto"
                 >
                   <img
                     src="/images/girls.png"
-                    style="width: 100%; object-fit: cover; border-radius: 16px"
-                    :style="isMobileSmall ? 'height:auto' : 'height: 100%;'"
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 16px;
+                    "
                   />
                 </div>
               </swiper-slide>
             </swiper>
-            <div class="navigation" v-if="!isDesktopSmall">
+            <div class="navigation">
               <div class="slider-button swiper-button-prev prev">
                 <svg
                   width="32"
@@ -310,6 +321,33 @@
         </div>
       </div>
     </div>
+    <div class="py-60" style="background-color: #fff">
+      <div class="container">
+        <div class="section__top" :class="isMobile ? 'mb-30' : 'mb-60'">
+          <app-text
+            :size="isMobile ? 24 : 30"
+            :line-height="isMobile ? 28 : 36"
+            weight="500"
+            class=""
+            data-aos="fade-up"
+          >
+            Dasturlash darslari
+          </app-text>
+          <div class="section__top-details" data-aos="fade-up">
+            <app-text
+              :size="isMobile ? 16 : 18"
+              :line-height="isMobile ? 24 : 26"
+              weight="400"
+              max-width="500"
+              class=""
+            >
+              Robotexnika togaragi darslari mobaynida dasturlash tillari
+              oqitladi
+            </app-text>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 <script>
@@ -326,6 +364,7 @@ export default {
           disableOnInteraction: false,
         },
         grabCursor: true,
+
         breakpoints: {
           400: {
             slidesPerView: 1,
@@ -336,7 +375,7 @@ export default {
           768: {
             slidesPerView: 2,
           },
-          990: {
+          1000: {
             slidesPerView: 2,
           },
           1200: {
