@@ -1,6 +1,6 @@
 <template>
   <div class="hero-banner">
-    <!-- <div
+    <div
       style="
         position: absolute;
         left: 0px;
@@ -11,7 +11,7 @@
         opacity: 0.3;
         z-index: -1;
       "
-    ></div> -->
+    ></div>
     <app-header />
     <div class="container">
       <div class="hero-banner__inner py-30">
@@ -21,7 +21,7 @@
           data-aos-duration="500"
         >
           <!-- :class="isMobile ? '' : 'color-white'" -->
-          <h1 class="hero-banner__title">
+          <h1 class="hero-banner__title" :class="isMobile ? '' : 'color-white'">
             Yuksalish maktabi - ta’lim va tarbiya birlashgan dargoh
             <svg
               width="52"
@@ -66,6 +66,7 @@
                 weight="400"
                 maxWidth="490"
                 class="mb-30"
+                :class="isMobile ? '' : 'color-white'"
               >
                 Bizning vazifamiz - intellektual va tandiqiy fikrovchi, o‘zini
                 namoyon qila oladigan yoshlarni tayyorlash
@@ -85,7 +86,7 @@
                 <img src="/icons/angle-right.svg" alt="" />
               </AppButton>
             </div>
-            <div class="hero-banner__photo">
+            <!-- <div class="hero-banner__photo">
               <div class="cards">
                 <div
                   class="cards__item"
@@ -142,7 +143,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -190,7 +191,7 @@ export default {
 <style lang="scss" scoped>
 .hero-banner {
   background-color: #fff;
-  // background-image: url("@/assets/home.jpg");
+  background-image: url("@/assets/home.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: calc(100vh - 0px);

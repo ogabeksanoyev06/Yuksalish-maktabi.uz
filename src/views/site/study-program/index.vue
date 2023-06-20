@@ -209,7 +209,7 @@
           class="d-flex justify-space-between"
           :class="isDesktopMedium ? 'flex-column' : ''"
         >
-          <div :class="isDesktopMedium ? 'mb-30 text-center' : ''">
+          <div :class="isDesktopMedium ? 'mb-30 text-center' : 'mr-20'">
             <app-text
               :size="isMobile ? 22 : 32"
               :line-height="isMobile ? 28 : 44"
@@ -390,9 +390,11 @@
 <script>
 import AppButton from "@/components/shared-components/AppButton.vue";
 import CourseSlider from "@/components/pages/CourseSlider.vue";
+import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+import "swiper/css/swiper.css";
 export default {
   name: "StudyProgram",
-  components: { AppButton, CourseSlider },
+  components: { AppButton, CourseSlider, Swiper, SwiperSlide },
   data() {
     return {
       swiperOptions: {
@@ -401,7 +403,6 @@ export default {
           disableOnInteraction: false,
         },
         grabCursor: true,
-
         breakpoints: {
           400: {
             slidesPerView: 1,
@@ -417,10 +418,10 @@ export default {
         },
       },
       swiperOptions2: {
-        // autoplay: {
-        //   delay: 4000,
-        //   disableOnInteraction: false,
-        // },
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
         breakpoints: {
           400: {
             slidesPerView: 1,
