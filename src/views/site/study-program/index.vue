@@ -1,5 +1,5 @@
 <template>
-  <section class="section py-30">
+  <section class="section">
     <div class="container">
       <div
         style="background-color: #fff; border-radius: 0px 0px 16px 16px"
@@ -339,12 +339,49 @@
               :line-height="isMobile ? 24 : 26"
               weight="400"
               max-width="500"
-              class=""
+              class="mb-20"
             >
               Robotexnika togaragi darslari mobaynida dasturlash tillari
               oqitladi
             </app-text>
+            <router-link class="section__top-link" to="/">
+              <AppButton
+                theme="main"
+                :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
+                sides="20"
+                class="mb-10"
+                :height="isMobileSmall ? '40' : '50'"
+              >
+                <span class="">ONLAYN QABUL</span>
+              </AppButton>
+            </router-link>
           </div>
+        </div>
+        <div style="max-width: 1180px; width: 100%" class="mx-auto">
+          <swiper class="swiper" :options="swiperOptions2">
+            <swiper-slide
+              v-for="(item, i) in 5"
+              :key="i"
+              data-aos="fade-up"
+              :data-aos-duration="(i + 1) * 500"
+            >
+              <div
+                style="max-width: 590px; width: 100%"
+                :style="isMobileSmall ? 'height:auto' : 'height: 380px;'"
+                class="mx-auto"
+              >
+                <img
+                  src="/images/girls.png"
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 16px;
+                  "
+                />
+              </div>
+            </swiper-slide>
+          </swiper>
         </div>
       </div>
     </div>
@@ -372,21 +409,27 @@ export default {
           576: {
             slidesPerView: 2,
           },
-          768: {
-            slidesPerView: 2,
-          },
-          1000: {
-            slidesPerView: 2,
-          },
-          1200: {
-            slidesPerView: 2,
-          },
         },
         spaceBetween: 24,
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
+      },
+      swiperOptions2: {
+        // autoplay: {
+        //   delay: 4000,
+        //   disableOnInteraction: false,
+        // },
+        breakpoints: {
+          400: {
+            slidesPerView: 1,
+          },
+          576: {
+            slidesPerView: 2,
+          },
+        },
+        spaceBetween: 12,
       },
     };
   },
