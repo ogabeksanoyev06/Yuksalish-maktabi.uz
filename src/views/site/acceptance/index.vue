@@ -62,10 +62,8 @@
             </app-text>
           </div>
           <div
-            class="d-flex align-center"
-            :class="
-              (isMobile ? 'flex-column' : '', isMobile ? 'mb-30' : 'mb-60')
-            "
+            class="d-flex align-center mb-30"
+            :class="isMobile ? 'flex-column' : ''"
           >
             <div
               :style="isMobile ? 'margin-bottom:30px' : 'width:400px'"
@@ -584,7 +582,6 @@
             margin-bottom: 30px;
           "
         ></div>
-
         <div
           class="d-flex align-center justify-space-between"
           data-aos="fade-up"
@@ -645,7 +642,7 @@
         </div>
       </div>
     </div>
-    <div class="py-60" style="background-color: #fff">
+    <div class="py-60" style="background-color: #f4f2f7">
       <div class="container">
         <div class="section__top" :class="isMobile ? 'mb-30' : 'mb-60'">
           <app-text
@@ -667,6 +664,342 @@
               Bizning maxsus chegirmalar va imtiyozlarimiz oilangiz byudjetiga
               foyda va yoshlarga mativatsiya bola oladi
             </app-text>
+          </div>
+        </div>
+        <div class="d-flex flex-wrap justify-content-center" style="gap: 12px">
+          <div
+            style="
+              max-width: 390px;
+              width: 100%;
+              background-color: #f3ca3d;
+              border-radius: 16px;
+            "
+            :class="isMobile ? 'pa-20' : 'pa-30'"
+            data-aos="fade-up"
+            data-aos-duration="500"
+          >
+            <div
+              style="
+                background: #fff;
+                padding: 12px;
+                border-radius: 32px;
+                width: fit-content;
+              "
+              :class="isMobile ? 'mb-20' : 'mb-40'"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                style="vertical-align: middle"
+              >
+                <path
+                  d="M9.64493 12.4711C9.61286 12.3105 8.5081 6.78668 8.47306 6.61164C8.41833 6.33777 8.17782 6.14062 7.89853 6.14062H6.72665C6.44735 6.14062 6.20685 6.33777 6.15212 6.61164C6.11653 6.78965 5.01064 12.3191 4.98024 12.471C4.91677 12.7884 5.12259 13.097 5.43989 13.1605C5.7572 13.2239 6.06591 13.0181 6.12935 12.7008L6.50388 10.8281H8.1213L8.49583 12.7009C8.55931 13.0183 8.86813 13.224 9.18528 13.1605C9.50259 13.097 9.70841 12.7884 9.64493 12.4711ZM6.73825 9.65625L7.207 7.3125H7.41817L7.88692 9.65625H6.73825Z"
+                  fill="black"
+                />
+                <path
+                  d="M19.0312 10.8281H17.2734V10.2422C17.2734 9.91859 17.0111 9.65625 16.6875 9.65625C16.3639 9.65625 16.1016 9.91859 16.1016 10.2422V10.8281H14.3438C14.0202 10.8281 13.7578 11.0905 13.7578 11.4141C13.7578 11.7377 14.0202 12 14.3438 12H14.4855C14.8194 13.0786 15.3221 13.9065 15.8752 14.5699C15.425 14.9817 14.9695 15.3194 14.5637 15.644C14.311 15.8462 14.27 16.2149 14.4722 16.4676C14.6745 16.7204 15.0432 16.7611 15.2957 16.5591C15.7038 16.2326 16.1929 15.8698 16.6875 15.4159C17.1825 15.8702 17.6725 16.2336 18.0793 16.5591C18.332 16.7613 18.7007 16.7202 18.9028 16.4676C19.105 16.2149 19.064 15.8461 18.8113 15.644C18.4066 15.3202 17.9505 14.9821 17.4998 14.5699C18.0529 13.9065 18.5556 13.0786 18.8895 12H19.0312C19.3548 12 19.6172 11.7377 19.6172 11.4141C19.6172 11.0905 19.3548 10.8281 19.0312 10.8281ZM16.6875 13.7088C16.3135 13.2393 15.977 12.6788 15.7233 11.9961H17.6516C17.398 12.6788 17.0615 13.2393 16.6875 13.7088Z"
+                  fill="black"
+                />
+                <path
+                  d="M20.2422 5.55469H11.789L11.5379 3.53977C11.4281 2.66195 10.6783 2 9.79363 2H3.75781C2.78855 2 2 2.78855 2 3.75781V16.6875C2 17.6568 2.78855 18.4453 3.75781 18.4453H8.69855L8.94652 20.4602C9.05605 21.3363 9.8059 22 10.6908 22H20.2422C21.2114 22 22 21.2114 22 20.2422V7.3125C22 6.34324 21.2114 5.55469 20.2422 5.55469ZM3.75781 17.2734C3.43473 17.2734 3.17188 17.0106 3.17188 16.6875V3.75781C3.17188 3.43473 3.43473 3.17188 3.75781 3.17188H9.79363C10.0885 3.17188 10.3385 3.3925 10.375 3.68492C10.4599 4.36602 11.9847 16.5978 12.0689 17.2734H3.75781ZM10.0752 20.0371L9.87926 18.4453H11.4513L10.0752 20.0371ZM20.8281 20.2422C20.8281 20.5653 20.5653 20.8281 20.2422 20.8281H10.9404L13.171 18.2479C13.2852 18.1191 13.3364 17.9482 13.3128 17.7782L11.9351 6.72656H20.2422C20.5653 6.72656 20.8281 6.98941 20.8281 7.3125V20.2422Z"
+                  fill="black"
+                />
+              </svg>
+            </div>
+            <app-text
+              :size="isMobile ? 16 : 22"
+              :line-height="isMobile ? 24 : 30"
+              weight="500"
+              :class="isMobile ? 'mb-15' : 'mb-20'"
+            >
+              Alifbodagi barcha harflarni orgatish
+            </app-text>
+            <app-text
+              :size="isMobile ? 14 : 16"
+              :line-height="isMobile ? 20 : 24"
+              weight="500"
+              class="d-flex align-center color-trans-04"
+            >
+              <img src="/svg/okey.svg" alt="" class="mr-5" />
+              Boshlangich tayyorlov
+            </app-text>
+          </div>
+          <div
+            style="
+              max-width: 390px;
+              width: 100%;
+              background-color: #130024;
+              border-radius: 16px;
+            "
+            :class="isMobile ? 'pa-20' : 'pa-30'"
+            data-aos="fade-up"
+            data-aos-duration="700"
+          >
+            <div
+              style="
+                background: #fff;
+                padding: 12px;
+                border-radius: 32px;
+                width: fit-content;
+              "
+              :class="isMobile ? 'mb-20' : 'mb-40'"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                style="vertical-align: middle"
+              >
+                <path
+                  d="M7.08001 1.32251H4.20001V4.99811H0.524414V7.87811H4.20001V11.5537H7.08001V7.87811H10.7556V4.99811H7.08001V1.32251Z"
+                  fill="black"
+                />
+                <path
+                  d="M8.23968 13.8025L5.64048 16.4017L3.04128 13.8025L1.00488 15.8389L3.60408 18.4381L1.00488 21.0371L3.04128 23.0737L5.64048 20.4745L8.23968 23.0737L10.2761 21.0371L7.67688 18.4381L10.2761 15.8389L8.23968 13.8025Z"
+                  fill="black"
+                />
+                <path
+                  d="M13.4844 16.3201H23.7158V19.2001H13.4844V16.3201Z"
+                  fill="black"
+                />
+                <path
+                  d="M20.0405 13.5601C20.0405 12.7648 19.3958 12.1201 18.6005 12.1201C16.6941 12.1859 16.6946 14.9346 18.6005 15.0001C19.3958 15.0001 20.0405 14.3555 20.0405 13.5601Z"
+                  fill="black"
+                />
+                <path
+                  d="M18.6002 20.52C17.8048 20.52 17.1602 21.1647 17.1602 21.96C17.2259 23.8663 19.9746 23.8659 20.0402 21.96C20.0402 21.1647 19.3955 20.52 18.6002 20.52Z"
+                  fill="black"
+                />
+                <path
+                  d="M13.4844 4.97803H23.7158V7.85803H13.4844V4.97803Z"
+                  fill="black"
+                />
+              </svg>
+            </div>
+            <app-text
+              :size="isMobile ? 16 : 22"
+              :line-height="isMobile ? 24 : 30"
+              weight="500"
+              :class="isMobile ? 'mb-15' : 'mb-20'"
+              class="color-white"
+            >
+              Hisob kitobga boshlangich konikmalarga ega bolish
+            </app-text>
+            <app-text
+              :size="isMobile ? 14 : 16"
+              :line-height="isMobile ? 20 : 24"
+              weight="500"
+              class="d-flex align-center color-white"
+            >
+              <img src="/svg/okey.svg" alt="" class="mr-5" />
+              Boshlangich tayyorlov
+            </app-text>
+          </div>
+          <div
+            style="
+              max-width: 390px;
+              width: 100%;
+              background-color: #f09ddc;
+              border-radius: 16px;
+            "
+            :class="isMobile ? 'pa-20' : 'pa-30'"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            <div
+              style="
+                background: #fff;
+                padding: 12px;
+                border-radius: 32px;
+                width: fit-content;
+              "
+              :class="isMobile ? 'mb-20' : 'mb-40'"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                style="vertical-align: center"
+              >
+                <g clip-path="url(#clip0_454_1180)">
+                  <path
+                    d="M15.0097 4.69259C15.0097 2.21507 17.026 0.198759 19.5045 0.198759C21.9819 0.198759 23.9982 2.21456 23.9982 4.69259C23.9982 5.40584 23.4203 5.98378 22.7071 5.98378C21.9938 5.98378 21.4159 5.40584 21.4159 4.69259C21.4159 3.63847 20.5586 2.78113 19.5045 2.78113C18.4499 2.78113 17.592 3.63847 17.592 4.69259C17.592 5.40584 17.0141 5.98378 16.3009 5.98378C15.5876 5.98378 15.0097 5.40533 15.0097 4.69259ZM0.691824 4.67865C0.691824 2.20113 2.70809 0.184814 5.18659 0.184814C7.66406 0.184814 9.68033 2.20061 9.68033 4.67865C9.68033 5.3919 9.10241 5.96983 8.38918 5.96983C7.67594 5.96983 7.09802 5.3919 7.09802 4.67865C7.09802 3.62453 6.24069 2.76718 5.18659 2.76718C4.13198 2.76718 3.27414 3.62453 3.27414 4.67865C3.27414 5.3919 2.69621 5.96983 1.98298 5.96983C1.26974 5.96983 0.691824 5.3919 0.691824 4.67865ZM0.119067 16.2223C-0.209403 15.4321 0.165032 14.5252 0.955736 14.1973C1.14993 14.1167 1.35135 14.0785 1.54967 14.0785C2.15703 14.0785 2.7334 14.4379 2.98078 15.0345C4.415 18.4871 7.96723 20.7177 12.0308 20.7177C16.0023 20.7177 19.5339 18.486 21.028 15.0308C21.3679 14.2453 22.2799 13.8827 23.0645 14.2236C23.85 14.5634 24.2115 15.475 23.8717 16.2606C21.888 20.8499 17.2398 23.8155 12.0308 23.8155C6.71068 23.8161 2.03514 20.8355 0.119067 16.2223Z"
+                    fill="black"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_454_1180">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <app-text
+              :size="isMobile ? 16 : 22"
+              :line-height="isMobile ? 24 : 30"
+              weight="500"
+              :class="isMobile ? 'mb-15' : 'mb-20'"
+            >
+              Alifbodagi barcha harflarni orgatish
+            </app-text>
+            <app-text
+              :size="isMobile ? 14 : 16"
+              :line-height="isMobile ? 20 : 24"
+              weight="500"
+              class="d-flex align-center color-trans-04"
+            >
+              <img src="/svg/okey.svg" alt="" class="mr-5" />
+              Boshlangich tayyorlov
+            </app-text>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="py-60" style="background-color: #fff">
+      <div class="container">
+        <app-text
+          :size="isMobile ? 22 : 32"
+          :line-height="isMobile ? 28 : 44"
+          weight="500"
+          class="mb-20"
+          data-aos="fade-right"
+          max-width="474"
+        >
+          Maktab va oqitish tizimi haqida ota- onalarning fikrlari
+        </app-text>
+        <router-link class="section__top-link" to="/">
+          <AppButton
+            theme="black"
+            :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
+            :sides="isMobileSmall ? '15' : '20'"
+            :class="isMobile ? 'mb-30' : 'mb-60'"
+            :height="isMobileSmall ? '40' : '50'"
+            data-aos="fade-right"
+            class="d-flex align-center"
+          >
+            <span :class="isMobileSmall ? '' : 'mr-10'">SUXBATGA YOZILISH</span>
+            <img src="/icons/angle-right.svg" alt="" />
+          </AppButton>
+        </router-link>
+        <swiper class="swiper" :options="swiperOptions2">
+          <swiper-slide
+            v-for="(item, i) in 5"
+            :key="i"
+            data-aos="fade-up"
+            :data-aos-duration="(i + 1) * 500"
+          >
+            <div
+              style="background-color: #ececec; border-radius: 16px"
+              :class="isMobile ? 'pa-20' : 'pa-30'"
+            >
+              <app-text
+                :size="isMobile ? 16 : 20"
+                :line-height="isMobile ? 22 : 28"
+                weight="500"
+                :class="isMobile ? 'mb-10' : 'mb-20'"
+                max-width="420"
+              >
+                “Oquv tizimi oddatiy maktablardana ancha faqli qilingan
+                bolalarimiz biz kutgandan kora ancha koproq bilimga ega
+                bolishmoqda
+              </app-text>
+              <div class="d-flex align-center">
+                <img
+                  src="/images/girls.png"
+                  style="
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                  "
+                  class="mr-10"
+                />
+                <div>
+                  <app-text size="16" line-height="22">
+                    Sanoyev Og'abek
+                  </app-text>
+                  <app-text size="14" line-height="18">
+                    Web Dasturchi
+                  </app-text>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
+    </div>
+    <div
+      style="background-color: #660448"
+      :class="isMobileSmall ? 'py-30' : isMobile ? 'py-60' : 'py-100'"
+    >
+      <div class="container">
+        <div class="section__top">
+          <app-text
+            :size="isMobile ? 24 : 32"
+            :line-height="isMobile ? 28 : 44"
+            weight="500"
+            max-width="330"
+            class="color-red"
+            data-aos="fade-up"
+          >
+            Biz haqimizda ko‘proq ma’lumot
+          </app-text>
+          <div class="section__top-details" data-aos="fade-up">
+            <app-text
+              :size="isMobile ? 16 : 24"
+              :line-height="isMobile ? 24 : 32"
+              weight="400"
+              max-width="550"
+              class="color-red mb-20"
+            >
+              Maktab haqida barcha ma’lumotlarni pdf katalog orqali oling
+            </app-text>
+            <router-link class="section__top-link" to="/">
+              <AppButton
+                theme="red"
+                :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
+                sides="20"
+                :height="isMobileSmall ? '40' : '50'"
+              >
+                <span class="mr-10">PDF KATALOG</span>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.44 8.8999C20.04 9.2099 21.51 11.0599 21.51 15.1099V15.2399C21.51 19.7099 19.72 21.4999 15.25 21.4999H8.73998C4.26998 21.4999 2.47998 19.7099 2.47998 15.2399V15.1099C2.47998 11.0899 3.92998 9.2399 7.46998 8.9099"
+                    stroke="#660448"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12 2V14.88"
+                    stroke="#660448"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M15.3499 12.6499L11.9999 15.9999L8.6499 12.6499"
+                    stroke="#660448"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </AppButton>
+            </router-link>
           </div>
         </div>
       </div>
@@ -698,6 +1031,26 @@ export default {
           },
         },
         spaceBetween: 12,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      },
+      swiperOptions2: {
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        grabCursor: true,
+        breakpoints: {
+          400: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2.4,
+          },
+        },
+        spaceBetween: 24,
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",

@@ -8,10 +8,13 @@ import "./plugins/media/media-mixin";
 import "./plugins/directives/click-outside";
 import "./plugins/mixins/mixin";
 import VueAwesomeSwiper from "vue-awesome-swiper";
+import { CursorFx } from "@luxdamore/vue-cursor-fx";
+import "@luxdamore/vue-cursor-fx/dist/CursorFx.css";
 
 Vue.config.productionTip = false;
 Vue.component("AppText", AppText);
 Vue.use(VueAwesomeSwiper);
+Vue.component(CursorFx.name, CursorFx);
 
 new Vue({
   router,

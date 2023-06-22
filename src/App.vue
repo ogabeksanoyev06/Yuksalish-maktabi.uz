@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <router-view />
+    <!-- <cursor-fx /> -->
   </div>
 </template>
 
