@@ -2,6 +2,145 @@
   <section class="section">
     <hero-banner />
     <!--  -->
+    <cta-banner />
+    <!--  -->
+    <div class="py-60">
+      <div class="container">
+        <app-text
+          :size="isMobile ? 24 : 36"
+          :line-height="isMobile ? 28 : 42"
+          class="mb-20"
+          weight="700"
+          data-aos="fade-up"
+        >
+          Maktab haqida
+        </app-text>
+        <app-text
+          :size="isMobile ? 16 : 18"
+          :line-height="isMobile ? 20 : 24"
+          :class="isMobile ? 'mb-20' : 'mb-40'"
+          weight="400"
+          max-width=""
+          data-aos="fade-up"
+        >
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt
+          laudantium qui a quisquam dolorum enim suscipit assumenda consectetur
+          amet? Fugiat repellat, ratione aperiam necessitatibus sint atque
+          commodi alias nobis laboriosam vitae mollitia, id modi? Minus rerum
+          neque accusamus? Sit molestiae, atque perferendis facilis sequi sunt,
+          rem, quas ex enim asperiores quam vero aliquam! Culpa voluptas,
+        </app-text>
+        <youtube-link-banner />
+      </div>
+    </div>
+    <div class="py-60">
+      <div class="container">
+        <app-text
+          :size="isMobile ? 32 : 36"
+          :line-height="isMobile ? 38 : 42"
+          class="mb-40 text-center"
+          weight="700"
+          data-aos="fade-up"
+        >
+          Yuksalish maktablari
+        </app-text>
+        <div
+          style="display: grid; gap: 30px"
+          :style="
+            isMobile
+              ? 'grid-template-columns: 1fr'
+              : isDesktopSmall
+              ? 'grid-template-columns: 1fr 1fr'
+              : 'grid-template-columns: 1fr 1fr 1fr'
+          "
+        >
+          <div
+            class="pa-30"
+            style="
+              background-color: #ffa500;
+              border-radius: 16px;
+              min-height: 250px;
+            "
+            data-aos="fade-up"
+          >
+            <app-text
+              :size="isMobile ? 24 : 32"
+              :line-height="isMobile ? 28 : 36"
+              class="mb-10 color-white"
+              weight="700"
+            >
+              Maqsadi
+            </app-text>
+            <app-text
+              :size="isMobile ? 16 : 18"
+              :line-height="isMobile ? 22 : 24"
+              weight="400"
+              class="color-white"
+            >
+              Taʼlim va tarbiyani barcha bosqichlarini oʼz ichiga olgan yaxlit
+              tizim yaratish asnosida zamonaviy bilim va yuqori malakaga ega
+              bo’lgan raqobatbardosh avlodni tayyorlash.
+            </app-text>
+          </div>
+          <div
+            class="pa-30"
+            style="
+              background-color: #3247b0;
+              border-radius: 16px;
+              min-height: 250px;
+            "
+            data-aos="fade-up"
+          >
+            <app-text
+              :size="isMobile ? 24 : 32"
+              :line-height="isMobile ? 28 : 36"
+              class="mb-10 color-white"
+              weight="700"
+            >
+              Missiyasi
+            </app-text>
+            <app-text
+              :size="isMobile ? 16 : 18"
+              :line-height="isMobile ? 22 : 24"
+              weight="400"
+              class="color-white"
+            >
+              Yoshlarimizga barcha fanlar boʼyicha jahon andozalari darajasida
+              bilim berish, ular intellektual salohiyatini oshirish, tafakkur
+              qilish muhitini yaratish.
+            </app-text>
+          </div>
+          <div
+            class="pa-30"
+            style="
+              background-color: #ececec;
+              border-radius: 16px;
+              min-height: 250px;
+            "
+            data-aos="fade-up"
+          >
+            <app-text
+              :size="isMobile ? 24 : 32"
+              :line-height="isMobile ? 28 : 36"
+              class="mb-10"
+              weight="700"
+            >
+              Qadriyati
+            </app-text>
+            <app-text
+              :size="isMobile ? 16 : 18"
+              :line-height="isMobile ? 22 : 24"
+              weight="400"
+            >
+              Yoshlarimizni oʼzligini, milliy qadriyatlarini unutmasdan, zamon
+              talablari asosida tarbiyalash, jahon ilm-fanini oʼrgatgan
+              ajdodlariga munosib avlod boʼlib yetishtirish.
+            </app-text>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
     <course-slider />
     <!--  -->
     <div class="py-60">
@@ -243,6 +382,7 @@ import CustomSlider from "@/components/pages/CustomSlider.vue";
 import MotiovationVideo from "@/components/pages/MotiovationVideo.vue";
 import YoutubeLinkBanner from "@/components/pages/YoutubeLinkBanner.vue";
 import CourseSlider from "@/components/pages/CourseSlider.vue";
+import CtaBanner from "@/components/pages/CtaBanner.vue";
 export default {
   name: "AppHome",
   components: {
@@ -252,6 +392,7 @@ export default {
     MotiovationVideo,
     YoutubeLinkBanner,
     CourseSlider,
+    CtaBanner,
   },
   data() {
     return {};

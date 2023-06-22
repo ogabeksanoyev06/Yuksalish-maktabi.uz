@@ -100,17 +100,17 @@ export default {
         {
           id: 3,
           title: "O'qituvchilar",
-          link: "/study-program",
+          link: "/teachers",
         },
         {
           id: 3,
           title: "Media",
-          link: "/study-program",
+          link: "/media",
         },
         {
           id: 3,
           title: "Yangiliklar",
-          link: "/study-program",
+          link: "/news",
         },
         {
           id: 4,

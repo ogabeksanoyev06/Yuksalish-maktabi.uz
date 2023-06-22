@@ -24,6 +24,21 @@ const routes = [
         component: () => import("../views/site/acceptance"),
       },
       {
+        path: "/teachers",
+        name: "teachers",
+        component: () => import("../views/site/teacher"),
+      },
+      {
+        path: "/media",
+        name: "media",
+        component: () => import("../views/site/gallery"),
+      },
+      {
+        path: "/news",
+        name: "news",
+        component: () => import("../views/site/news"),
+      },
+      {
         path: "/study-program",
         name: "study-program",
         component: () => import("../views/site/study-program"),

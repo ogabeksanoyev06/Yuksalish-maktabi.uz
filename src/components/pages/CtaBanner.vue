@@ -1,37 +1,38 @@
 <template>
-  <div class="cta__banner">
-    <div class="cta__banner-photo">
-      <img :src="photo" alt="" />
-    </div>
-    <div
-      class="cta__banner-content"
-      :class="isDesktopSmall ? 'pa-30' : 'pa-60'"
-    >
-      <app-text
-        :size="isMobile ? 26 : 30"
-        :line-height="isMobile ? 30 : 36"
-        weight="600"
-        class="mb-30"
-      >
-        {{ title }}
-      </app-text>
-
-      <app-text class="color-text mb-30" size="16" line-height="24">
-        {{ content }}
-      </app-text>
-
-      <app-button theme="secondary" sides="20" font-size="14">
-        {{ buttonText }}
-      </app-button>
+  <div class="container">
+    <div class="cta__banner my-60" :class="isDesktopSmall ? 'pa-30' : 'pa-60'">
+      <div class="cta__banner-content">
+        <app-text
+          :size="isMobile ? 22 : 28"
+          :line-height="isMobile ? 28 : 34"
+          weight="700"
+          class="mb-30"
+          max-width="460"
+        >
+          YUZ YILDA BIR KELADIGAN ENG BUYUK INSON - SIZSIZ
+        </app-text>
+        <app-text
+          :size="isMobile ? 16 : 18"
+          :line-height="isMobile ? 20 : 24"
+          weight="400"
+          class=""
+        >
+          Ustoz Muhammadali Eshonqulov<br />
+          Yuksalish maktabi asoschsi
+        </app-text>
+      </div>
+      <div class="cta__banner-photo">
+        <img src="/images/muhammadalieshonqulov.png" alt="" />
+        <div v-if="!isDesktopSmall"></div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import AppButton from "../../shared-components/AppButton";
 export default {
   name: "CtaBanner",
-  components: { AppButton },
+  components: {},
   props: {
     title: String,
     content: String,
@@ -45,18 +46,32 @@ export default {
 <style lang="scss" scoped>
 .cta__banner {
   display: flex;
-  border-radius: 10px;
+  align-items: center;
   overflow: hidden;
-  background: #f5f9fd;
+  background: #ececec;
+  border-radius: 16px;
 
   &-photo {
     max-width: 450px;
     width: 100%;
+    position: relative;
+    z-index: 1;
+    div {
+      position: absolute;
+      bottom: -30px;
+      right: -30px;
+      width: 200px;
+      height: 200px;
+      background-color: #f2741e;
+      z-index: -1;
+      border-radius: 16px;
+    }
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 16px;
     }
   }
 
