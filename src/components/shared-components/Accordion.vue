@@ -6,31 +6,32 @@
 
 <script>
 export default {
+  name: "AppAccordion",
   props: {
     activeProp: {
       type: Number,
       default: null,
-    }
+    },
   },
   data() {
     return {
       Accordion: {
         count: 0,
-        active: null
-      }
+        active: null,
+      },
     };
   },
   created() {
     this.Accordion.active = this.activeProp;
   },
   provide() {
-    return {Accordion: this.Accordion};
+    return { Accordion: this.Accordion };
   },
   watch: {
     activeProp() {
       this.Accordion.active = this.activeProp;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -44,6 +45,4 @@ export default {
     border-bottom: none;
   }
 }
-
-
 </style>

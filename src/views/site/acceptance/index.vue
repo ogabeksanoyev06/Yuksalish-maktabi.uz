@@ -6,45 +6,44 @@
         class="py-60"
       >
         <div class="container">
-          <div class="container">
-            <app-text
-              :size="isMobile ? 26 : 64"
-              :line-height="isMobile ? 30 : 78"
-              weight="500"
-              class="mb-30 mx-auto text-center"
-              maxWidth="680"
-              data-aos="fade-up"
-              data-aos-duration="500"
+          <app-text
+            :size="isMobile ? 26 : 64"
+            :line-height="isMobile ? 30 : 78"
+            weight="500"
+            class="mb-30 mx-auto text-center"
+            maxWidth="680"
+            data-aos="fade-up"
+            data-aos-duration="500"
+          >
+            Qabul haqida malumotlarimiz
+          </app-text>
+          <app-text
+            :size="isMobile ? 16 : 20"
+            :line-height="isMobile ? 22 : 32"
+            weight="200"
+            class="mb-30 mx-auto text-center color-trans-04"
+            maxWidth="415"
+            data-aos="fade-up"
+            data-aos-duration="700"
+          >
+            Maktablarimizga bolalarni qabul qilish tartibi bilan tanishing
+          </app-text>
+          <div data-aos="fade-up" data-aos-duration="900">
+            <app-button
+              theme="main"
+              :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
+              :sides="isMobileSmall ? '15' : '20'"
+              class="mb-30 mx-auto d-flex align-center"
+              :height="isMobileSmall ? '40' : '50'"
             >
-              Qabul haqida malumotlarimiz
-            </app-text>
-            <app-text
-              :size="isMobile ? 16 : 20"
-              :line-height="isMobile ? 22 : 32"
-              weight="200"
-              class="mb-30 mx-auto text-center color-trans-04"
-              maxWidth="415"
-              data-aos="fade-up"
-              data-aos-duration="700"
-            >
-              Maktablarimizga bolalarni qabul qilish tartibi bilan tanishing
-            </app-text>
-            <div data-aos="fade-up" data-aos-duration="900">
-              <app-button
-                theme="main"
-                :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
-                :sides="isMobileSmall ? '15' : '20'"
-                class="mb-30 mx-auto d-flex align-center"
-                :height="isMobileSmall ? '40' : '50'"
-              >
-                <span :class="isMobileSmall ? '' : 'mr-10'">
-                  QABULGA YOZILISH
-                </span>
-                <img src="/icons/angle-right.svg" alt="" />
-              </app-button>
-            </div>
+              <span :class="isMobileSmall ? '' : 'mr-10'">
+                QABULGA YOZILISH
+              </span>
+              <img src="/icons/angle-right.svg" alt="" />
+            </app-button>
           </div>
         </div>
+
         <youtube-link-banner :topLink="false" :bgGreen="false" />
       </div>
       <div class="py-60">
