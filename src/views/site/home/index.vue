@@ -12,7 +12,7 @@
             :line-height="isMobile ? 26 : 50"
             :class="isMobile ? 'mb-20' : 'mb-40'"
             weight="700"
-            class="text-start"
+            class="text-start color-orange-gradient"
             data-aos="fade-up"
           >
             Maktab haqida
@@ -41,7 +41,7 @@
         <app-text
           :size="isMobile ? 32 : 42"
           :line-height="isMobile ? 38 : 54"
-          class="mb-40 text-center"
+          class="mb-40 mx-auto color-orange-gradient"
           weight="700"
           data-aos="fade-up"
         >
@@ -60,7 +60,7 @@
           <div
             class="pa-30"
             style="
-              background-color: #ffa500;
+              background: linear-gradient(137deg, #ff6801 0%, #ffa365 100%);
               border-radius: 16px;
               min-height: 210px;
             "
@@ -85,10 +85,12 @@
               bo’lgan raqobatbardosh avlodni tayyorlash.
             </app-text>
           </div>
+          <div v-if="!isMobile"></div>
+          <div v-if="!isMobile"></div>
           <div
             class="pa-30"
             style="
-              background-color: #3247b0;
+              background: linear-gradient(133deg, #84a9ff 0%, #b2caff 100%);
               border-radius: 16px;
               min-height: 210px;
             "
@@ -113,10 +115,11 @@
               qilish muhitini yaratish.
             </app-text>
           </div>
+
           <div
             class="pa-30"
             style="
-              background-color: #ececec;
+              background: linear-gradient(99.18deg, #eeeeee 0%, #fbf9f9 100%);
               border-radius: 16px;
               min-height: 210px;
             "

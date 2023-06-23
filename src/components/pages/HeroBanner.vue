@@ -1,6 +1,7 @@
 <template>
   <div class="hero-banner">
     <div
+      v-if="!isMobile"
       style="
         position: absolute;
         left: 0px;
@@ -86,7 +87,7 @@
                 <img src="/icons/angle-right.svg" alt="" />
               </AppButton>
             </div>
-            <!-- <div class="hero-banner__photo">
+            <div class="hero-banner__photo" v-if="isMobile">
               <div class="cards">
                 <div
                   class="cards__item"
@@ -143,7 +144,7 @@
                   </div>
                 </div>
               </div>
-            </div> -->
+            </div>
           </div>
         </div>
       </div>
@@ -327,7 +328,7 @@ export default {
       &__item {
         width: 300px;
         height: 450px;
-        background-color: #d9d9d9;
+        // background-color: #d9d9d9;
         border-radius: 24px;
         margin-right: 20px;
         transition: 0.3s;
@@ -341,7 +342,6 @@ export default {
     .hero-banner {
       background-color: #fff;
       background-image: none;
-      padding: 30px 0;
       height: auto;
       &__inner {
         display: flex;

@@ -35,6 +35,14 @@
   text-fill-color: transparent;
   width: fit-content;
 }
+.color-orange-gradient {
+  background: linear-gradient(90deg, #ff6801 34.18%, #ff9e44 85.48%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  width: fit-content;
+}
 .swiper-button-prev:after,
 .swiper-button-next:after {
   content: "" !important;
@@ -123,7 +131,8 @@
 }
 
 .greyBg {
-  background-color: #fff;
+  background: rgba(229, 228, 229, 0.55);
+  backdrop-filter: blur(12px);
 }
 .section {
   margin-top: 10px;
