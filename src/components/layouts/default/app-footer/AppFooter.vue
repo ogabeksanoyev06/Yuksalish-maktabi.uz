@@ -286,25 +286,26 @@ export default {
           children: [
             {
               id: 0,
-              title: "Maktab haqida",
-              link: "/about-us",
+              title: "Bosh sahifa",
+              link: "/",
               status: true,
             },
             {
               id: 1,
-              title: "Kurs royhati",
-              link: "/",
+              title: "Maktab haqida",
+              link: "/about-us",
               status: true,
             },
+
             {
               id: 2,
-              title: "Bosh sahifa",
-              link: "/",
+              title: "O'quv dasturi",
+              link: "/study-program",
             },
             {
               id: 3,
-              title: "Ekskursiya",
-              link: "/",
+              title: "O'qituvchilar",
+              link: "/teachers",
             },
           ],
         },
@@ -313,49 +314,31 @@ export default {
           children: [
             {
               id: 0,
-              title: "Sport to‘garaklari",
-              link: "/",
+              title: "Media",
+              link: "/media",
               status: true,
             },
             {
               id: 1,
-              title: "O‘quv dasturi",
-              link: "/study-program",
+              title: "Yangiliklar",
+              link: "/news",
               status: true,
             },
             {
               id: 2,
-              title: "Qabul haqida",
+              title: "Qabul",
               link: "/acceptance",
             },
             {
               id: 3,
-              title: "Kun tartibi",
-              link: "/",
+              title: "Aloqa",
+              link: "/contact",
             },
           ],
         },
         {
           id: 2,
-          children: [
-            {
-              id: 0,
-              title: "O‘quv kurslar",
-              link: "/",
-              status: true,
-            },
-            {
-              id: 1,
-              title: "Chegirmalar",
-              link: "/",
-              status: true,
-            },
-            {
-              id: 2,
-              title: "Aloqa",
-              link: "/contact",
-            },
-          ],
+          children: [],
         },
       ],
     };

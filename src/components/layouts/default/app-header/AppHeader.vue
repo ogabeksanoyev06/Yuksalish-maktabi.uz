@@ -23,25 +23,13 @@
                   {{ item.title }}
                 </router-link>
               </li>
+              <li class="header__menu-item">
+                <a href="" class="header__menu-link"> Online test </a>
+              </li>
             </ul>
           </div>
 
           <div class="header__right">
-            <a
-              href="tel:+998951010600"
-              style="
-                font-size: 14px;
-                font-weight: 400;
-                color: #000;
-                position: relative;
-                line-height: 24px;
-                transition: 0.3s;
-                cursor: pointer;
-              "
-              v-if="!isDesktopMedium"
-            >
-              +998 (95) 101 06 00
-            </a>
             <AppButton
               v-if="isDesktopMedium"
               sides="10"
@@ -101,27 +89,27 @@ export default {
           link: "/study-program",
         },
         {
-          id: 3,
+          id: 4,
           title: "O'qituvchilar",
           link: "/teachers",
         },
         {
-          id: 3,
+          id: 5,
           title: "Media",
           link: "/media",
         },
         {
-          id: 3,
+          id: 6,
           title: "Yangiliklar",
           link: "/news",
         },
         {
-          id: 4,
+          id: 7,
           title: "Qabul",
           link: "/acceptance",
         },
         {
-          id: 4,
+          id: 8,
           title: "Aloqa",
           link: "/contact",
         },
