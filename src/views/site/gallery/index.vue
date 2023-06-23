@@ -1,12 +1,90 @@
 <template>
-  <div class="section"></div>
+  <div class="section">
+    <div class="media py-30">
+      <div class="container">
+        <app-text
+          :size="isMobile ? 32 : 48"
+          :line-height="isMobile ? 40 : 64"
+          weight="700"
+          class="mb-20"
+          data-aos="fade-right"
+        >
+          Media
+        </app-text>
+        <CoolLightBox :items="items" :index="index" @close="index = null">
+        </CoolLightBox>
+        <div class="images-wrapper">
+          <div
+            v-for="(item, imageIndex) in items"
+            @click="index = imageIndex"
+            :key="imageIndex"
+            class="images"
+            data-aos="fade-up"
+            :data-aos-duration="(imageIndex + 1) * 100"
+          >
+            <img :src="item.src" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 <script>
+import CoolLightBox from "vue-cool-lightbox";
+import "vue-cool-lightbox/dist/vue-cool-lightbox.min.css";
 export default {
   name: "AppMedia",
-  components: {},
+  components: { CoolLightBox },
   data() {
-    return {};
+    return {
+      items: [
+        {
+          src: "https://storage.kun.uz/source/9/nrXXRjw13dwfy2FrTfwdiXy_czMI6xlB.jpg",
+        },
+        {
+          src: "https://storage.kun.uz/source/9/IgHoRa0sNRyUeTHllNXaviilvWpAsGlt.jpg",
+        },
+        {
+          src: "https://storage.kun.uz/source/9/IgHoRa0sNRyUeTHllNXaviilvWpAsGlt.jpg",
+        },
+        {
+          src: "https://storage.kun.uz/source/9/IgHoRa0sNRyUeTHllNXaviilvWpAsGlt.jpg",
+        },
+      ],
+      index: null,
+    };
   },
 };
 </script>
+<style lang="scss" scoped>
+.images-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.images {
+  position: relative;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s ease !important;
+    &:hover {
+      margin-top: -5px;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .images-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 576px) {
+  .images-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

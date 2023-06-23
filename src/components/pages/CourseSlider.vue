@@ -1,17 +1,12 @@
 <template>
   <section class="section">
-    <div
-      class="py-60 course"
-      :style="
-        color ? 'background-color: #091F00;' : 'background-color: #130024;'
-      "
-    >
+    <div class="py-60 course">
       <div class="container">
         <div class="section__top mb-30">
           <app-text
             :size="isMobile ? 20 : 30"
             :line-height="isMobile ? 26 : 36"
-            :class="color ? 'color-green' : 'color-violet'"
+            class="color-white"
             weight="500"
             data-aos="fade-up"
           >
@@ -22,8 +17,7 @@
             <app-text
               :size="isMobile ? 14 : 18"
               :line-height="isMobile ? 20 : 26"
-              :class="color ? 'color-green' : 'color-violet'"
-              class="mb-20"
+              class="mb-20 color-white"
               weight="400"
               max-width="500"
             >
@@ -32,37 +26,13 @@
             </app-text>
             <router-link class="section__top-link" to="/">
               <app-button
-                :theme="color ? 'green' : 'cyan'"
+                theme="white"
                 :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
                 sides="20"
-                class="mb-10"
+                class="mb-10 d-flex align-center"
                 :height="isMobileSmall ? '40' : '50'"
               >
-                <span class="mr-10">TO'LIQ TANISHISH</span>
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14.43 5.92999L20.5 12L14.43 18.07"
-                    stroke="#130024"
-                    stroke-width="1.5"
-                    stroke-miterlimit="10"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M3.5 12H20.33"
-                    stroke="#130024"
-                    stroke-width="1.5"
-                    stroke-miterlimit="10"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+                TO'LIQ TANISHISH
               </app-button>
             </router-link>
           </div>
@@ -190,7 +160,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 .course {
-  //  border-radius: 0px 0px 16px 16px;
+  background-image: url("@/assets/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   .items {
     .item {
       position: relative;

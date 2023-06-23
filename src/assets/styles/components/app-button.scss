@@ -108,9 +108,10 @@
           white,
           lighten(white, 5%),
           darken(white, 5%),
-          $text-color-default,
-          $text-color-default,
-          $text-color-default
+          #5b81e5,
+          #5b81e5,
+          #5b81e5,
+          #fff
         ),
         (
           "secondary",
@@ -134,7 +135,17 @@
         ("cyan", #e2c9fc, #e2c9fc, #e2c9fc, #130024, #130024, #130024),
         ("green", #b1ff9d, #b1ff9d, #b1ff9d, #130024, #130024, #130024),
         ("red", #f7bae8, #f7bae8, #f7bae8, #660448, #660448, #660448),
-        ("black", #3247b0, #3247b0, #3247b0, #fff, #fff, #fff)
+        ("black", #3247b0, #3247b0, #3247b0, #fff, #fff, #fff),
+        (
+          "blue",
+          #b9ceff,
+          #b9ceff,
+          #b9ceff,
+          #000c1f,
+          #000c1f,
+          #000c1f,
+          transparent
+        )
       )
   {
     &--th-#{$theme} {

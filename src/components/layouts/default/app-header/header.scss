@@ -3,19 +3,16 @@
 
 .header {
   width: 100%;
-  z-index: 99;
-  // background-color: #fff;
-
+  z-index: 9999;
   &__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     min-height: 60px;
-    padding: 10px 30px;
-    background: rgba(229, 228, 229, 0.55);
-    backdrop-filter: blur(24px);
-    border-radius: 12px;
+    padding: 20px 0;
+    // backdrop-filter: blur(24px);
+    // border-radius: 12px;
   }
 
   &__left {

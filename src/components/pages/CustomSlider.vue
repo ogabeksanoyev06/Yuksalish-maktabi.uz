@@ -78,9 +78,7 @@
             :size="isMobileSmall ? '16' : '24'"
             :line-height="isMobileSmall ? '20' : '32'"
             weight="500"
-            :class="
-              (isMobile ? 'mb-5' : 'mb-20', bgGreen ? 'color-green-1' : '')
-            "
+            :class="(isMobile ? 'mb-5' : 'mb-20', bgGreen ? 'color-blue' : '')"
             data-aos="fade-up"
             data-aos-duration="500"
           >
@@ -90,7 +88,7 @@
             :size="isMobileSmall ? '14' : '20'"
             :line-height="isMobileSmall ? '20' : '26'"
             weight="400"
-            :class="bgGreen ? 'color-green-1' : ''"
+            :class="bgGreen ? 'color-blue' : ''"
             data-aos="fade-up"
             data-aos-duration="700"
           >
@@ -143,7 +141,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .bgGreen {
-  background-color: #091f00;
+  // background-color: #091f00;
+  background-size: cover;
 }
 .custom__slide {
   position: relative;
@@ -186,11 +185,12 @@ export default {
     justify-content: center;
     border-radius: 56px !important;
     &.bgGreen {
-      background-color: #091f00;
-      border-color: (177, 255, 157, 0.1);
+      background-color: #060032;
+      border: 1px solid rgba(177, 255, 157, 0.1);
+
       svg {
         path {
-          stroke: #b1ff9d;
+          stroke: #84a9ff;
         }
       }
     }

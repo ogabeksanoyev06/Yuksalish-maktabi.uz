@@ -45,14 +45,14 @@
     </div>
     <div
       class="py-60"
-      style="background-color: #091f00; border-radius: 0px 0px 16px 16px"
+      style="background-color: #060032; border-radius: 0px 0px 16px 16px"
     >
       <div class="container">
         <div class="section__top mb-30">
           <app-text
             :size="isMobile ? 24 : 30"
             :line-height="isMobile ? 28 : 36"
-            class="color-green"
+            class="color-blue"
             weight="500"
             data-aos="fade-up"
           >
@@ -62,7 +62,7 @@
             <app-text
               :size="isMobile ? 16 : 18"
               :line-height="isMobile ? 24 : 26"
-              class="mb-20 color-green"
+              class="mb-20 color-blue"
               weight="400"
               max-width="500"
             >
@@ -71,7 +71,7 @@
             </app-text>
             <router-link class="section__top-link" to="/">
               <AppButton
-                theme="green"
+                theme="blue"
                 :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
                 sides="20"
                 class="mb-10"

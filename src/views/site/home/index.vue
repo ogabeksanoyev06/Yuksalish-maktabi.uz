@@ -1,43 +1,46 @@
 <template>
-  <section class="section">
+  <section class="">
     <hero-banner />
     <!--  -->
     <cta-banner />
     <!--  -->
     <div class="py-60">
       <div class="container">
-        <app-text
-          :size="isMobile ? 24 : 36"
-          :line-height="isMobile ? 28 : 42"
-          class="mb-20"
-          weight="700"
-          data-aos="fade-up"
-        >
-          Maktab haqida
-        </app-text>
-        <app-text
-          :size="isMobile ? 16 : 18"
-          :line-height="isMobile ? 20 : 24"
-          :class="isMobile ? 'mb-20' : 'mb-40'"
-          weight="400"
-          max-width=""
-          data-aos="fade-up"
-        >
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt
-          laudantium qui a quisquam dolorum enim suscipit assumenda consectetur
-          amet? Fugiat repellat, ratione aperiam necessitatibus sint atque
-          commodi alias nobis laboriosam vitae mollitia, id modi? Minus rerum
-          neque accusamus? Sit molestiae, atque perferendis facilis sequi sunt,
-          rem, quas ex enim asperiores quam vero aliquam! Culpa voluptas,
-        </app-text>
+        <div style="max-width: 750px" class="mx-auto">
+          <app-text
+            :size="isMobile ? 28 : 42"
+            :line-height="isMobile ? 26 : 50"
+            :class="isMobile ? 'mb-20' : 'mb-40'"
+            weight="700"
+            class="text-start"
+            data-aos="fade-up"
+          >
+            Maktab haqida
+          </app-text>
+          <app-text
+            :size="isMobile ? 16 : 18"
+            :line-height="isMobile ? 24 : 32"
+            :class="isMobile ? 'mb-20' : 'mb-40'"
+            weight="500"
+            data-aos="fade-up"
+          >
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt
+            laudantium qui a quisquam dolorum enim suscipit assumenda
+            consectetur amet? Fugiat repellat, ratione aperiam necessitatibus
+            sint atque commodi alias nobis laboriosam vitae mollitia, id modi?
+            Minus rerum neque accusamus? Sit molestiae, atque perferendis
+            facilis sequi sunt, rem, quas ex enim asperiores quam vero aliquam!
+            Culpa voluptas,
+          </app-text>
+        </div>
         <youtube-link-banner />
       </div>
     </div>
     <div class="py-60">
       <div class="container">
         <app-text
-          :size="isMobile ? 32 : 36"
-          :line-height="isMobile ? 38 : 42"
+          :size="isMobile ? 32 : 42"
+          :line-height="isMobile ? 38 : 54"
           class="mb-40 text-center"
           weight="700"
           data-aos="fade-up"
@@ -51,7 +54,7 @@
               ? 'grid-template-columns: 1fr'
               : isDesktopSmall
               ? 'grid-template-columns: 1fr 1fr'
-              : 'grid-template-columns: 1fr 1fr 1fr'
+              : 'grid-template-columns: 1fr 1fr '
           "
         >
           <div
@@ -59,7 +62,7 @@
             style="
               background-color: #ffa500;
               border-radius: 16px;
-              min-height: 250px;
+              min-height: 210px;
             "
             data-aos="fade-up"
           >
@@ -87,7 +90,7 @@
             style="
               background-color: #3247b0;
               border-radius: 16px;
-              min-height: 250px;
+              min-height: 210px;
             "
             data-aos="fade-up"
           >
@@ -115,7 +118,7 @@
             style="
               background-color: #ececec;
               border-radius: 16px;
-              min-height: 250px;
+              min-height: 210px;
             "
             data-aos="fade-up"
           >
@@ -183,16 +186,13 @@
       <custom-slider :topLink="true" :bgGreen="false" />
     </div>
     <!--  -->
-    <div
-      style="background-color: #091f00"
-      :class="isMobileSmall ? 'py-30' : 'py-60'"
-    >
+    <div class="bg" :class="isMobileSmall ? 'py-30' : 'py-60'">
       <div class="container">
         <div class="section__top mb-30">
           <app-text
             :size="isMobile ? 24 : 30"
             :line-height="isMobile ? 28 : 36"
-            class="color-green"
+            class="color-white"
             weight="500"
             data-aos="fade-up"
           >
@@ -202,7 +202,7 @@
             <app-text
               :size="isMobile ? 16 : 18"
               :line-height="isMobile ? 24 : 26"
-              class="mb-20 color-green"
+              class="mb-20 color-white"
               weight="400"
               max-width="500"
             >
@@ -210,15 +210,14 @@
               sharoiti bilan yaqindan tanishing.
             </app-text>
             <router-link class="section__top-link" to="/">
-              <app-button
-                theme="green"
+              <AppButton
+                theme="white"
                 :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
                 sides="20"
-                class="mb-10"
                 :height="isMobileSmall ? '40' : '50'"
               >
-                <span class="mr-10">EKSKURSIYAGA YOZILISH</span>
-              </app-button>
+                EKSKURSIYAGA YOZILISH
+              </AppButton>
             </router-link>
           </div>
         </div>
@@ -325,7 +324,7 @@
       <div class="container">
         <div
           style="
-            background-color: #130024;
+            background: linear-gradient(180deg, #2667ff 0%, #7497ff 100%);
             border-radius: 24px;
             padding-left: 10px;
             padding-right: 10px;
@@ -336,7 +335,7 @@
             <app-text
               :size="isMobile ? 20 : 30"
               :line-height="isMobile ? 26 : 36"
-              class="color-violet text-center mb-20"
+              class="color-white text-center mb-20"
               weight="500"
               data-aos="fade-up"
               data-aos-duration="500"
@@ -346,7 +345,7 @@
             <app-text
               :size="isMobile ? 16 : 24"
               :line-height="isMobile ? 22 : 32"
-              class="color-violet text-center"
+              class="color-white text-center"
               weight="400"
               maxWidth="700"
               :class="isMobile ? 'mb-20' : 'mb-40'"
@@ -358,14 +357,12 @@
             </app-text>
             <div data-aos="fade-up" data-aos-duration="1000">
               <AppButton
-                theme="main"
+                theme="white"
                 :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
                 sides="20"
-                class="mb-10"
                 :height="isMobileSmall ? '40' : '50'"
               >
-                <span class="mr-10">ALOQAGA CHIQISH</span>
-                <img src="/icons/angle-right.svg" alt="" />
+                ALOQAGA CHIQISH
               </AppButton>
             </div>
           </div>
@@ -426,6 +423,11 @@ export default {
       }
     }
   }
+}
+.bg {
+  background-image: url("@/assets/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 @media (max-width: 1200px) {
 }

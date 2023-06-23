@@ -195,7 +195,6 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: calc(100vh - 0px);
-  padding: 30px 0;
   background-attachment: fixed;
   position: relative;
   z-index: 1;

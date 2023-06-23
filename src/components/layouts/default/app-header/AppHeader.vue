@@ -2,7 +2,10 @@
   <div>
     <header
       class="header"
-      :style="$route.path === '/' ? '' : 'margin-top:30px'"
+      :class="{
+        greyBg: $route.path === '/',
+        header__shadow: $route.path !== '/',
+      }"
     >
       <div class="container">
         <div class="header__inner">
