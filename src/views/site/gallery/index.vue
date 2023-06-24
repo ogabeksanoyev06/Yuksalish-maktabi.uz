@@ -6,7 +6,7 @@
           :size="isMobile ? 32 : 48"
           :line-height="isMobile ? 40 : 64"
           weight="700"
-          class="mb-20"
+          class="mb-20 color-orange-gradient"
           data-aos="fade-right"
         >
           Media

@@ -15,7 +15,7 @@
             class="text-start color-orange-gradient"
             data-aos="fade-up"
           >
-            Maktab haqida
+            Yuksalish maktabi haqida
           </app-text>
           <app-text
             :size="isMobile ? 16 : 18"
@@ -24,15 +24,21 @@
             weight="500"
             data-aos="fade-up"
           >
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt
-            laudantium qui a quisquam dolorum enim suscipit assumenda
-            consectetur amet? Fugiat repellat, ratione aperiam necessitatibus
-            sint atque commodi alias nobis laboriosam vitae mollitia, id modi?
-            Minus rerum neque accusamus? Sit molestiae, atque perferendis
-            facilis sequi sunt, rem, quas ex enim asperiores quam vero aliquam!
-            Culpa voluptas,
+            “Salam International School” maktabi farzandingiz uchun har
+            tomonlama ideal tanlovdir. Maktabda o’zbek, rus, ingiliz va arab
+            tillarida ta’lim beriladi. 11 yillik ta’lim tizimiga mo’ljallangan
+            bo’lib, bu vaqt davomida o’quvchilarimiz xorijiy tillarni hamda aniq
+            fanlarni puxta o’zlashtiradilar. Shu bilan birga o’quvchilarimizning
+            ahloqlariga alohida e’tibor bergan holatda ta’lim oladilar.
           </app-text>
         </div>
+        <video
+          style="width: 100%; height: 100%; object-fit: cover"
+          poster="/images/ustozBg.png"
+          controls
+        >
+          <source src="@/assets/maktab.mp4" type="video/mp4" />
+        </video>
         <youtube-link-banner />
       </div>
     </div>
@@ -54,7 +60,7 @@
               ? 'grid-template-columns: 1fr'
               : isDesktopSmall
               ? 'grid-template-columns: 1fr 1fr'
-              : 'grid-template-columns: 1fr 1fr '
+              : 'grid-template-columns: 1fr 1fr'
           "
         >
           <div
@@ -431,6 +437,13 @@ export default {
   background-image: url("@/assets/bg.png");
   background-repeat: no-repeat;
   background-size: cover;
+}
+video::-webkit-media-controls-panel {
+  // Your styling here
+  background-image: linear-gradient(
+    transparent,
+    transparent
+  ) !important; //Transparent for your case
 }
 @media (max-width: 1200px) {
 }

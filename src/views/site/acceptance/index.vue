@@ -1,6 +1,6 @@
 <template>
   <section class="section">
-    <div style="background-color: #111011; border-radius: 0 0 16px 16px">
+    <div style="background-color: #060032; border-radius: 0 0 16px 16px">
       <div
         style="background-color: #fff; border-radius: 0px 0px 16px 16px"
         class="py-60"
