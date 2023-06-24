@@ -24,7 +24,7 @@
               Biz bolalarni rivojlantirish uchun DTS darslilardan tashqari
               qo'shimcha fanlar va sport to'garaklarimiz ham mavjud.
             </app-text>
-            <router-link class="section__top-link" to="/">
+            <router-link class="section__top-link" to="/study-program">
               <app-button
                 theme="white"
                 :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"

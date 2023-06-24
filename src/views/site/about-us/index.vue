@@ -69,7 +69,7 @@
               Yuksalish maktabi 2022 - yilda ochilgan bo'lib, uning bosh
               asoschisi Muhammadali Eshonqulov.
             </app-text>
-            <router-link class="section__top-link" to="/">
+            <!-- <router-link class="section__top-link" to="/">
               <AppButton
                 theme="blue"
                 :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
@@ -79,7 +79,7 @@
               >
                 <span class="mr-10">BEPUL KONSULTATSIYA OLISH</span>
               </AppButton>
-            </router-link>
+            </router-link> -->
           </div>
         </div>
       </div>

@@ -181,7 +181,7 @@
               Maktablarimiz bino, xona, bolalar o‘quv jarayonidan, turli xil
               sport musobaqalardan olingan rasmlar.
             </app-text>
-            <router-link class="section__top-link" to="/">
+            <router-link class="section__top-link" to="/about-us">
               <AppButton
                 theme="main"
                 :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
@@ -221,16 +221,6 @@
               Yuksalish maktablariga tashrif buyuring. Maktab faoliyati va o'quv
               sharoiti bilan yaqindan tanishing.
             </app-text>
-            <router-link class="section__top-link" to="/">
-              <AppButton
-                theme="white"
-                :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
-                sides="20"
-                :height="isMobileSmall ? '40' : '50'"
-              >
-                EKSKURSIYAGA YOZILISH
-              </AppButton>
-            </router-link>
           </div>
         </div>
       </div>

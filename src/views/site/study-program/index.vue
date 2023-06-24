@@ -221,7 +221,7 @@
               Qizlarimiz rivojlanishi uchun biz bir qancha amaliy togaraklar
               yolga qoyganmiz
             </app-text>
-            <router-link class="section__top-link" to="/">
+            <router-link class="section__top-link" to="/about-us">
               <AppButton
                 theme="white"
                 :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
