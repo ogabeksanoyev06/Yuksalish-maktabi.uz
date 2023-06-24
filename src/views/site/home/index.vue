@@ -4,7 +4,7 @@
     <!--  -->
     <cta-banner />
     <!--  -->
-    <div class="py-60">
+    <div :class="isMobile ? 'py-30' : 'py-60'">
       <div class="container">
         <div style="max-width: 750px" class="mx-auto">
           <app-text
@@ -32,14 +32,17 @@
             ahloqlariga alohida e’tibor bergan holatda ta’lim oladilar.
           </app-text>
         </div>
+        <!-- <youtube-link-banner /> -->
+      </div>
+
+      <div style="max-width: 800px" class="mx-auto">
         <video
-          style="width: 100%; height: 100%; object-fit: cover"
-          poster="/images/ustozBg.png"
+          style="width: 100%; height: auto"
+          poster="/images/bg_video.png"
           controls
         >
           <source src="@/assets/maktab.mp4" type="video/mp4" />
         </video>
-        <youtube-link-banner />
       </div>
     </div>
     <div class="py-60">
@@ -444,6 +447,10 @@ video::-webkit-media-controls-panel {
     transparent,
     transparent
   ) !important; //Transparent for your case
+}
+video[poster] {
+  width: 100%;
+  height: auto;
 }
 @media (max-width: 1200px) {
 }
