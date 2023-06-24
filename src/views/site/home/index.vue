@@ -24,12 +24,12 @@
             weight="500"
             data-aos="fade-up"
           >
-            “Salam International School” maktabi farzandingiz uchun har
-            tomonlama ideal tanlovdir. Maktabda o’zbek, rus, ingiliz va arab
-            tillarida ta’lim beriladi. 11 yillik ta’lim tizimiga mo’ljallangan
-            bo’lib, bu vaqt davomida o’quvchilarimiz xorijiy tillarni hamda aniq
-            fanlarni puxta o’zlashtiradilar. Shu bilan birga o’quvchilarimizning
-            ahloqlariga alohida e’tibor bergan holatda ta’lim oladilar.
+            “Yuksalish maktabi” maktabi farzandingiz uchun har tomonlama ideal
+            tanlovdir. Maktabda o’zbek, rus, ingiliz va arab tillarida ta’lim
+            beriladi. 11 yillik ta’lim tizimiga mo’ljallangan bo’lib, bu vaqt
+            davomida o’quvchilarimiz xorijiy tillarni hamda aniq fanlarni puxta
+            o’zlashtiradilar. Shu bilan birga o’quvchilarimizning ahloqlariga
+            alohida e’tibor bergan holatda ta’lim oladilar.
           </app-text>
         </div>
         <!-- <youtube-link-banner /> -->
