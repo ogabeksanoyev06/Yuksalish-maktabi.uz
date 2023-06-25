@@ -67,7 +67,6 @@ export default {
     max-width: 450px;
     width: 100%;
     position: relative;
-    z-index: 1;
     margin-top: -150px;
 
     img {

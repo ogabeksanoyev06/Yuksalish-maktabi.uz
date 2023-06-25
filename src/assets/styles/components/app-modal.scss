@@ -8,7 +8,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  z-index: 555;
+  z-index: 999;
   transition: opacity 0.2s linear, transform 0.2s ease-out;
   opacity: 0;
   transform: translateY(-30px);

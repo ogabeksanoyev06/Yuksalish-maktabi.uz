@@ -36,6 +36,7 @@
               :sides="isMobileSmall ? '15' : '20'"
               class="mb-30 mx-auto d-flex align-center"
               :height="isMobileSmall ? '40' : '50'"
+              @click="modalTrue"
             >
               <span :class="isMobileSmall ? '' : 'mr-10'"> ONLAYN QABUL</span>
               <img src="/icons/angle-right.svg" alt="" v-if="!isMobileSmall" />
@@ -385,6 +386,7 @@
         </div>
       </div>
     </div>
+    <app-modal v-if="onlineReception" @close="closeModal" />
   </section>
 </template>
 <script>
@@ -392,9 +394,10 @@ import AppButton from "@/components/shared-components/AppButton.vue";
 import CourseSlider from "@/components/pages/CourseSlider.vue";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
+import AppModal from "@/components/shared-components/AppModal.vue";
 export default {
   name: "StudyProgram",
-  components: { AppButton, CourseSlider, Swiper, SwiperSlide },
+  components: { AppButton, CourseSlider, Swiper, SwiperSlide, AppModal },
   data() {
     return {
       swiperOptions: {
@@ -432,7 +435,16 @@ export default {
         },
         spaceBetween: 12,
       },
+      onlineReception: false,
     };
+  },
+  methods: {
+    closeModal() {
+      this.onlineReception = false;
+    },
+    modalTrue() {
+      this.onlineReception = true;
+    },
   },
 };
 </script>

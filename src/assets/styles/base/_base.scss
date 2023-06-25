@@ -33,7 +33,9 @@
 .overflow {
   overflow: hidden;
 }
-
+.swiper-container {
+  z-index: 0;
+}
 .bold-text {
   font-weight: 700;
   font-family: "Inter", sans-serif;

@@ -29,18 +29,19 @@
             Maktablarimizga bolalarni qabul qilish tartibi bilan tanishing
           </app-text>
           <div data-aos="fade-up" data-aos-duration="900">
-            <app-button
+            <AppButton
               theme="main"
               :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
               :sides="isMobileSmall ? '15' : '20'"
               class="mb-30 mx-auto d-flex align-center"
               :height="isMobileSmall ? '40' : '50'"
+              @click="modalTrue"
             >
               <span :class="isMobileSmall ? '' : 'mr-10'">
                 QABULGA YOZILISH
               </span>
               <img src="/icons/angle-right.svg" alt="" />
-            </app-button>
+            </AppButton>
           </div>
         </div>
 
@@ -376,17 +377,6 @@
                 Robotexnika togaragi darslari mobaynida dasturlash tillari
                 oqitladi
               </app-text>
-              <router-link class="section__top-link" to="/">
-                <AppButton
-                  theme="main"
-                  :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
-                  sides="20"
-                  class="mb-10"
-                  :height="isMobileSmall ? '40' : '50'"
-                >
-                  <span class="">ONLAYN QABUL</span>
-                </AppButton>
-              </router-link>
             </div>
           </div>
           <div class="d-flex flex-wrap" style="gap: 20px">
@@ -482,17 +472,6 @@
               Biz bolalarni dunyo qarashi oqishga bolgan ishtiyoqi va
               tarbiyasiga qarab birinchi sinfga qabul qilamiz.
             </app-text>
-            <router-link class="section__top-link" to="/">
-              <AppButton
-                theme="cyan"
-                :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
-                sides="20"
-                class="mb-10"
-                :height="isMobileSmall ? '40' : '50'"
-              >
-                <span class="">SUXBATGA YOZILISH</span>
-              </AppButton>
-            </router-link>
           </div>
           <div
             style="position: relative; max-width: 680px; width: 100%"
@@ -873,20 +852,7 @@
         >
           Maktab va oqitish tizimi haqida ota- onalarning fikrlari
         </app-text>
-        <router-link class="section__top-link" to="/">
-          <AppButton
-            theme="black"
-            :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
-            :sides="isMobileSmall ? '15' : '20'"
-            :class="isMobile ? 'mb-30' : 'mb-60'"
-            :height="isMobileSmall ? '40' : '50'"
-            data-aos="fade-right"
-            class="d-flex align-center"
-          >
-            <span :class="isMobileSmall ? '' : 'mr-10'">SUXBATGA YOZILISH</span>
-            <img src="/icons/angle-right.svg" alt="" />
-          </AppButton>
-        </router-link>
+
         <swiper class="swiper" :options="swiperOptions2">
           <swiper-slide
             v-for="(item, i) in 5"
@@ -1003,6 +969,7 @@
         </div>
       </div>
     </div>
+    <app-modal v-if="onlineReception" @close="closeModal" />
   </section>
 </template>
 <script>
@@ -1010,9 +977,10 @@ import AppButton from "@/components/shared-components/AppButton.vue";
 import YoutubeLinkBanner from "@/components/pages/YoutubeLinkBanner.vue";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
+import AppModal from "@/components/shared-components/AppModal.vue";
 export default {
   name: "AppAcceptance",
-  components: { AppButton, YoutubeLinkBanner, Swiper, SwiperSlide },
+  components: { AppButton, YoutubeLinkBanner, Swiper, SwiperSlide, AppModal },
   data() {
     return {
       swiperOptions: {
@@ -1055,7 +1023,16 @@ export default {
           prevEl: ".swiper-button-prev",
         },
       },
+      onlineReception: false,
     };
+  },
+  methods: {
+    closeModal() {
+      this.onlineReception = false;
+    },
+    modalTrue() {
+      this.onlineReception = true;
+    },
   },
 };
 </script>

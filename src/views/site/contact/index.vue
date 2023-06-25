@@ -30,6 +30,7 @@
           :sides="isMobileSmall ? '15' : '20'"
           class="mb-30 mx-auto d-flex align-center"
           :height="isMobileSmall ? '40' : '50'"
+          @click="modalTrue"
         >
           <span :class="isMobileSmall ? '' : 'mr-10'"> QABULGA YOZILISH </span>
           <img src="/icons/angle-right.svg" alt="" />
@@ -237,15 +238,17 @@
         </accordion>
       </div>
     </div>
+    <app-modal v-if="onlineReception" @close="closeModal" />
   </section>
 </template>
 <script>
 import AppButton from "@/components/shared-components/AppButton.vue";
 import Accordion from "@/components/shared-components/Accordion.vue";
 import AccordionItem from "@/components/shared-components/AccordionItem.vue";
+import AppModal from "@/components/shared-components/AppModal.vue";
 export default {
   name: "AppContact",
-  components: { AppButton, Accordion, AccordionItem },
+  components: { AppButton, Accordion, AccordionItem, AppModal },
   data() {
     return {
       list: [
@@ -278,11 +281,18 @@ export default {
         },
       ],
       activeListItem: null,
+      onlineReception: false,
     };
   },
   methods: {
     listItem(id) {
       this.activeListItem == id;
+    },
+    closeModal() {
+      this.onlineReception = false;
+    },
+    modalTrue() {
+      this.onlineReception = true;
     },
   },
 };

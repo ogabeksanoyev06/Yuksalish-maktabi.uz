@@ -11,7 +11,7 @@
         <div class="single-page">
           <div class="info d-flex align-center justify-space-between">
             <div class="left-info">
-              <!-- <span>
+              <span>
                 <i>
                   <svg
                     width="24"
@@ -38,7 +38,7 @@
                   </svg>
                 </i>
                 16:18 - 1 May 2023
-              </span> -->
+              </span>
               <router-link to="/news" class="cat-news">
                 <i>
                   <svg
