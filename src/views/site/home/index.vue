@@ -156,6 +156,9 @@
         </div>
       </div>
     </div>
+    <div class="">
+      <img src="/images/image.jpg" alt="" style="width: 100%; height: auto" />
+    </div>
     <!--  -->
     <course-slider />
     <!--  -->
@@ -400,9 +403,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="">
-      <img src="/images/image.jpg" alt="" style="width: 100%; height: auto" />
     </div>
     <!--  -->
     <motiovation-video />
