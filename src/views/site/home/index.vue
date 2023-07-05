@@ -156,8 +156,14 @@
         </div>
       </div>
     </div>
-    <div class="">
-      <img src="/images/image.jpg" alt="" style="width: 100%; height: auto" />
+    <div class="py-60">
+      <div class="container">
+        <img
+          src="/images/image.jpg"
+          alt=""
+          style="width: 100%; height: auto; border-radius: 15px"
+        />
+      </div>
     </div>
     <!--  -->
     <course-slider />
@@ -338,17 +344,6 @@
               Bizning chegirma va imtiyozlarimiz yoshlarga motivatsiya bo'la
               oladi.
             </app-text>
-            <router-link class="section__top-link" to="/">
-              <AppButton
-                theme="main"
-                :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
-                sides="20"
-                class="mb-10"
-                :height="isMobileSmall ? '40' : '50'"
-              >
-                <span class="mr-10">KONSULTATSIYA OLISH</span>
-              </AppButton>
-            </router-link>
           </div>
         </div>
         <div class="reliefs">
@@ -514,7 +509,11 @@ export default {
   }
 }
 .bg {
-  background-image: url("@/assets/bg.png");
+  background-image: linear-gradient(
+    0.33028155376282897turn,
+    rgba(253, 125, 125, 1) 0%,
+    rgba(255, 201, 72, 1) 100%
+  );
   background-repeat: no-repeat;
   background-size: cover;
 }
