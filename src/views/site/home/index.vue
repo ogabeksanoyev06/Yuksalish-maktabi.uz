@@ -45,6 +45,7 @@
         </video>
       </div>
     </div>
+
     <div class="py-60">
       <div class="container">
         <app-text
@@ -158,6 +159,84 @@
     <!--  -->
     <course-slider />
     <!--  -->
+    <div :class="isMobile ? 'py-30' : 'py-60'" class="selection">
+      <div class="container">
+        <div class="d-flex align-center flex-wrap justify-space-between mb-30">
+          <div class="mb-20">
+            <app-text
+              :size="isMobile ? 32 : 42"
+              :line-height="isMobile ? 40 : 50"
+              weight="700"
+              class="text-start color-orange-gradient mb-20"
+              data-aos="fade-up"
+            >
+              Bizning tanlovlar
+            </app-text>
+            <div class="d-flex align-center">
+              <img
+                src="/images/fanlar-min.webp"
+                alt=""
+                style="width: 60px; height: 60px"
+                class="mr-20"
+                v-if="!isMobileSmall"
+              />
+              <app-text
+                :size="isMobile ? 18 : 23"
+                :line-height="isMobile ? 24 : 35"
+                class="color-white"
+                weight="400"
+                data-aos="fade-up"
+                max-width="460"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </app-text>
+            </div>
+          </div>
+          <div
+            class="d-flex pa-20 mb-20"
+            style="border: 1px solid #fff; border-radius: 10px"
+          >
+            <img
+              src="/images/sinov-min.webp"
+              alt=""
+              style="width: 100px; height: 100px"
+              v-if="!isMobileSmall"
+            />
+            <app-text
+              :size="isMobile ? 18 : 23"
+              :line-height="isMobile ? 24 : 35"
+              weight="400"
+              class="color-white"
+              data-aos="fade-up"
+              max-width="380"
+            >
+              Sinovdan o’tgan o’quvchilar 1 hafta davomida bepul ta’lim olish
+              imkoniyatiga ega bo’ladilar
+            </app-text>
+          </div>
+        </div>
+        <div class="d-flex flex-wrap">
+          <div
+            v-for="(item, i) in 10"
+            :key="i"
+            class="selection__item"
+            data-aos="fade-up"
+            :data-aos-duration="(i + 1) * 100"
+          >
+            <app-text
+              :size="isMobile ? 16 : 20"
+              :line-height="isMobile ? 24 : 28"
+              weight="400"
+              class=""
+              data-aos="fade-up"
+            >
+              Lorem ipsum dolor sit amet.
+            </app-text>
+            <div class="num">{{ i + 1 }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="py-60">
       <div class="container">
         <div class="section__top mb-30">
@@ -224,9 +303,14 @@
           </div>
         </div>
       </div>
-      <youtube-link-banner :topLink="true" :bgGreen="true" />
+      <youtube-link-banner
+        :topLink="true"
+        :bgGreen="true"
+        :link="'https://youtu.be/rtWW7nRu4II'"
+      />
     </div>
     <!--  -->
+
     <div class="py-60">
       <div class="container">
         <div class="section__top mb-30">
@@ -316,6 +400,9 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="">
+      <img src="/images/image.jpg" alt="" style="width: 100%; height: auto" />
     </div>
     <!--  -->
     <motiovation-video />
@@ -441,6 +528,40 @@ video::-webkit-media-controls-panel {
 video[poster] {
   width: 100%;
   height: auto;
+}
+.selection {
+  background-image: linear-gradient(
+    0.38451118195724093turn,
+    rgba(43, 56, 94, 1) 0%,
+    rgba(24, 31, 52, 1) 98%
+  );
+  color: #fff;
+  border-radius: 0px 0px 16px 16px;
+  &__item {
+    border-radius: 10px;
+    background-image: linear-gradient(
+      0.33028155376282897turn,
+      rgba(253, 125, 125, 1) 0%,
+      rgba(255, 201, 72, 1) 100%
+    );
+
+    max-width: 370px;
+    width: 100%;
+    height: 200px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .num {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 32px;
+    }
+  }
 }
 @media (max-width: 1200px) {
 }

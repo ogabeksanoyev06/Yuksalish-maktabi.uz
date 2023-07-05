@@ -10,8 +10,7 @@
             weight="500"
             data-aos="fade-up"
           >
-            Qoshimcha kurs va <br />
-            to‘garaklarimiz
+            Fanlar
           </app-text>
           <div class="section__top-details" data-aos="fade-up">
             <app-text
@@ -21,8 +20,6 @@
               weight="400"
               max-width="500"
             >
-              Biz bolalarni rivojlantirish uchun DTS darslilardan tashqari
-              qo'shimcha fanlar va sport to'garaklarimiz ham mavjud.
             </app-text>
             <router-link class="section__top-link" to="/study-program">
               <app-button

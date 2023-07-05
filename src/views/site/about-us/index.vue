@@ -628,7 +628,7 @@
       style="background-color: #130024"
       :class="isMobileSmall ? 'py-30' : 'py-60'"
     >
-      <div class="container">
+      <!-- <div class="container">
         <div class="section__top" :class="isMobileSmall ? 'mb-30' : 'mb-60'">
           <app-text
             :size="isMobile ? 24 : 32"
@@ -723,7 +723,7 @@
             </div>
           </swiper-slide>
         </swiper>
-      </div>
+      </div> -->
     </div>
     <div
       style="background-color: #660448; border-radius: 0px 0px 16px 16px"
