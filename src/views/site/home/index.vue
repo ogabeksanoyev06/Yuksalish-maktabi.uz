@@ -34,7 +34,7 @@
         </div>
         <!-- <youtube-link-banner /> -->
       </div>
-
+      <!--  -->
       <div style="max-width: 800px" class="mx-auto">
         <video
           style="width: 100%; height: auto"
@@ -45,7 +45,7 @@
         </video>
       </div>
     </div>
-
+    <!--  -->
     <div class="py-60">
       <div class="container">
         <app-text
@@ -156,6 +156,7 @@
         </div>
       </div>
     </div>
+    <!--  -->
     <div class="py-60">
       <div class="container">
         <img
@@ -246,80 +247,7 @@
         </div>
       </div>
     </div>
-    <div class="py-60">
-      <div class="container">
-        <div class="section__top mb-30">
-          <app-text
-            :size="isMobile ? 24 : 30"
-            :line-height="isMobile ? 28 : 36"
-            weight="500"
-            data-aos="fade-up"
-          >
-            Maktabimizdan <br />
-            fotogalereya
-          </app-text>
-          <div class="section__top-details" data-aos="fade-up">
-            <app-text
-              :size="isMobile ? 16 : 18"
-              :line-height="isMobile ? 24 : 26"
-              class="mb-20"
-              weight="400"
-              max-width="500"
-            >
-              Maktablarimiz bino, xona, bolalar o‘quv jarayonidan, turli xil
-              sport musobaqalardan olingan rasmlar.
-            </app-text>
-            <router-link class="section__top-link" to="/about-us">
-              <AppButton
-                theme="main"
-                :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
-                sides="20"
-                class="mb-10"
-                :height="isMobileSmall ? '40' : '50'"
-              >
-                <span class="mr-10">MAKTAB HAQIDA BATAFSIL</span>
-              </AppButton>
-            </router-link>
-          </div>
-        </div>
-      </div>
-      <custom-slider :topLink="true" :bgGreen="false" />
-    </div>
     <!--  -->
-    <div class="bg" :class="isMobileSmall ? 'py-30' : 'py-60'">
-      <div class="container">
-        <div class="section__top mb-30">
-          <app-text
-            :size="isMobile ? 24 : 30"
-            :line-height="isMobile ? 28 : 36"
-            class="color-white"
-            weight="500"
-            data-aos="fade-up"
-          >
-            Maktabga ekskursiya
-          </app-text>
-          <div class="section__top-details" data-aos="fade-up">
-            <app-text
-              :size="isMobile ? 16 : 18"
-              :line-height="isMobile ? 24 : 26"
-              class="mb-20 color-white"
-              weight="400"
-              max-width="500"
-            >
-              Yuksalish maktablariga tashrif buyuring. Maktab faoliyati va o'quv
-              sharoiti bilan yaqindan tanishing.
-            </app-text>
-          </div>
-        </div>
-      </div>
-      <youtube-link-banner
-        :topLink="true"
-        :bgGreen="true"
-        :link="'https://youtu.be/rtWW7nRu4II'"
-      />
-    </div>
-    <!--  -->
-
     <div class="py-60">
       <div class="container">
         <div class="section__top mb-30">
@@ -400,8 +328,180 @@
       </div>
     </div>
     <!--  -->
+    <div :class="isMobileSmall ? 'py-30' : 'py-60'" class="receptions">
+      <div class="container">
+        <div
+          class="d-flex justify-space-between"
+          :class="isDesktopSmall ? 'flex-wrap justify-content-center' : ''"
+        >
+          <div>
+            <app-text
+              :size="isMobile ? 32 : 44"
+              :line-height="isMobile ? 40 : 52"
+              weight="700"
+              class="color-kok mb-20"
+              data-aos="fade-up"
+              max-width="620"
+            >
+              Qabulimiz 3 xil turga bolinadi
+            </app-text>
+            <app-text
+              :size="isMobile ? 16 : 20"
+              :line-height="isMobile ? 24 : 30"
+              weight="500"
+              class="mb-20"
+              max-width="500"
+              data-aos="fade-up"
+            >
+              Maktabizdagi imtihonlar bolalarning yoshiga qarab bo'lingan
+              bo'lib, unda suhbat va test orqali bolalar sinaladi
+            </app-text>
+          </div>
+          <div class="items" data-aos="fade-up" data-aos-duration="1000">
+            <div class="item" data-aos="fade-up" data-aos-duration="100">
+              <app-text :size="20" :line-height="30" class="color-white">
+                01
+              </app-text>
+              <app-text
+                :size="16"
+                :line-height="22"
+                weight="700"
+                class="color-white"
+              >
+                Maktabgacha ta'lim
+              </app-text>
+            </div>
+            <div class="item" data-aos="fade-up" data-aos-duration="200">
+              <app-text :size="20" :line-height="30" class="color-white">
+                02
+              </app-text>
+              <app-text
+                :size="16"
+                :line-height="22"
+                weight="700"
+                class="color-white"
+              >
+                Birinchi sinf qabuli
+              </app-text>
+            </div>
+            <div class="item" data-aos="fade-up" data-aos-duration="300">
+              <app-text :size="20" :line-height="30" class="color-white">
+                03
+              </app-text>
+              <app-text
+                :size="16"
+                :line-height="22"
+                weight="700"
+                class="color-white"
+              >
+                Yuqori sinflar qabuli
+              </app-text>
+            </div>
+            <div class="item" data-aos="fade-up" data-aos-duration="400">
+              <app-text :size="20" :line-height="30" class="color-white">
+                04
+              </app-text>
+              <app-text
+                :size="16"
+                :line-height="22"
+                weight="700"
+                class="color-white"
+              >
+                Matematika
+              </app-text>
+            </div>
+            <div class="item" data-aos="fade-up" data-aos-duration="500">
+              <app-text :size="20" :line-height="30" class="color-white">
+                05
+              </app-text>
+              <app-text
+                :size="16"
+                :line-height="22"
+                weight="700"
+                class="color-white"
+              >
+                Ingliz tili
+              </app-text>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="py-60">
+      <div class="container">
+        <div class="section__top mb-30">
+          <app-text
+            :size="isMobile ? 24 : 30"
+            :line-height="isMobile ? 28 : 36"
+            weight="500"
+            data-aos="fade-up"
+          >
+            Maktabimizdan <br />
+            fotogalereya
+          </app-text>
+          <div class="section__top-details" data-aos="fade-up">
+            <app-text
+              :size="isMobile ? 16 : 18"
+              :line-height="isMobile ? 24 : 26"
+              class="mb-20"
+              weight="400"
+              max-width="500"
+            >
+              Maktablarimiz bino, xona, bolalar o‘quv jarayonidan, turli xil
+              sport musobaqalardan olingan rasmlar.
+            </app-text>
+            <router-link class="section__top-link" to="/about-us">
+              <AppButton
+                theme="main"
+                :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
+                sides="20"
+                class="mb-10"
+                :height="isMobileSmall ? '40' : '50'"
+              >
+                <span class="mr-10">MAKTAB HAQIDA BATAFSIL</span>
+              </AppButton>
+            </router-link>
+          </div>
+        </div>
+      </div>
+      <custom-slider :topLink="true" :bgGreen="false" />
+    </div>
+    <!--  -->
+    <div class="bg" :class="isMobileSmall ? 'py-30' : 'py-60'">
+      <div class="container">
+        <div class="section__top mb-30">
+          <app-text
+            :size="isMobile ? 24 : 30"
+            :line-height="isMobile ? 28 : 36"
+            class="color-white"
+            weight="500"
+            data-aos="fade-up"
+          >
+            Maktabga ekskursiya
+          </app-text>
+          <div class="section__top-details" data-aos="fade-up">
+            <app-text
+              :size="isMobile ? 16 : 18"
+              :line-height="isMobile ? 24 : 26"
+              class="mb-20 color-white"
+              weight="400"
+              max-width="500"
+            >
+              Yuksalish maktablariga tashrif buyuring. Maktab faoliyati va o'quv
+              sharoiti bilan yaqindan tanishing.
+            </app-text>
+          </div>
+        </div>
+      </div>
+      <youtube-link-banner
+        :topLink="true"
+        :bgGreen="true"
+        :link="'https://youtu.be/rtWW7nRu4II'"
+      />
+    </div>
+    <!--  -->
     <motiovation-video />
-    <div
+    <!-- <div
       style="background-color: #fff; border-radius: 0px 0px 16px 16px"
       class="mb-30"
     >
@@ -452,7 +552,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </section>
 </template>
 
@@ -562,6 +662,29 @@ video[poster] {
     }
   }
 }
+.receptions {
+  .items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    .item {
+      border-radius: 5px;
+      background-image: linear-gradient(
+        0.33028155376282897turn,
+        rgba(253, 125, 125, 1) 14%,
+        rgba(255, 201, 72, 1) 100%
+      );
+      border-color: transparent;
+      border-style: solid;
+      width: 180px;
+      height: 115px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+}
 @media (max-width: 1200px) {
 }
 @media (max-width: 991px) {
@@ -575,6 +698,33 @@ video[poster] {
   .reliefs {
     .items {
       grid-template-columns: 1fr;
+    }
+  }
+  .receptions {
+    .items {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .receptions {
+    .items {
+      .item {
+        border-radius: 5px;
+        background-image: linear-gradient(
+          0.33028155376282897turn,
+          rgba(253, 125, 125, 1) 14%,
+          rgba(255, 201, 72, 1) 100%
+        );
+        border-color: transparent;
+        border-style: solid;
+        width: 150px;
+        min-height: 100px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
     }
   }
 }
