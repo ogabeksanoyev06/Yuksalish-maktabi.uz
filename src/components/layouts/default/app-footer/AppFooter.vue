@@ -166,6 +166,18 @@
                 </router-link>
               </li>
             </ul>
+            <CoolLightBox :items="items" :index="index" @close="index = null">
+            </CoolLightBox>
+            <ul class="certificate_container">
+              <li
+                class="certificate_img_container"
+                v-for="(item, i) in items"
+                @click="index = i"
+                :key="i"
+              >
+                <img :src="item.src" alt="" />
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -274,10 +286,11 @@
 
 <script>
 import "./footer.scss";
-
+import CoolLightBox from "vue-cool-lightbox";
+import "vue-cool-lightbox/dist/vue-cool-lightbox.min.css";
 export default {
   name: "AppFooter",
-  components: {},
+  components: { CoolLightBox },
   data() {
     return {
       menu: [
@@ -336,9 +349,17 @@ export default {
             },
           ],
         },
+      ],
+      index: null,
+      items: [
         {
-          id: 2,
-          children: [],
+          src: "/images/certificate.png",
+        },
+        {
+          src: "/images/certificate.png",
+        },
+        {
+          src: "/images/certificate.png",
         },
       ],
     };
