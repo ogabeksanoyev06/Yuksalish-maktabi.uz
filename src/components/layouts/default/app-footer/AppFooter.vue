@@ -353,13 +353,13 @@ export default {
       index: null,
       items: [
         {
-          src: "/images/certificate.png",
+          src: "/images/certificate1.png",
         },
         {
-          src: "/images/certificate.png",
+          src: "/images/certificate2.png",
         },
         {
-          src: "/images/certificate.png",
+          src: "/images/certificate3.png",
         },
       ],
     };
