@@ -86,7 +86,7 @@
       <custom-slider :topLink="true" :bgGreen="true" />
     </div>
     <div
-      style="background-color: #1e1d1e; border-radius: 0px 0px 16px 16px"
+      style="background-color: #fff; border-radius: 0px 0px 16px 16px"
       :class="isMobileSmall ? 'py-30' : 'py-60'"
     >
       <div class="container">
@@ -104,7 +104,7 @@
         <div class="items">
           <div
             class="item"
-            v-for="(item, i) in 3"
+            v-for="(item, i) in 6"
             :key="i"
             data-aos="fade-up"
             data-aos-duration="500"
@@ -133,7 +133,7 @@
               <app-text
                 :size="isMobile ? 18 : 24"
                 :line-height="isMobile ? 24 : 32"
-                class="mb-10"
+                class="mb-10 color-orange"
                 weight="500"
               >
                 Chorak reyting boyicha
@@ -141,7 +141,7 @@
               <app-text
                 :size="isMobile ? 14 : 18"
                 :line-height="isMobile ? 20 : 24"
-                class=""
+                class="color-kok"
                 weight="400"
               >
                 Har chorak reytingida eng yuqori natija korsatgan oquvchilar
@@ -158,55 +158,7 @@
             width: 100%;
           "
         />
-        <div class="items mb-60">
-          <div
-            class="item"
-            v-for="(item, i) in 3"
-            :key="i"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
-            <svg
-              width="30"
-              height="29"
-              viewBox="0 0 30 29"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M4.33329 10.9668H1.66667C0.75 10.9668 0 11.7168 0 12.6335V27.0001C0 27.9168 0.75 28.6668 1.66667 28.6668H4.33329C5.24996 28.6668 5.99996 27.9168 5.99996 27.0001V12.6335C5.99996 11.7001 5.24996 10.9668 4.33329 10.9668Z"
-                fill="#F37221"
-              />
-              <path
-                d="M16.3333 5.65039H13.6667C12.75 5.65039 12 6.40039 12 7.31706V27.0004C12 27.9171 12.75 28.6671 13.6667 28.6671H16.3333C17.25 28.6671 18 27.9171 18 27.0004V7.31706C18 6.40039 17.25 5.65039 16.3333 5.65039Z"
-                fill="#F37221"
-              />
-              <path
-                d="M28.3333 0.333496H25.6667C24.75 0.333496 24 1.0835 24 2.00016V27.0002C24 27.9168 24.75 28.6668 25.6667 28.6668H28.3333C29.25 28.6668 30 27.9168 30 27.0002V2.00016C30 1.0835 29.25 0.333496 28.3333 0.333496Z"
-                fill="#F37221"
-              />
-            </svg>
-            <div class="item__content">
-              <app-text
-                :size="isMobile ? 18 : 24"
-                :line-height="isMobile ? 24 : 32"
-                class="mb-10"
-                weight="500"
-              >
-                Chorak reyting boyicha
-              </app-text>
-              <app-text
-                :size="isMobile ? 14 : 18"
-                :line-height="isMobile ? 20 : 24"
-                class=""
-                weight="400"
-              >
-                Har chorak reytingida eng yuqori natija korsatgan oquvchilar
-                uchun 50% chegirma
-              </app-text>
-            </div>
-          </div>
-        </div>
+
         <app-text
           :size="isMobile ? 22 : 44"
           :line-height="isMobile ? 30 : 52"
@@ -625,108 +577,7 @@
       </div>
     </div>
     <div
-      style="background-color: #130024"
-      :class="isMobileSmall ? 'py-30' : 'py-60'"
-    >
-      <!-- <div class="container">
-        <div class="section__top" :class="isMobileSmall ? 'mb-30' : 'mb-60'">
-          <app-text
-            :size="isMobile ? 24 : 32"
-            :line-height="isMobile ? 28 : 44"
-            weight="500"
-            class="color-violet"
-            data-aos="fade-up"
-          >
-            Mahorat darslari
-          </app-text>
-          <div class="section__top-details" data-aos="fade-up">
-            <app-text
-              :size="isMobile ? 16 : 24"
-              :line-height="isMobile ? 24 : 32"
-              weight="400"
-              max-width="600"
-              class="color-violet"
-            >
-              Maktabimizda tez-tez tajribali ustozlar ishtirokida bolalar uchun
-              ham mahorat darslari bo‘lib turadi.
-            </app-text>
-          </div>
-        </div>
-        <swiper class="swiper" :options="swiperOptions4">
-          <swiper-slide
-            v-for="(item, i) in 2"
-            :key="i"
-            class="d-flex flex-column"
-            data-aos="fade-up"
-            :data-aos-duration="(i + 1) * 500"
-          >
-            <div
-              :style="isMobileSmall ? 'height:auto' : 'height: 341px'"
-              :class="isMobile ? 'mb-10' : 'mb-20'"
-              style="max-width: 586px; width: 100%"
-              class="mx-auto"
-            >
-              <img
-                src="/images/girls.png"
-                class="mx-auto"
-                style="width: 100%; object-fit: cover; border-radius: 16px"
-                :style="isMobileSmall ? 'height:auto' : 'height: 100%;'"
-              />
-            </div>
-            <div
-              style="
-                max-width: 586px;
-                width: 100%;
-                height: 2.5px;
-                background-color: #c8a5f1;
-              "
-              :style="isMobile ? 'margin: 15px auto' : 'margin: 30px auto'"
-            ></div>
-            <div class="d-flex" :class="isMobile ? 'flex-column' : ''">
-              <svg
-                width="44"
-                height="44"
-                viewBox="0 0 44 44"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                :class="isMobile ? 'mb-10' : 'mr-30'"
-                style="flex: none"
-              >
-                <path
-                  d="M6.73063 5.19238C6.72944 5.19238 6.72811 5.19238 6.72692 5.19238C6.31077 5.19238 5.91937 5.35461 5.62381 5.64942C5.32499 5.9475 5.1604 6.34439 5.1604 6.76691V30.3766C5.1604 31.2424 5.86751 31.9485 6.73685 31.9507C10.4018 31.9594 16.5419 32.7233 20.7778 37.156V12.4478C20.7778 12.1543 20.7028 11.8786 20.5613 11.6505C17.0847 6.05164 10.4038 5.20098 6.73063 5.19238Z"
-                  fill="#C8A5F1"
-                />
-                <path
-                  d="M38.8396 30.3768V6.76691C38.8396 6.34439 38.6751 5.9475 38.3762 5.64942C38.0807 5.35461 37.689 5.19238 37.2733 5.19238C37.2719 5.19238 37.2706 5.19238 37.2694 5.19238C33.5964 5.20112 26.9155 6.05179 23.4387 11.6506C23.2972 11.8788 23.2224 12.1545 23.2224 12.448V37.156C27.4583 32.7233 33.5984 31.9594 37.2633 31.9507C38.1325 31.9485 38.8396 31.2424 38.8396 30.3768Z"
-                  fill="#C8A5F1"
-                />
-                <path
-                  d="M42.4257 10.6372H41.2841V30.3767C41.2841 32.5872 39.4831 34.3897 37.2691 34.3952C34.1605 34.4026 29.0349 35.0105 25.4048 38.4462C31.683 36.909 38.3014 37.9083 42.0733 38.7678C42.5443 38.8751 43.0309 38.7643 43.4083 38.4635C43.7843 38.1635 44 37.7151 44 37.2337V12.2114C44.0001 11.3434 43.2937 10.6372 42.4257 10.6372Z"
-                  fill="#C8A5F1"
-                />
-                <path
-                  d="M2.71586 30.3767V10.6372H1.57423C0.706373 10.6372 0 11.3434 0 12.2114V37.2333C0 37.7148 0.215704 38.1631 0.591706 38.4631C0.968744 38.7637 1.45497 38.8749 1.92667 38.7674C5.69854 37.9077 12.3171 36.9086 18.595 38.4457C14.9651 35.0102 9.83944 34.4025 6.73084 34.3951C4.51705 34.3897 2.71586 32.5872 2.71586 30.3767Z"
-                  fill="#C8A5F1"
-                />
-              </svg>
-              <app-text
-                :size="isMobile ? 16 : 18"
-                :line-height="isMobile ? 22 : 26"
-                weight="400"
-                max-width="470"
-                class="color-violet"
-              >
-                DTS va qo'shimcha to'garaklardan fizika, kimyo, matematika,
-                robototexnika kabi fanlarda amaliy va og'zaki mahorat darslari
-                bo'lib o'tadi.
-              </app-text>
-            </div>
-          </swiper-slide>
-        </swiper>
-      </div> -->
-    </div>
-    <div
-      style="background-color: #660448; border-radius: 0px 0px 16px 16px"
+      style="background-color: #660448"
       :class="isMobileSmall ? 'py-30' : isMobile ? 'py-60' : 'py-100'"
     >
       <div class="container">
@@ -914,7 +765,7 @@ export default {
 
 <style lang="scss" scoped>
 .about-us {
-  background-color: #1e1d1e;
+  background-color: #fff;
   .items {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

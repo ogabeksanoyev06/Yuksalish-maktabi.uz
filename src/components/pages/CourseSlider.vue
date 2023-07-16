@@ -157,7 +157,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 .course {
- background-image: linear-gradient(0.33028155376282897turn,rgba(253,125,125,1) 0%,rgba(255,201,72,1) 100%);
+  background-image: linear-gradient(
+    0.384511182turn,
+    rgb(43, 56, 94) 0%,
+    rgb(24, 31, 52) 98%
+  );
   background-repeat: no-repeat;
   background-size: cover;
   .items {

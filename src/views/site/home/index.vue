@@ -576,7 +576,50 @@ export default {
     CtaBanner,
   },
   data() {
-    return {};
+    return {
+      tanlovList: [
+        {
+          id: 0,
+          title: "",
+        },
+        {
+          id: 1,
+          title: "",
+        },
+        {
+          id: 2,
+          title: "",
+        },
+        {
+          id: 3,
+          title: "",
+        },
+        {
+          id: 4,
+          title: "",
+        },
+        {
+          id: 5,
+          title: "",
+        },
+        {
+          id: 6,
+          title: "",
+        },
+        {
+          id: 7,
+          title: "",
+        },
+        {
+          id: 8,
+          title: "",
+        },
+        {
+          id: 9,
+          title: "",
+        },
+      ],
+    };
   },
   methods: {},
 };
@@ -610,9 +653,9 @@ export default {
 }
 .bg {
   background-image: linear-gradient(
-    0.33028155376282897turn,
-    rgba(253, 125, 125, 1) 0%,
-    rgba(255, 201, 72, 1) 100%
+    0.384511182turn,
+    rgb(43, 56, 94) 0%,
+    rgb(24, 31, 52) 98%
   );
   background-repeat: no-repeat;
   background-size: cover;

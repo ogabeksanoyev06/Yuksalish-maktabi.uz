@@ -1,5 +1,46 @@
 <template>
-  <div class="navigation-drawer"></div>
+  <div class="navigation-drawer">
+    <div class="mobile-logo">
+      <img src="/images/logo.png" alt="" class="w-100" />
+    </div>
+    <ul class="mobile-menu-wrap" v-on-click-outside:excludedClass="hideMenus">
+      <li
+        v-for="(item, index) in menu"
+        :key="index"
+        @click="clickMenu(item.link)"
+        class="mobile-menu__item"
+      >
+        <span class="mobile-menu__link">
+          {{ item.title }}
+        </span>
+      </li>
+    </ul>
+    <div class="footer__socials-wrap">
+      <a
+        href="https://www.facebook.com/yuksalishmaktablari"
+        target="_blank"
+        class="footer__socials-item"
+      >
+        <img src="/icons/facebook.svg" alt="" />
+      </a>
+
+      <a
+        href="https://www.instagram.com/yuksalish_maktablari/"
+        class="footer__socials-item"
+        target="_blank"
+      >
+        <img src="/icons/instagram.svg" alt="" />
+      </a>
+
+      <a
+        href="https://t.me/yuksalish_maktablari"
+        class="footer__socials-item"
+        target="_blank"
+      >
+        <img src="/icons/telegram.svg" alt="" />
+      </a>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -15,23 +56,43 @@ export default {
       menu: [
         {
           id: 1,
-          title: "Yo'nalishlar",
-          link: "/categories",
+          title: "Bosh sahifa",
+          link: "/",
         },
         {
           id: 2,
-          title: "Fanlar",
-          link: "/subjects",
+          title: "Maktab haqida",
+          link: "/about-us",
         },
         {
           id: 3,
-          title: "Konkurs natijalari",
-          link: "/top-50",
+          title: "O'quv dasturi",
+          link: "/study-program",
         },
         {
           id: 4,
-          title: "Testlar",
-          link: "/choose-test",
+          title: "O'qituvchilar",
+          link: "/teachers",
+        },
+        {
+          id: 5,
+          title: "Media",
+          link: "/media",
+        },
+        {
+          id: 6,
+          title: "Yangiliklar",
+          link: "/news",
+        },
+        {
+          id: 7,
+          title: "Qabul",
+          link: "/acceptance",
+        },
+        {
+          id: 8,
+          title: "Aloqa",
+          link: "/contact",
         },
       ],
       search: "",
@@ -42,62 +103,16 @@ export default {
   },
   methods: {
     ...mapActions([]),
-    clickMenu() {
+    clickMenu(link) {
       this.$emit("closeNavigationDrawer");
+      this.$router.push({ path: link });
     },
+
     hideMenus() {
       this.activeId = false;
     },
-    prepareSkillCourseTree(data, menu) {
-      data.forEach((d) => {
-        let parentMenuModel = {
-          id: d.id,
-          title: d.name,
-          link: "",
-          children: [],
-        };
-        let childrenMenus = [];
-        if (d.courseList) {
-          d.courseList.forEach((children) => {
-            let childrenMenuModel = {
-              id: children.id,
-              title: children.name,
-              link: "",
-            };
-            childrenMenus.push(childrenMenuModel);
-          });
-          parentMenuModel.children = childrenMenus;
-        }
-        menu.push(parentMenuModel);
-      });
-    },
   },
-  async mounted() {
-    if (this.userIsLoggedOn) {
-      await this.getUser();
-    }
-    await this.getSkillTree();
-    await this.getSubjectTree();
-    this.menu[0].children = [];
-    this.prepareSkillCourseTree(this.skillTree, this.menu[0].children);
-    this.menu[1].children = [];
-    this.prepareSkillCourseTree(this.subjectTree, this.menu[1].children);
-  },
-  watch: {
-    skillTree() {
-      this.menu[0].children = [];
-      this.prepareSkillCourseTree(this.skillTree, this.menu[0].children);
-    },
-    subjectTree() {
-      this.menu[1].children = [];
-      this.prepareSkillCourseTree(this.subjectTree, this.menu[1].children);
-    },
-    async isLoggedOn() {
-      if (this.userIsLoggedOn) {
-        await this.getUser();
-      }
-    },
-  },
+  mounted() {},
 };
 </script>
 
@@ -111,35 +126,63 @@ export default {
   max-width: 600px;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(279.37deg, #008ae4 0%, #a6dcff 158.68%);
-  z-index: 100;
+  background: rgb(8, 15, 70);
+  z-index: 50;
   overflow-y: auto;
-  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
 
   &__close {
     background-color: #00d06c;
   }
+}
+.mobile-logo {
+}
+.mobile-menu {
+  &-wrap {
+    width: 100%;
+    flex: 1;
+  }
+  &__item {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: rgba(49, 101, 203, 0.1);
+    cursor: pointer;
+  }
 
-  .header__search {
-    margin-right: 0;
+  &__link {
+    font-size: 16px;
+    font-family: "Gilroy", sans-serif;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    transition: 0.3s;
+    color: #fff;
 
-    .input__holder {
-      max-width: 100%;
+    &:hover {
+      // color: $color-main;
     }
   }
 }
 
-.mobile-menu {
+.mobile-submenu {
+  padding: 0 0 10px;
+
+  &__item {
+  }
+
   &__link {
-    background-color: white;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    font-size: 16px;
-    font-family: "Inter", sans-serif;
+    font-size: 14px;
     font-weight: 700;
     display: flex;
     width: 100%;
-    padding: 10px;
+    padding: 10px 20px;
     transition: 0.3s;
 
     &:hover {
@@ -150,7 +193,7 @@ export default {
 
 @media (max-width: 768px) {
   .navigation-drawer {
-    max-width: 100% !important;
+    max-width: 85% !important;
   }
 }
 </style>
