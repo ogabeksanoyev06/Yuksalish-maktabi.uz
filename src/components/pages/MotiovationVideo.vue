@@ -2,7 +2,7 @@
   <section class="section py-60">
     <div class="container">
       <div class="slider" style="position: relative">
-        <div class="navigation" v-if="!isDesktopSmall">
+        <!-- <div class="navigation" v-if="!isDesktopSmall">
           <div class="slider-button swiper-button-prev prev">
             <svg
               width="32"
@@ -55,8 +55,8 @@
               />
             </svg>
           </div>
-        </div>
-        <swiper class="swiper items" :options="swiperOptions">
+        </div> -->
+        <!-- <swiper class="swiper items" :options="swiperOptions">
           <swiper-slide class="item" v-for="(item, i) in 10" :key="i">
             <app-text
               :size="isMobileSmall ? '20' : '32'"
@@ -84,7 +84,7 @@
               Anvar Berdiyev
             </app-text>
           </swiper-slide>
-        </swiper>
+        </swiper> -->
       </div>
       <div class="animation-video">
         <div class="animation-video__item" data-aos="fade-up">
@@ -98,21 +98,6 @@
           >
             <source src="@/assets/header.mp4" type="video/mp4" />
           </video>
-          <app-text
-            :size="isMobileSmall ? '16' : '20'"
-            :line-height="isMobileSmall ? '20' : '28'"
-            weight="500"
-            class="mb-5"
-          >
-            Abdulaziz Abdukarimov
-          </app-text>
-          <app-text
-            :size="isMobileSmall ? '14' : '16'"
-            :line-height="isMobileSmall ? '18' : '24'"
-            weight="400"
-          >
-            Matkabimizning binosining tashqi korinishi
-          </app-text>
         </div>
         <div
           class="animation-video__item"
@@ -122,7 +107,6 @@
           <video
             loop
             muted
-            
             @mouseover="playVideo(1)"
             @mouseleave="stopVideo(1)"
             ref="video2"
@@ -130,21 +114,6 @@
           >
             <source src="@/assets/header.mp4" type="video/mp4" />
           </video>
-          <app-text
-            :size="isMobileSmall ? '16' : '20'"
-            :line-height="isMobileSmall ? '20' : '28'"
-            weight="500"
-            class="mb-5"
-          >
-            Abdulaziz Abdukarimov
-          </app-text>
-          <app-text
-            :size="isMobileSmall ? '14' : '16'"
-            :line-height="isMobileSmall ? '18' : '24'"
-            weight="400"
-          >
-            Matkabimizning binosining tashqi korinishi
-          </app-text>
         </div>
         <div
           class="animation-video__item"
@@ -154,7 +123,6 @@
           <video
             loop
             muted
-            
             @mouseover="playVideo(2)"
             @mouseleave="stopVideo(2)"
             ref="video3"
@@ -162,7 +130,7 @@
           >
             <source src="@/assets/header.mp4" type="video/mp4" />
           </video>
-          <app-text
+          <!-- <app-text
             :size="isMobileSmall ? '16' : '20'"
             :line-height="isMobileSmall ? '20' : '28'"
             weight="500"
@@ -176,17 +144,17 @@
             weight="400"
           >
             Matkabimizning binosining tashqi korinishi
-          </app-text>
+          </app-text> -->
         </div>
       </div>
     </div>
   </section>
 </template>
 <script>
-import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+// import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 export default {
   name: "MotivationVdeo",
-  components: { Swiper, SwiperSlide },
+  components: {},
   data() {
     return {
       swiperOptions: {

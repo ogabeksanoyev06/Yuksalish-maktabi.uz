@@ -182,7 +182,7 @@
             >
               Bizning tanlovlar
             </app-text>
-            <div class="d-flex align-center">
+            <!-- <div class="d-flex align-center">
               <img
                 src="/images/fanlar-min.webp"
                 alt=""
@@ -200,7 +200,7 @@
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
               </app-text>
-            </div>
+            </div> -->
           </div>
           <div
             class="d-flex pa-20 mb-20"
@@ -227,7 +227,7 @@
         </div>
         <div class="d-flex flex-wrap">
           <div
-            v-for="(item, i) in 10"
+            v-for="(item, i) in tanlovList"
             :key="i"
             class="selection__item"
             data-aos="fade-up"
@@ -240,7 +240,7 @@
               class=""
               data-aos="fade-up"
             >
-              Lorem ipsum dolor sit amet.
+              {{ item.title }}
             </app-text>
             <div class="num">{{ i + 1 }}</div>
           </div>
@@ -258,7 +258,7 @@
             weight="500"
             data-aos="fade-up"
           >
-            Chegirma va <br />
+            Afzalliklar va <br />
             imkoniyatlar
           </app-text>
           <div class="section__top-details" data-aos="fade-up">
@@ -269,8 +269,7 @@
               weight="400"
               max-width="500"
             >
-              Bizning chegirma va imtiyozlarimiz yoshlarga motivatsiya bo'la
-              oladi.
+              Bizning imtiyozlarimiz yoshlarga motivatsiya bo'la oladi.
             </app-text>
           </div>
         </div>
@@ -368,7 +367,7 @@
                 weight="700"
                 class="color-white"
               >
-                Maktabgacha ta'lim
+                Test - (matematika ,ingliz tili)
               </app-text>
             </div>
             <div class="item" data-aos="fade-up" data-aos-duration="200">
@@ -381,7 +380,7 @@
                 weight="700"
                 class="color-white"
               >
-                Birinchi sinf qabuli
+                Psixologik suhbat
               </app-text>
             </div>
             <div class="item" data-aos="fade-up" data-aos-duration="300">
@@ -394,33 +393,7 @@
                 weight="700"
                 class="color-white"
               >
-                Yuqori sinflar qabuli
-              </app-text>
-            </div>
-            <div class="item" data-aos="fade-up" data-aos-duration="400">
-              <app-text :size="20" :line-height="30" class="color-white">
-                04
-              </app-text>
-              <app-text
-                :size="16"
-                :line-height="22"
-                weight="700"
-                class="color-white"
-              >
-                Matematika
-              </app-text>
-            </div>
-            <div class="item" data-aos="fade-up" data-aos-duration="500">
-              <app-text :size="20" :line-height="30" class="color-white">
-                05
-              </app-text>
-              <app-text
-                :size="16"
-                :line-height="22"
-                weight="700"
-                class="color-white"
-              >
-                Ingliz tili
+                Shartnoma imzolash
               </app-text>
             </div>
           </div>
@@ -580,43 +553,43 @@ export default {
       tanlovList: [
         {
           id: 0,
-          title: "",
+          title: "Eng yaxshi sinf",
         },
         {
           id: 1,
-          title: "",
+          title: "Eng a'lochi o'quvchi",
         },
         {
           id: 2,
-          title: "",
+          title: "Kitobxonlik",
         },
         {
           id: 3,
-          title: "",
+          title: "Robototexnika",
         },
         {
           id: 4,
-          title: "",
+          title: "Zakovat",
         },
         {
           id: 5,
-          title: "",
+          title: "Futbol",
         },
         {
           id: 6,
-          title: "",
+          title: "Shahmat",
         },
         {
           id: 7,
-          title: "",
+          title: "Kamonbozlik",
         },
         {
           id: 8,
-          title: "",
+          title: "Pazanda qizlar",
         },
         {
           id: 9,
-          title: "",
+          title: "Yuksalish ixtirolari",
         },
       ],
     };
@@ -672,11 +645,8 @@ video[poster] {
   height: auto;
 }
 .selection {
-  background-image: linear-gradient(
-    0.38451118195724093turn,
-    rgba(43, 56, 94, 1) 0%,
-    rgba(24, 31, 52, 1) 98%
-  );
+  background-color: rgb(43, 56, 94);
+
   color: #fff;
   border-radius: 0px 0px 16px 16px;
   &__item {
@@ -708,7 +678,7 @@ video[poster] {
 .receptions {
   .items {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
     .item {
       border-radius: 5px;
@@ -719,7 +689,8 @@ video[poster] {
       );
       border-color: transparent;
       border-style: solid;
-      width: 180px;
+      max-width: 250px;
+      width: 100%;
       height: 115px;
       padding: 15px;
       display: flex;

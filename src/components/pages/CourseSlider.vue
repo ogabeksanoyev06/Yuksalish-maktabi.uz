@@ -157,13 +157,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .course {
-  background-image: linear-gradient(
-    0.384511182turn,
-    rgb(43, 56, 94) 0%,
-    rgb(24, 31, 52) 98%
-  );
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: rgb(43, 56, 94);
+
   .items {
     .item {
       position: relative;

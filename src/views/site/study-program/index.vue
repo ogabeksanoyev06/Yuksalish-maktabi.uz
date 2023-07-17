@@ -46,14 +46,13 @@
       </div>
     </div>
     <course-slider :color="true" />
-    <div class="py-60" style="background-color: #130024">
+    <div class="py-60" style="background-color: #f5f5f5">
       <div class="container">
         <div class="section__top" :class="isMobile ? 'mb-30' : 'mb-60'">
           <app-text
             :size="isMobile ? 24 : 30"
             :line-height="isMobile ? 28 : 36"
             weight="500"
-            class="color-violet"
             data-aos="fade-up"
           >
             Kun tartibimiz
@@ -64,7 +63,6 @@
               :line-height="isMobile ? 24 : 26"
               weight="400"
               max-width="500"
-              class="color-violet"
             >
               Oquvchularimizning kun davomida qilingan vazifalari va
               mashgulotlar haqida malumot
@@ -204,7 +202,7 @@
         </div>
       </div>
     </div>
-    <div class="py-60" style="background-color: #1e1d1e">
+    <div class="py-60" style="background-color: #060032">
       <div class="container">
         <div
           class="d-flex justify-space-between"
@@ -482,7 +480,7 @@ export default {
     position: absolute;
     z-index: 1;
     border: 1px solid #111011;
-    background: #111011;
+    background: #060032;
     transition: all 0.3s ease-in-out;
     width: 50px;
     height: 50px;

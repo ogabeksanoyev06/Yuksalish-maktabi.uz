@@ -114,7 +114,7 @@
         </div>
       </div>
     </div>
-    <div
+    <!-- <div
       style="background-color: #660448"
       :class="isMobileSmall ? 'py-30' : isMobile ? 'py-60' : 'py-100'"
     >
@@ -182,7 +182,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="py-60">
       <div class="container">
         <app-text

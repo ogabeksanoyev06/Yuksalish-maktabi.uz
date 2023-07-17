@@ -88,7 +88,7 @@
                 data-aos="fade-right"
                 data-aos-duration="600"
               >
-                Imtihon.
+                Test.
               </app-text>
               <app-text
                 :size="isMobile ? 24 : 41"
@@ -98,7 +98,7 @@
                 data-aos="fade-right"
                 data-aos-duration="700"
               >
-                Suhbat.
+                Psixologik suhbat.
               </app-text>
               <app-text
                 :size="isMobile ? 24 : 41"
@@ -109,7 +109,7 @@
                 data-aos="fade-right"
                 data-aos-duration="750"
               >
-                Test.
+                Shartnoma imzolash.
               </app-text>
               <app-text
                 :size="isMobile ? 16 : 20"
@@ -124,7 +124,7 @@
                 Maktabizdagi imtihonlar bolalarning yoshiga qarab bolinggan
                 bolib, unda suhbat va test orqali bolalar sinaladi
               </app-text>
-              <app-text
+              <!-- <app-text
                 :size="isMobile ? 16 : 22"
                 :line-height="isMobile ? 22 : 26"
                 weight="500"
@@ -134,7 +134,7 @@
                 :max-width="isMobileSmall ? '' : '154'"
               >
                 Qabulimiz 3 xil turga bolinadi
-              </app-text>
+              </app-text> -->
             </div>
             <div
               style="max-width: 800px; width: 100%"
@@ -900,7 +900,7 @@
         </swiper>
       </div>
     </div>
-    <div
+    <!-- <div
       style="background-color: #660448"
       :class="isMobileSmall ? 'py-30' : isMobile ? 'py-60' : 'py-100'"
     >
@@ -968,7 +968,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <app-modal v-if="onlineReception" @close="closeModal" />
   </section>
 </template>

@@ -14,7 +14,7 @@
           data-aos="fade-up"
           data-aos-duration="500"
         >
-          O‘zbekistondagi sifatli hususiy maktab
+          O‘zbekistondagi sifatli xususiy maktab
         </app-text>
         <app-text
           :size="isMobile ? 16 : 20"
@@ -25,7 +25,7 @@
           data-aos="fade-up"
           data-aos-duration="700"
         >
-          Maktabimiz haqida barcha ma’lumotlar, maktabga ekskursiyalar vva
+          Maktabimiz haqida barcha ma’lumotlar, maktabga ekskursiyalar va
           boshqalar bilan tanishing
         </app-text>
         <div data-aos="fade-up" data-aos-duration="900">
@@ -332,7 +332,7 @@
       </div>
     </div>
     <div
-      style="background-color: #1e1d1e; border-radius: 0px 0px 16px 16px"
+      style="background-color: #f5f5f5; border-radius: 0px 0px 16px 16px"
       :class="isMobileSmall ? 'py-30' : 'py-60'"
     >
       <div class="container">
@@ -340,18 +340,18 @@
           <app-text
             :size="isMobile ? 24 : 30"
             :line-height="isMobile ? 28 : 36"
-            class="color-white"
+            class=""
             weight="500"
             data-aos="fade-up"
           >
-            Soglom ovqatlanish <br />
+            Sog'lom ovqatlanish <br />
             ilmga quvvatdir
           </app-text>
           <div class="section__top-details" data-aos="fade-up">
             <app-text
               :size="isMobile ? 16 : 18"
               :line-height="isMobile ? 24 : 26"
-              class="color-white"
+              class=""
               weight="400"
               max-width="500"
             >
