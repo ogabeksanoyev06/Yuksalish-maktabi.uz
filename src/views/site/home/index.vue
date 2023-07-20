@@ -234,15 +234,13 @@
             :data-aos-duration="(i + 1) * 100"
           >
             <app-text
-              :size="isMobile ? 16 : 20"
-              :line-height="isMobile ? 24 : 28"
+              :size="isMobile ? 20 : 32"
+              :line-height="isMobile ? 26 : 40"
               weight="400"
-              class=""
-              data-aos="fade-up"
             >
               {{ item.title }}
             </app-text>
-            <div class="num">{{ i + 1 }}</div>
+            <!-- <div class="num">{{ i + 1 }}</div> -->
           </div>
         </div>
       </div>
@@ -326,7 +324,6 @@
         </div>
       </div>
     </div>
-    <!--  -->
     <div :class="isMobileSmall ? 'py-30' : 'py-60'" class="receptions">
       <div class="container">
         <div
@@ -400,151 +397,18 @@
         </div>
       </div>
     </div>
-    <div class="py-60">
-      <div class="container">
-        <div class="section__top mb-30">
-          <app-text
-            :size="isMobile ? 24 : 30"
-            :line-height="isMobile ? 28 : 36"
-            weight="500"
-            data-aos="fade-up"
-          >
-            Maktabimizdan <br />
-            fotogalereya
-          </app-text>
-          <div class="section__top-details" data-aos="fade-up">
-            <app-text
-              :size="isMobile ? 16 : 18"
-              :line-height="isMobile ? 24 : 26"
-              class="mb-20"
-              weight="400"
-              max-width="500"
-            >
-              Maktablarimiz bino, xona, bolalar o‘quv jarayonidan, turli xil
-              sport musobaqalardan olingan rasmlar.
-            </app-text>
-            <router-link class="section__top-link" to="/about-us">
-              <AppButton
-                theme="main"
-                :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
-                sides="20"
-                class="mb-10"
-                :height="isMobileSmall ? '40' : '50'"
-              >
-                <span class="mr-10">MAKTAB HAQIDA BATAFSIL</span>
-              </AppButton>
-            </router-link>
-          </div>
-        </div>
-      </div>
-      <custom-slider :topLink="true" :bgGreen="false" />
-    </div>
-    <!--  -->
-    <div class="bg" :class="isMobileSmall ? 'py-30' : 'py-60'">
-      <div class="container">
-        <div class="section__top mb-30">
-          <app-text
-            :size="isMobile ? 24 : 30"
-            :line-height="isMobile ? 28 : 36"
-            class="color-white"
-            weight="500"
-            data-aos="fade-up"
-          >
-            Maktabga ekskursiya
-          </app-text>
-          <div class="section__top-details" data-aos="fade-up">
-            <app-text
-              :size="isMobile ? 16 : 18"
-              :line-height="isMobile ? 24 : 26"
-              class="mb-20 color-white"
-              weight="400"
-              max-width="500"
-            >
-              Yuksalish maktablariga tashrif buyuring. Maktab faoliyati va o'quv
-              sharoiti bilan yaqindan tanishing.
-            </app-text>
-          </div>
-        </div>
-      </div>
-      <youtube-link-banner
-        :topLink="true"
-        :bgGreen="true"
-        :link="'https://youtu.be/rtWW7nRu4II'"
-      />
-    </div>
-    <!--  -->
-    <motiovation-video />
-    <!-- <div
-      style="background-color: #fff; border-radius: 0px 0px 16px 16px"
-      class="mb-30"
-    >
-      <div class="container">
-        <div
-          style="
-            background: linear-gradient(180deg, #2667ff 0%, #7497ff 100%);
-            border-radius: 24px;
-            padding-left: 10px;
-            padding-right: 10px;
-          "
-          :class="isMobile ? 'py-30' : 'py-60'"
-        >
-          <div class="d-flex flex-column justify-content-center align-center">
-            <app-text
-              :size="isMobile ? 20 : 30"
-              :line-height="isMobile ? 26 : 36"
-              class="color-white text-center mb-20"
-              weight="500"
-              data-aos="fade-up"
-              data-aos-duration="500"
-            >
-              Savollarinigiz bormi?
-            </app-text>
-            <app-text
-              :size="isMobile ? 16 : 24"
-              :line-height="isMobile ? 22 : 32"
-              class="color-white text-center"
-              weight="400"
-              maxWidth="700"
-              :class="isMobile ? 'mb-20' : 'mb-40'"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-            >
-              Ozingizni qiziqtirgan savollar bolsa quydagi formani toldiring va
-              operatorlarimiz siz bilan tezda aloqaga chiqishadi
-            </app-text>
-            <div data-aos="fade-up" data-aos-duration="1000">
-              <AppButton
-                theme="white"
-                :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
-                sides="20"
-                :height="isMobileSmall ? '40' : '50'"
-              >
-                ALOQAGA CHIQISH
-              </AppButton>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
   </section>
 </template>
 
 <script>
 import HeroBanner from "@/components/pages/HeroBanner.vue";
-import AppButton from "@/components/shared-components/AppButton.vue";
-import CustomSlider from "@/components/pages/CustomSlider.vue";
-import MotiovationVideo from "@/components/pages/MotiovationVideo.vue";
-import YoutubeLinkBanner from "@/components/pages/YoutubeLinkBanner.vue";
 import CourseSlider from "@/components/pages/CourseSlider.vue";
 import CtaBanner from "@/components/pages/CtaBanner.vue";
 export default {
   name: "AppHome",
   components: {
     HeroBanner,
-    AppButton,
-    CustomSlider,
-    MotiovationVideo,
-    YoutubeLinkBanner,
+
     CourseSlider,
     CtaBanner,
   },
@@ -594,7 +458,28 @@ export default {
       ],
     };
   },
-  methods: {},
+  methods: {
+    getPerson() {
+      try {
+        this.$api
+          .get("news/")
+          .then((data) => {
+            if (data) {
+              console.log(data);
+            }
+          })
+          .catch((error) => {
+            console.log("Error on getting SkillCourseTree" + ": " + error);
+          })
+          .finally(() => {});
+      } catch (e) {
+        console.log(e);
+      }
+    },
+  },
+  mounted() {
+    this.getPerson();
+  },
 };
 </script>
 <style lang="scss" scoped>

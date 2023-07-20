@@ -2,14 +2,14 @@ import axios from "axios";
 import TokenService from "./TokenService";
 
 window.axios = axios;
-export let baseURL = "http://ocelot.cpru.uz/";
+export let baseURL = "http://api.yuksalishmaktabi.uz/api/";
 
 export default {
   install: function (Vue) {
     axios.defaults.baseURL = baseURL;
     Vue.prototype.$api = {
       send(requestType, apiRoute, params = {}, data = null) {
-        this.setToken();
+        // this.setToken();
         return new Promise((resolve, reject) => {
           axios[requestType](baseURL + apiRoute, params ? params : [], data)
             .then((res) => {

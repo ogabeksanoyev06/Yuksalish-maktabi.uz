@@ -15,7 +15,7 @@
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            Qabul haqida malumotlarimiz
+            Qabul haqida ma'lumotlarimiz
           </app-text>
           <app-text
             :size="isMobile ? 16 : 20"
@@ -45,7 +45,12 @@
           </div>
         </div>
 
-        <youtube-link-banner :topLink="false" :bgGreen="false" />
+        <div class="container">
+          <img
+            src="/images/people.jpg"
+            style="width: 100%; height: auto; object-fit: cover"
+          />
+        </div>
       </div>
       <div class="py-60">
         <div class="container">
@@ -69,17 +74,6 @@
               :style="isMobile ? 'margin-bottom:30px' : 'width:400px'"
               class="mr-20"
             >
-              <app-text
-                :size="isMobile ? 24 : 41"
-                :line-height="isMobile ? 32 : 50"
-                weight="500"
-                class="color-gradient mb-15"
-                :class="isMobileSmall ? 'mx-auto' : ''"
-                data-aos="fade-right"
-                data-aos-duration="500"
-              >
-                Rezin Art
-              </app-text>
               <app-text
                 :size="isMobile ? 24 : 41"
                 :line-height="isMobile ? 32 : 50"
@@ -191,7 +185,7 @@
                 weight="500"
                 class="color-gradient mb-15"
               >
-                Maktabgacha talim
+                Maktabgacha ta'lim
               </app-text>
               <app-text
                 :size="isMobile ? 16 : 20"
@@ -199,8 +193,8 @@
                 weight="400"
                 class="color-white"
               >
-                Har chorak reytingida eng yuqori natija korsatgan oquvchilar
-                uchun 50% chegirma
+                Maktabgacha tayyorgarlik tizimini ham yo'lga qo'ygan holda biz
+                bolalarning maktabga tayyorgarligini olib boramiz.
               </app-text>
             </div>
             <div style="max-width: 384px; width: 100%" class="pa-20">
@@ -253,8 +247,8 @@
                 weight="400"
                 class="color-white"
               >
-                Har chorak reytingida eng yuqori natija korsatgan oquvchilar
-                uchun 50% chegirma
+                Birinchi sinfga suhbat asosida qabul qilinadi, malakali ustozlar
+                tamonidan.
               </app-text>
             </div>
             <div style="max-width: 384px; width: 100%" class="pa-20">
@@ -342,8 +336,8 @@
                 weight="400"
                 class="color-white"
               >
-                Har chorak reytingida eng yuqori natija korsatgan oquvchilar
-                uchun 50% chegirma
+                Biz bunda bolalarni bilim darajasiga qarab test 30 ta beramiz va
+                qisqa suhbat asosida qabul qilib olamiz
               </app-text>
             </div>
           </div>
@@ -364,7 +358,8 @@
               class=""
               data-aos="fade-up"
             >
-              Dasturlash darslari
+              Yuqori sinflarni <br />
+              imtihoni haqida ma'lumot
             </app-text>
             <div class="section__top-details" data-aos="fade-up">
               <app-text
@@ -374,8 +369,8 @@
                 max-width="500"
                 class="mb-20"
               >
-                Robotexnika togaragi darslari mobaynida dasturlash tillari
-                oqitladi
+                2 sinfdan yuqori bo'lgan bolalarni qabul qilish tartibi haqida
+                ma'lumot.
               </app-text>
             </div>
           </div>
@@ -390,7 +385,7 @@
               "
               :style="isMobile ? 'min-height:auto' : 'min-height:276px'"
               class="d-flex flex-column justify-space-between"
-              v-for="(item, i) in 3"
+              v-for="(item, i) in list"
               :key="i"
               data-aos="fade-up"
               :data-aos-duration="(i + 1) * 500"
@@ -427,15 +422,14 @@
                   weight="500"
                   class="mb-10"
                 >
-                  Matematika
+                  {{ item.title }}
                 </app-text>
                 <app-text
                   :size="isMobile ? 16 : 20"
                   :line-height="isMobile ? 22 : 28"
                   weight="400"
                 >
-                  Har chorak reytingida eng yuqori natija korsatgan oquvchilar
-                  uchun 50% chegirma
+                  {{ item.text }}
                 </app-text>
               </div>
             </div>
@@ -850,7 +844,7 @@
           data-aos="fade-right"
           max-width="474"
         >
-          Maktab va oqitish tizimi haqida ota- onalarning fikrlari
+          Maktab va o'qitish tizimi haqida ota - onalarning fikrlari
         </app-text>
 
         <swiper class="swiper" :options="swiperOptions2">
@@ -974,13 +968,12 @@
 </template>
 <script>
 import AppButton from "@/components/shared-components/AppButton.vue";
-import YoutubeLinkBanner from "@/components/pages/YoutubeLinkBanner.vue";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
 import AppModal from "@/components/shared-components/AppModal.vue";
 export default {
   name: "AppAcceptance",
-  components: { AppButton, YoutubeLinkBanner, Swiper, SwiperSlide, AppModal },
+  components: { AppButton, Swiper, SwiperSlide, AppModal },
   data() {
     return {
       swiperOptions: {
@@ -1024,6 +1017,23 @@ export default {
         },
       },
       onlineReception: false,
+      list: [
+        {
+          id: 0,
+          title: "Matematika",
+          text: "Bolalarga o'z yoshiga mos bo'lgan matematikadan bilimni sinash uchun test beriladi.",
+        },
+        {
+          id: 1,
+          title: "Ingliz tili",
+          text: "Bolalar ingliz tili darajasini sinfga qarab tuzilgan test orqali sinab olinadi.",
+        },
+        {
+          id: 2,
+          title: "IQ",
+          text: "Bolalarni keng fikrlashini sinash uchun biz har biriga o'ziga mos IQ testlarni beramiz.",
+        },
+      ],
     };
   },
   methods: {

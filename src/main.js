@@ -7,6 +7,7 @@ import "./assets/styles/main.scss";
 import "./plugins/media/media-mixin";
 import "./plugins/directives/click-outside";
 import "./plugins/mixins/mixin";
+import api from "./service/apiService";
 import VueMask from "v-mask";
 import VueAwesomeSwiper from "vue-awesome-swiper";
 import { CursorFx } from "@luxdamore/vue-cursor-fx";
@@ -23,6 +24,7 @@ Vue.component(CursorFx.name, CursorFx);
 Vue.use(CoolLightBox);
 Vue.use(ElementUI);
 Vue.use(VueMask);
+Vue.use(api);
 
 new Vue({
   router,

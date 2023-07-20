@@ -58,7 +58,8 @@
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           class="mb-30"
-        ></iframe>
+        >
+        </iframe>
         <div class="location">
           <div
             style="background-color: #ececec; border-radius: 16px"
@@ -90,7 +91,7 @@
               class="mb-15 d-flex align-center"
             >
               <img src="/svg/chart.svg" alt="" class="mr-10" />
-              +998 95 334 14 42
+              +998 95 101 06 00
             </app-text>
             <app-text
               :size="16"
@@ -99,7 +100,7 @@
               class="mb-15 d-flex align-center"
             >
               <img src="/svg/chart.svg" alt="" class="mr-10" />
-              yuksalish.t@gmail.com
+              @yuksalish_maktabi_admin
             </app-text>
             <app-text
               :size="16"
