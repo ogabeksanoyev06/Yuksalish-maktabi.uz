@@ -35,12 +35,15 @@
           </div>
         </div>
         <swiper class="swiper items" ref="mySwiper" :options="swiperOptions">
-          <swiper-slide v-for="(item, index) in 10" :key="index">
+          <swiper-slide v-for="(item, index) in science" :key="index">
             <div class="item">
               <div class="item__photo">
-                <img src="/images/girls.png" alt="" />
+                <img
+                  :src="'http://api.yuksalishmaktabi.uz' + item.img"
+                  alt=""
+                />
               </div>
-              <p class="item__title">IXTISOSLASHGAN FANLAR</p>
+              <p class="item__title">{{ item.info }}</p>
               <div class="item__info">
                 <app-text
                   :size="isMobile ? '16' : '20'"
@@ -48,9 +51,9 @@
                   weight="400"
                   class="color-white mb-10"
                 >
-                  Robototexnika darslari
+                  {{ item.name }} darslari
                 </app-text>
-                <app-text
+                <!-- <app-text
                   :size="16"
                   :line-height="24"
                   weight="400"
@@ -104,7 +107,7 @@
                     </defs>
                   </svg>
                   <span>Start • 3 sinifdan</span>
-                </app-text>
+                </app-text> -->
               </div>
             </div>
           </swiper-slide>
@@ -148,10 +151,33 @@ export default {
         },
         spaceBetween: 24,
       },
+      science: [],
     };
   },
   props: {
     color: Boolean,
+  },
+  methods: {
+    getScience() {
+      this.$api
+        .get(`science/`)
+        .then((data) => {
+          if (!data.error) {
+            this.science = data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          this.loading = false;
+        })
+        .finally(() => {
+          console.log("im finally");
+          this.loading = false;
+        });
+    },
+  },
+  mounted() {
+    this.getScience();
   },
 };
 </script>

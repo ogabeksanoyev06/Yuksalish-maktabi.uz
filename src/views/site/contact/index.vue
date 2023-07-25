@@ -64,7 +64,7 @@
           <div
             style="background-color: #ececec; border-radius: 16px"
             class="pa-20"
-            v-for="(item, i) in 3"
+            v-for="(item, i) in maps"
             :key="i"
           >
             <app-text
@@ -73,7 +73,7 @@
               weight="600"
               class="mb-20"
             >
-              Toshkent
+              {{ item.name }}
             </app-text>
             <app-text
               :size="16"
@@ -81,8 +81,8 @@
               weight="400"
               class="mb-15 d-flex align-center"
             >
-              <img src="/svg/chart.svg" alt="" class="mr-10" />
-              Dush - Shan, 09:00 - 18:00
+              <img src="/icons/day.svg" alt="" class="mr-10" width="24px" />
+              {{ item.title }}
             </app-text>
             <app-text
               :size="16"
@@ -90,8 +90,8 @@
               weight="400"
               class="mb-15 d-flex align-center"
             >
-              <img src="/svg/chart.svg" alt="" class="mr-10" />
-              +998 95 101 06 00
+              <img src="/icons/tel.svg" alt="" class="mr-10" width="24px" />
+              {{ item.tel }}
             </app-text>
             <app-text
               :size="16"
@@ -99,8 +99,8 @@
               weight="400"
               class="mb-15 d-flex align-center"
             >
-              <img src="/svg/chart.svg" alt="" class="mr-10" />
-              @yuksalish_maktabi_admin
+              <img src="/icons/email.svg" alt="" class="mr-10" width="24" />
+              {{ item.email }}
             </app-text>
             <app-text
               :size="16"
@@ -108,82 +108,14 @@
               weight="400"
               class="d-flex align-center"
             >
-              <img src="/svg/chart.svg" alt="" class="mr-10" />
-              Toshkent, Ozbekiston
+              <img src="/icons/addres.svg" alt="" class="mr-10" width="24" />
+              {{ item.address }}
             </app-text>
           </div>
         </div>
       </div>
     </div>
-    <!-- <div
-      style="background-color: #660448"
-      :class="isMobileSmall ? 'py-30' : isMobile ? 'py-60' : 'py-100'"
-    >
-      <div class="container">
-        <div class="section__top">
-          <app-text
-            :size="isMobile ? 24 : 32"
-            :line-height="isMobile ? 28 : 44"
-            weight="500"
-            max-width="330"
-            class="color-red"
-            data-aos="fade-up"
-          >
-            Biz haqimizda ko‘proq ma’lumot
-          </app-text>
-          <div class="section__top-details" data-aos="fade-up">
-            <app-text
-              :size="isMobile ? 16 : 24"
-              :line-height="isMobile ? 24 : 32"
-              weight="400"
-              max-width="550"
-              class="color-red mb-20"
-            >
-              Maktab haqida barcha ma’lumotlarni pdf katalog orqali oling
-            </app-text>
-            <router-link class="section__top-link" to="/">
-              <AppButton
-                theme="red"
-                :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
-                sides="20"
-                :height="isMobileSmall ? '40' : '50'"
-              >
-                <span class="mr-10">PDF KATALOG</span>
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M16.44 8.8999C20.04 9.2099 21.51 11.0599 21.51 15.1099V15.2399C21.51 19.7099 19.72 21.4999 15.25 21.4999H8.73998C4.26998 21.4999 2.47998 19.7099 2.47998 15.2399V15.1099C2.47998 11.0899 3.92998 9.2399 7.46998 8.9099"
-                    stroke="#660448"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M12 2V14.88"
-                    stroke="#660448"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M15.3499 12.6499L11.9999 15.9999L8.6499 12.6499"
-                    stroke="#660448"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </AppButton>
-            </router-link>
-          </div>
-        </div>
-      </div>
-    </div> -->
+
     <div class="py-60">
       <div class="container">
         <app-text
@@ -198,7 +130,7 @@
         <accordion>
           <accordion-item
             class="m-20"
-            v-for="(sectionContent, sectionContentIndex) in list"
+            v-for="(sectionContent, sectionContentIndex) in faq"
             :key="sectionContentIndex"
           >
             <template slot="accordion-trigger">
@@ -217,11 +149,7 @@
               <img src="/icons/plus.svg" alt="" />
             </template>
             <template slot="accordion-content">
-              <div
-                style="padding: 15px 0"
-                v-for="(content, contentIndex) in sectionContent.contentList"
-                :key="contentIndex"
-              >
+              <div style="padding: 15px 0">
                 <div class="question__accordion-item">
                   <app-text
                     :size="isMobile ? 16 : 18"
@@ -230,7 +158,7 @@
                     max-width="760"
                     class="color-trans-04"
                   >
-                    {{ content.name }}
+                    {{ sectionContent.title }}
                   </app-text>
                 </div>
               </div>
@@ -281,6 +209,8 @@ export default {
           ],
         },
       ],
+      maps: [],
+      faq: [],
       activeListItem: null,
       onlineReception: false,
     };
@@ -295,6 +225,46 @@ export default {
     modalTrue() {
       this.onlineReception = true;
     },
+    getMaps() {
+      this.loading = true;
+      this.$api
+        .get("map/")
+        .then((data) => {
+          if (!data.error) {
+            this.maps = data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          this.loading = false;
+        })
+        .finally(() => {
+          console.log("im finally");
+          this.loading = false;
+        });
+    },
+    getFaq() {
+      this.loading = true;
+      this.$api
+        .get("faq/")
+        .then((data) => {
+          if (!data.error) {
+            this.faq = data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          this.loading = false;
+        })
+        .finally(() => {
+          console.log("im finally");
+          this.loading = false;
+        });
+    },
+  },
+  mounted() {
+    this.getMaps();
+    this.getFaq();
   },
 };
 </script>

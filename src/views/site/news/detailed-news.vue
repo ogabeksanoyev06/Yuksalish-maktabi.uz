@@ -1,12 +1,10 @@
 <template>
   <section class="section py-30">
     <div class="container">
-      <div class="main-content" data-aos="fade-up">
+      <loader v-if="loading" />
+      <div class="main-content" data-aos="fade-up" v-if="!loading">
         <h1 class="title mb-20">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio esse,
-          cupiditate nostrum dolorem tempora mollitia, porro ducimus dolor
-          adipisci quod quas consequatur nemo! Adipisci ut quidem inventore
-          suscipit atque quas?
+          {{ list.name }}
         </h1>
         <div class="single-page">
           <div class="info d-flex align-center justify-space-between">
@@ -80,23 +78,12 @@
             </span>
           </div>
           <div class="content-wrap">
-            <!-- <p>
-              Bugun Davlat xizmatini rivojlantirish agentligi va Davlat
-              boshqaruvi akademiyasi hamkorligida shu mavzuda davra suhbati
-              tashkil etildi.
-            </p> -->
             <div class="img-wrap">
-              <img
-                src="https://tsue.uz/media/news/image_2023-06-21_01-19-21.png"
-                alt=""
-              />
+              <img :src="'http://api.yuksalishmaktabi.uz' + list.img" alt="" />
             </div>
             <div>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe
-                maxime architecto esse et perferendis, quaerat exercitationem
-                enim mollitia iure adipisci pariatur rem nostrum, illum
-                veritatis maiores, incidunt a! Nostrum, maxime.
+                {{ list.title }}
               </p>
             </div>
 
@@ -200,7 +187,7 @@
               <div class="inner">
                 <div
                   class="item"
-                  v-for="(item, index) in 5"
+                  v-for="(item, index) in news"
                   :key="index"
                   @click="goToLink(index)"
                 >
@@ -253,9 +240,10 @@
   </section>
 </template>
 <script>
+import Loader from "@/components/shared-components/Loader.vue";
 export default {
   name: "AppNewsDetailed",
-  components: {},
+  components: { Loader },
   data() {
     return {
       list: {},
@@ -267,21 +255,60 @@ export default {
     printPage() {
       window.print();
     },
-    goToLink(id) {
-      this.$router.push({
-        name: "detailed-news",
-        params: { newsId: id },
-      });
+    getNewsId() {
+      this.loading = true;
+      this.$api
+        .get(`news/${this.$route.params.newsId}`)
+        .then((data) => {
+          if (!data.error && data) {
+            this.list = data[0];
+          }
+        })
+        .catch((error) => {
+          console.log("Error on getting News" + ": " + error);
+          this.loading = false;
+        })
+        .finally(() => {
+          this.loading = false;
+        });
+    },
+    getNews() {
+      this.$api
+        .get(`news/`)
+        .then((data) => {
+          if (!data.error && data) {
+            this.news = [];
+            data.forEach((element) => {
+              console.log(element);
+              if (element.id != this.$route.params.newsId) {
+                this.news.push(element);
+              }
+            });
+          }
+        })
+        .catch((error) => {
+          console.log("Error on getting News" + ": " + error);
+        })
+        .finally(() => {});
     },
   },
+  goToLink(id) {
+    this.$router.push({
+      name: "detailed-news",
+      params: { newsId: id },
+    });
+  },
+
   watch: {
-    // $route() {
-    //   this.getNewsId();
-    //   this.getNews();
-    // },
+    $route() {
+      this.getNewsId();
+      this.getNews();
+    },
   },
   mounted() {
     this.$route.params.newsId;
+    this.getNewsId();
+    this.getNews();
   },
   created() {},
 };

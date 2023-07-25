@@ -26,13 +26,13 @@
         <div class="wrapper">
           <div
             class="wrapper__item"
-            v-for="(item, i) in 10"
+            v-for="(item, i) in list"
             :key="i"
             data-aos="fade-up"
             :data-aos-duration="(i + 1) * 100"
           >
             <img
-              src="/images/muhammadalieshonqulov1.png"
+              :src="'http://api.yuksalishmaktabi.uz' + item.img"
               class="mb-20"
               style="max-width: 100%; height: auto"
             />
@@ -42,14 +42,14 @@
               weight="600"
               class="mb-10"
             >
-              Muhammadali Eshonqulov
+              {{ item.name }}
             </app-text>
             <app-text
               :size="isMobile ? 18 : 20"
               :line-height="isMobile ? 24 : 26"
               weight="500"
             >
-              O'qituvchilar
+              {{ item.title }}
             </app-text>
           </div>
         </div>
@@ -63,7 +63,31 @@ export default {
   name: "AppTeachers",
   components: { CtaBanner },
   data() {
-    return {};
+    return {
+      list: [],
+    };
+  },
+  methods: {
+    getTeacherList() {
+      this.$api
+        .get(`person/`)
+        .then((data) => {
+          if (!data.error) {
+            this.list = data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          this.loading = false;
+        })
+        .finally(() => {
+          console.log("im finally");
+          this.loading = false;
+        });
+    },
+  },
+  mounted() {
+    this.getTeacherList();
   },
 };
 </script>

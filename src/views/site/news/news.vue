@@ -11,24 +11,22 @@
         >
           Yangiliklar
         </app-text>
-        <div class="news__wrapper">
+        <loader v-if="loading" />
+        <div class="news__wrapper" v-if="!loading">
           <div
             class="news__wrapper-item"
-            v-for="(item, index) in 10"
+            v-for="(item, index) in news"
             :key="index"
             :data-aos-delay="index * 50"
             data-aos="fade-up"
-            @click="goToLink(index)"
+            @click="goToLink(item.id)"
           >
             <div class="news__wrapper-photo">
-              <img
-                src="https://tsue.uz/media/news/1.00_40_48_13.Still006.jpg"
-              />
+              <img :src="'http://api.yuksalishmaktabi.uz' + item.img" />
             </div>
             <div class="news__wrapper-content">
               <div class="news__wrapper-title">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Distinctio, libero?
+                {{ item.name }}
               </div>
               <div class="d-flex flex-wrap justify-space-between">
                 <span class="name">
@@ -47,19 +45,44 @@
   </div>
 </template>
 <script>
+import Loader from "@/components/shared-components/Loader.vue";
 export default {
   name: "AppNews",
-  components: {},
+  components: { Loader },
   data() {
-    return {};
+    return {
+      news: [],
+      loading: true,
+    };
   },
   methods: {
+    getNews() {
+      this.loading = true;
+      this.$api
+        .get("news/")
+        .then((data) => {
+          if (!data.error) {
+            this.news = data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          this.loading = false;
+        })
+        .finally(() => {
+          console.log("im finally");
+          this.loading = false;
+        });
+    },
     goToLink(newsId) {
       this.$router.push({
         name: "detailed-news",
         params: { newsId: newsId },
       });
     },
+  },
+  mounted() {
+    this.getNews();
   },
 };
 </script>

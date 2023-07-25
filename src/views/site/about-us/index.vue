@@ -85,7 +85,7 @@
       </div>
       <custom-slider :topLink="true" :bgGreen="true" />
     </div>
-    <div
+    <!-- <div
       style="background-color: #fff; border-radius: 0px 0px 16px 16px"
       :class="isMobileSmall ? 'py-30' : 'py-60'"
     >
@@ -250,7 +250,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div
       style="
         background-color: rgba(244, 242, 247, 1);

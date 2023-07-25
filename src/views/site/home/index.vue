@@ -227,7 +227,7 @@
         </div>
         <div class="d-flex flex-wrap">
           <div
-            v-for="(item, i) in tanlovList"
+            v-for="(item, i) in choice"
             :key="i"
             class="selection__item"
             data-aos="fade-up"
@@ -238,7 +238,7 @@
               :line-height="isMobile ? 26 : 40"
               weight="400"
             >
-              {{ item.title }}
+              {{ item.info }}
             </app-text>
             <!-- <div class="num">{{ i + 1 }}</div> -->
           </div>
@@ -456,29 +456,30 @@ export default {
           title: "Yuksalish ixtirolari",
         },
       ],
+      choice: [],
     };
   },
   methods: {
-    getPerson() {
-      try {
-        this.$api
-          .get("news/")
-          .then((data) => {
-            if (data) {
-              console.log(data);
-            }
-          })
-          .catch((error) => {
-            console.log("Error on getting SkillCourseTree" + ": " + error);
-          })
-          .finally(() => {});
-      } catch (e) {
-        console.log(e);
-      }
+    getChoice() {
+      this.$api
+        .get(`choice/`)
+        .then((data) => {
+          if (!data.error) {
+            this.choice = data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          this.loading = false;
+        })
+        .finally(() => {
+          console.log("im finally");
+          this.loading = false;
+        });
     },
   },
   mounted() {
-    this.getPerson();
+    this.getChoice();
   },
 };
 </script>

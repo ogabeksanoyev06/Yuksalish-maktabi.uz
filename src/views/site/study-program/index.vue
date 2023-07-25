@@ -46,6 +46,41 @@
       </div>
     </div>
     <course-slider :color="true" />
+
+    <div :class="isMobile ? 'py-30' : 'py-60'" class="selection">
+      <div class="container">
+        <app-text
+          :size="isMobile ? 32 : 42"
+          :line-height="isMobile ? 40 : 50"
+          weight="700"
+          class="text-start color-gray mb-60"
+          data-aos="fade-up"
+        >
+          Sport to'garaklari
+        </app-text>
+
+        <div class="d-flex flex-wrap">
+          <div
+            v-for="(item, i) in tourarac"
+            :key="i"
+            class="selection__item"
+            data-aos="fade-up"
+            :data-aos-duration="(i + 1) * 100"
+          >
+            <app-text
+              :size="isMobile ? 20 : 32"
+              :line-height="isMobile ? 26 : 40"
+              weight="400"
+              class="color-gray"
+            >
+              {{ item.name }}
+            </app-text>
+            <!-- <div class="num">{{ i + 1 }}</div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="py-60" style="background-color: #f5f5f5">
       <div class="container">
         <div class="section__top" :class="isMobile ? 'mb-30' : 'mb-60'">
@@ -72,7 +107,7 @@
         <div class="agenda">
           <div
             class="agenda__item"
-            v-for="(item, i) in 6"
+            v-for="(item, i) in dayList"
             :key="i"
             data-aos="fade-up"
             :data-aos-duration="(i + 1) * 300"
@@ -101,7 +136,7 @@
               weight="500"
               :class="isMobile ? 'mb-10' : 'mb-20'"
             >
-              Oqish kunlari
+              {{ item.title }}
             </app-text>
             <app-text
               :size="isMobile ? 16 : 20"
@@ -109,12 +144,13 @@
               weight="400"
               max-width="336"
             >
-              Har chorak reytingida eng yuqori natija korsatgan oquvchilar uchun
+              {{ item.sub_title }}
             </app-text>
           </div>
         </div>
       </div>
     </div>
+
     <div class="py-60" style="background-color: #f4f2f7">
       <div class="container">
         <div class="section__top" :class="isMobile ? 'mb-30' : 'mb-60'">
@@ -144,7 +180,7 @@
         <div class="special-course">
           <div
             class="special-course__item"
-            v-for="(item, i) in 6"
+            v-for="(item, i) in courses"
             :key="i"
             data-aos="fade-up"
             :data-aos-duration="(i + 1) * 300"
@@ -187,7 +223,7 @@
               weight="500"
               :class="isMobile ? 'mb-10' : 'mb-20'"
             >
-              Qoshimcha mashgulotlar
+              {{ item.name }}
             </app-text>
             <app-text
               :size="isMobile ? 16 : 18"
@@ -195,8 +231,7 @@
               weight="400"
               max-width="336"
             >
-              Bolalarni turli xil sifatlarni ostirishga yordam beradigan turli
-              xil mashgulotlar berib boramiz
+              {{ item.info }}
             </app-text>
           </div>
         </div>
@@ -434,6 +469,9 @@ export default {
         spaceBetween: 12,
       },
       onlineReception: false,
+      dayList: [],
+      courses: [],
+      tourarac: [],
     };
   },
   methods: {
@@ -443,6 +481,62 @@ export default {
     modalTrue() {
       this.onlineReception = true;
     },
+    getDay() {
+      this.$api
+        .get(`day/`)
+        .then((data) => {
+          if (!data.error) {
+            this.dayList = data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          this.loading = false;
+        })
+        .finally(() => {
+          console.log("im finally");
+          this.loading = false;
+        });
+    },
+    getCourses() {
+      this.$api
+        .get(`courses/`)
+        .then((data) => {
+          if (!data.error) {
+            this.courses = data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          this.loading = false;
+        })
+        .finally(() => {
+          console.log("im finally");
+          this.loading = false;
+        });
+    },
+    getTourarac() {
+      this.$api
+        .get(`tourarac/`)
+        .then((data) => {
+          if (!data.error) {
+            this.tourarac = data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          this.loading = false;
+        })
+        .finally(() => {
+          console.log("im finally");
+          this.loading = false;
+        });
+    },
+  },
+  mounted() {
+    this.getDay();
+    this.getCourses();
+    this.getTourarac();
   },
 };
 </script>
@@ -493,6 +587,33 @@ export default {
     }
     &.next {
       left: 54px !important;
+    }
+  }
+}
+.selection {
+  background-color: #fff;
+
+  color: #fff;
+  border-radius: 0px 0px 16px 16px;
+  &__item {
+    border-radius: 10px;
+    background-color: rgb(245, 245, 245);
+
+    max-width: 370px;
+    width: 100%;
+    height: 200px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .num {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 32px;
     }
   }
 }

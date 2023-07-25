@@ -1,10 +1,5 @@
 <template>
-  <div class="lds-ring">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
+  <span class="loader"></span>
 </template>
 
 <script>
@@ -14,39 +9,18 @@ export default {
 </script>
 
 <style scoped>
-.lds-ring {
-  position: absolute;
-  height: 3px;
-  width: 100%;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.lds-ring div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  border: 8px solid #fff;
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 5px dotted #000;
   border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #fff transparent transparent transparent;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
 }
-.lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
-}
-.lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
-}
-.lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
-}
-@keyframes lds-ring {
+
+@keyframes rotation {
   0% {
     transform: rotate(0deg);
   }
