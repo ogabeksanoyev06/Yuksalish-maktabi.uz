@@ -26,8 +26,14 @@ Vue.use(ElementUI);
 Vue.use(VueMask);
 Vue.use(api);
 
+import i18n from "./locales/i18n";
+import Util from "@/plugins/globalMethod";
+
+Vue.prototype.$localeKey = Util.localeKey;
+
 new Vue({
   router,
   store,
+  i18n,
   render: (h) => h(App),
 }).$mount("#app");

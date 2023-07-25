@@ -19,16 +19,65 @@
                 :key="index"
               >
                 <router-link :to="item.link" class="header__menu-link">
-                  {{ item.title }}
+                  {{ $t(item.title) }}
                 </router-link>
               </li>
               <li class="header__menu-item">
-                <a href="" class="header__menu-link"> Online test </a>
+                <a href="" class="header__menu-link">
+                  {{ $t("Online test") }}
+                </a>
               </li>
             </ul>
           </div>
 
           <div class="header__right">
+            <div
+              class="header__language"
+              :class="isMobileMedium ? '' : 'mr-20'"
+              @click="languageDropdown = !languageDropdown"
+              v-on-click-outside:excludedClass="hideLanguageDropdown"
+            >
+              <div class="header__language-icon">
+                <img src="/icons/globe.svg" alt="" />
+              </div>
+              <transition name="slide">
+                <div class="header__dropdown" v-if="languageDropdown">
+                  <ul class="header__dropdown-wrap shadowed radius overflow">
+                    <li
+                      class="header__dropdown-item"
+                      @click="changeLanguage('uz')"
+                    >
+                      <span class="header__dropdown-link pa-10">
+                        <AppText size="14" line-height="18" weight="700">
+                          Uzbek
+                        </AppText>
+                      </span>
+                    </li>
+
+                    <li
+                      class="header__dropdown-item"
+                      @click="changeLanguage('ru')"
+                    >
+                      <span class="header__dropdown-link pa-10">
+                        <AppText size="14" line-height="18" weight="700">
+                          Russian
+                        </AppText>
+                      </span>
+                    </li>
+                    <li
+                      class="header__dropdown-item"
+                      @click="changeLanguage('en')"
+                    >
+                      <span class="header__dropdown-link pa-10">
+                        <AppText size="14" line-height="18" weight="700">
+                          English
+                        </AppText>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </transition>
+            </div>
             <AppButton
               v-if="isDesktopMedium"
               sides="10"
@@ -62,7 +111,8 @@
 import "./header.scss";
 import NavigationDrawer from "./NavigationDrawer";
 import AppButton from "../../../shared-components/AppButton";
-import { mapActions, mapGetters, mapMutations } from "vuex";
+import i18n from "@/locales/i18n";
+import { mapGetters } from "vuex";
 
 export default {
   name: "AppHeader",
@@ -119,6 +169,7 @@ export default {
       showDropdown: false,
       accountDropdown: false,
       languageDropdown: false,
+      lang: "",
     };
   },
   props: {
@@ -138,8 +189,6 @@ export default {
     closeDrawer() {
       this.navigationDrawer = false;
     },
-    ...mapMutations([]),
-    ...mapActions([]),
     showNavigationDrawer() {
       this.navigationDrawer = !this.navigationDrawer;
     },
@@ -149,8 +198,20 @@ export default {
     hideLanguageDropdown() {
       this.languageDropdown = false;
     },
+    changeLanguage(lang) {
+      localStorage.setItem("lang", lang);
+      i18n.locale = lang;
+      this.lang = lang;
+    },
   },
   async mounted() {},
+  created() {
+    if (!localStorage.getItem("lang")) {
+      localStorage.setItem("lang", "uz");
+    }
+    i18n.locale = localStorage.getItem("lang");
+    this.lang = localStorage.getItem("lang");
+  },
   watch: {},
 };
 </script>
