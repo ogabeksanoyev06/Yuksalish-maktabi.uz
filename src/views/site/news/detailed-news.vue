@@ -4,7 +4,7 @@
       <loader v-if="loading" />
       <div class="main-content" data-aos="fade-up" v-if="!loading">
         <h1 class="title mb-20">
-          {{ list.name }}
+          {{ list[$localeKey("name")] }}
         </h1>
         <div class="single-page">
           <div class="info d-flex align-center justify-space-between">
@@ -83,7 +83,7 @@
             </div>
             <div>
               <p>
-                {{ list.title }}
+                {{ list[$localeKey("title")] }}
               </p>
             </div>
 

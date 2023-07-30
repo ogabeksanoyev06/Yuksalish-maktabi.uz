@@ -68,12 +68,12 @@
       >
         <swiper-slide
           class="custom__slide-item"
-          v-for="(item, i) in 10"
+          v-for="(item, i) in schoolImages"
           :key="i"
           data-aos="fade-up"
           :data-aos-duration="(i + 1) * 500"
         >
-          <img src="/images/girls.png" :class="isMobile ? 'mb-10' : 'mb-20'" />
+          <img :src="item.img" :class="isMobile ? 'mb-10' : 'mb-20'" />
           <app-text
             :size="isMobileSmall ? '16' : '24'"
             :line-height="isMobileSmall ? '20' : '32'"
@@ -82,7 +82,7 @@
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            Maktab binosi
+            {{ item[$localeKey("name")] }}
           </app-text>
           <app-text
             :size="isMobileSmall ? '14' : '20'"
@@ -92,7 +92,7 @@
             data-aos="fade-up"
             data-aos-duration="700"
           >
-            Matkabimizning binosining tashqi korinishi
+            {{ item[$localeKey("title")] }}
           </app-text>
         </swiper-slide>
       </swiper>
@@ -134,9 +134,32 @@ export default {
           prevEl: ".swiper-button-prev",
         },
       },
+      schoolImages: [],
     };
   },
-  methods: {},
+  methods: {
+    getSchoolImages() {
+      this.loading = true;
+      this.$api
+        .get("gallery/?typ=3")
+        .then((data) => {
+          if (!data.error) {
+            this.schoolImages = data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          this.loading = false;
+        })
+        .finally(() => {
+          console.log("im finally");
+          this.loading = false;
+        });
+    },
+  },
+  mounted() {
+    this.getSchoolImages();
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -187,7 +210,6 @@ export default {
     &.bgGreen {
       background-color: #060032;
       border: 1px solid rgba(177, 255, 157, 0.1);
-
       svg {
         path {
           stroke: #84a9ff;

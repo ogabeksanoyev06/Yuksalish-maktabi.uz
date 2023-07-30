@@ -24,12 +24,15 @@
             weight="500"
             data-aos="fade-up"
           >
-            “Yuksalish maktabi” maktabi farzandingiz uchun har tomonlama ideal
-            tanlovdir. Maktabda o’zbek, rus, ingiliz va arab tillarida ta’lim
-            beriladi. 11 yillik ta’lim tizimiga mo’ljallangan bo’lib, bu vaqt
-            davomida o’quvchilarimiz xorijiy tillarni hamda aniq fanlarni puxta
-            o’zlashtiradilar. Shu bilan birga o’quvchilarimizning ahloqlariga
-            alohida e’tibor bergan holatda ta’lim oladilar.
+            Yuksalish maktabi bu ta'lim va tarbiya Birlashgan dargohdir. Bu erda
+            farzandingiz ingliz va Arab tillarini hamda matematikani
+            chuqurlashtirib o'rganadi. Maktabda o'quvchilarni shaxsiy
+            rivojlanishini ta'minlaydigan yuksalish darslari o'tiladi. Maktabda
+            kitobxonlikka alohida e'tibor qaratilgan. Maktab va ota onalar bilan
+            aloqalarni mustaxkamlash, o'quvchilarni kundalik faoliyatini
+            monitoring qilish maqsadida koordinatorlik lavozimi joriy etilgan.
+            Yuksalish maktabi o'quvchilar o'zlari qiziqqan kasblar bo'yicha
+            amaliy kunikmalarni o'zlashtirish imkoniyatiga ega.
           </app-text>
         </div>
         <!-- <youtube-link-banner /> -->
@@ -160,8 +163,7 @@
     <div class="py-60">
       <div class="container">
         <img
-          src="/images/image.jpg"
-          alt=""
+          :src="homeImage[0]?.img"
           style="width: 100%; height: auto; border-radius: 15px"
         />
       </div>
@@ -169,6 +171,7 @@
     <!--  -->
     <course-slider />
     <!--  -->
+
     <div :class="isMobile ? 'py-30' : 'py-60'" class="selection">
       <div class="container">
         <div class="d-flex align-center flex-wrap justify-space-between mb-30">
@@ -182,25 +185,6 @@
             >
               Bizning tanlovlar
             </app-text>
-            <!-- <div class="d-flex align-center">
-              <img
-                src="/images/fanlar-min.webp"
-                alt=""
-                style="width: 60px; height: 60px"
-                class="mr-20"
-                v-if="!isMobileSmall"
-              />
-              <app-text
-                :size="isMobile ? 18 : 23"
-                :line-height="isMobile ? 24 : 35"
-                class="color-white"
-                weight="400"
-                data-aos="fade-up"
-                max-width="460"
-              >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </app-text>
-            </div> -->
           </div>
           <div
             class="d-flex pa-20 mb-20"
@@ -220,8 +204,9 @@
               data-aos="fade-up"
               max-width="380"
             >
-              Sinovdan o’tgan o’quvchilar 1 hafta davomida bepul ta’lim olish
-              imkoniyatiga ega bo’ladilar
+              Yuksalish maktabida har chorakda robototexnikadan musobaqa
+              bo’ladi. Unda o’quvchilarimga o’z loyihalari rivojlantirish uchun
+              2000 000 1500 000 1000 000 so’m pul mukofati bilan taqdirlandi.
             </app-text>
           </div>
         </div>
@@ -238,7 +223,7 @@
               :line-height="isMobile ? 26 : 40"
               weight="400"
             >
-              {{ item.info }}
+              {{ item[$localeKey("info")] }}
             </app-text>
             <!-- <div class="num">{{ i + 1 }}</div> -->
           </div>
@@ -275,7 +260,7 @@
           <div class="items">
             <div
               class="item"
-              v-for="(item, i) in 6"
+              v-for="(item, i) in opportunity"
               :key="i"
               data-aos="zoom-in"
               :data-aos-duration="(i + 1) * 2000"
@@ -307,7 +292,7 @@
                   class="mb-10"
                   weight="500"
                 >
-                  Chorak reyting boyicha
+                  {{ item[$localeKey("name")] }}
                 </app-text>
                 <app-text
                   :size="isMobile ? 14 : 18"
@@ -315,8 +300,7 @@
                   class=""
                   weight="400"
                 >
-                  Har chorak reytingida eng yuqori natija korsatgan oquvchilar
-                  uchun 50% chegirma
+                  {{ item[$localeKey("info")] }}
                 </app-text>
               </div>
             </div>
@@ -339,7 +323,7 @@
               data-aos="fade-up"
               max-width="620"
             >
-              Qabulimiz 3 xil turga bolinadi
+              Qabul bosqichlari
             </app-text>
             <app-text
               :size="isMobile ? 16 : 20"
@@ -364,7 +348,7 @@
                 weight="700"
                 class="color-white"
               >
-                Test - (matematika ,ingliz tili)
+                Test - (matematika ,ingliz tili,IQ)
               </app-text>
             </div>
             <div class="item" data-aos="fade-up" data-aos-duration="200">
@@ -457,6 +441,9 @@ export default {
         },
       ],
       choice: [],
+      advantages: [],
+      opportunity: [],
+      homeImage: [],
     };
   },
   methods: {
@@ -477,9 +464,46 @@ export default {
           this.loading = false;
         });
     },
+    getAdvantages() {
+      this.$api
+        .get(`opportunity/`)
+        .then((data) => {
+          if (!data.error) {
+            this.opportunity = data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          this.loading = false;
+        })
+        .finally(() => {
+          console.log("im finally");
+          this.loading = false;
+        });
+    },
+    getHomeImages() {
+      this.loading = true;
+      this.$api
+        .get("gallery/?typ=2")
+        .then((data) => {
+          if (!data.error) {
+            this.homeImage = data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          this.loading = false;
+        })
+        .finally(() => {
+          console.log("im finally");
+          this.loading = false;
+        });
+    },
   },
   mounted() {
     this.getChoice();
+    this.getAdvantages();
+    this.getHomeImages();
   },
 };
 </script>

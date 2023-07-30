@@ -162,8 +162,13 @@
             <ul v-for="item in menu" :key="item.id">
               <li v-for="(child, i) in item.children" :key="i">
                 <router-link :to="child.link">
-                  {{ child.title }}
+                  {{ $t(child.title) }}
                 </router-link>
+              </li>
+              <li>
+                <a href="">
+                  {{ $t("Online test") }}
+                </a>
               </li>
             </ul>
             <CoolLightBox :items="items" :index="index" @close="index = null">
@@ -183,7 +188,11 @@
       </div>
       <div class="footer__socials mb-60">
         <div class="footer__socials-wrap">
-          <a class="footer__socials-item" href="#">
+          <a
+            class="footer__socials-item"
+            href="https://www.instagram.com/invites/contact/?i=11fuzi218z07s&utm_content=oqw3ebe"
+            target="_blank"
+          >
             <svg
               width="24"
               height="24"
@@ -212,7 +221,7 @@
               </defs>
             </svg>
           </a>
-          <div class="footer__socials-item">
+          <a class="footer__socials-item">
             <svg
               width="24"
               height="24"
@@ -232,8 +241,12 @@
                 </clipPath>
               </defs>
             </svg>
-          </div>
-          <div class="footer__socials-item">
+          </a>
+          <a
+            class="footer__socials-item"
+            href="https://t.me/yuksalish_maktablari"
+            target="_blank"
+          >
             <svg
               width="24"
               height="24"
@@ -253,8 +266,12 @@
                 </clipPath>
               </defs>
             </svg>
-          </div>
-          <div class="footer__socials-item">
+          </a>
+          <a
+            class="footer__socials-item"
+            href="https://www.youtube.com/@yuksalishmaktabi8961"
+            target="_blank"
+          >
             <svg
               width="24"
               height="24"
@@ -267,7 +284,7 @@
                 fill="white"
               />
             </svg>
-          </div>
+          </a>
         </div>
         <app-text class="" size="16" line-height="24">
           Toshkent, O‘zbekiston

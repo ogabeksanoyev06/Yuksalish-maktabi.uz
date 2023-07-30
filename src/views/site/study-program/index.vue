@@ -15,7 +15,7 @@
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            O‘quv dasturi bilan tanishamiz
+            Yuksalish maktabi o'quv dasturi
           </app-text>
           <app-text
             :size="isMobile ? 16 : 20"
@@ -26,8 +26,7 @@
             data-aos="fade-up"
             data-aos-duration="700"
           >
-            Jahon ta’limiga mos bo‘lgan o‘qitish tizimiga ega bo‘lgan zamonaviy
-            maktab.
+            Qadryatlarga asoslangan, ta'lim va tarbiya birlashgan dargoh
           </app-text>
           <div data-aos="fade-up" data-aos-duration="900">
             <AppButton
@@ -73,7 +72,7 @@
               weight="400"
               class="color-gray"
             >
-              {{ item.name }}
+              {{ item[$localeKey("name")] }}
             </app-text>
             <!-- <div class="num">{{ i + 1 }}</div> -->
           </div>
@@ -136,7 +135,7 @@
               weight="500"
               :class="isMobile ? 'mb-10' : 'mb-20'"
             >
-              {{ item.title }}
+              {{ item[$localeKey("title")] }}
             </app-text>
             <app-text
               :size="isMobile ? 16 : 20"
@@ -144,7 +143,7 @@
               weight="400"
               max-width="336"
             >
-              {{ item.sub_title }}
+              {{ item[$localeKey("sub_title")] }}
             </app-text>
           </div>
         </div>
@@ -162,7 +161,7 @@
             class=""
             data-aos="fade-up"
           >
-            Yuksalish maktabining maxsus kursi
+            Yuksalish darslari
           </app-text>
           <div class="section__top-details" data-aos="fade-up">
             <app-text
@@ -172,8 +171,9 @@
               max-width="500"
               class=""
             >
-              “Yuksalish Liderlar Akademiyasi”ning oylik kurslari ham fan
-              sifatida maktabimiz oquvchilari uchun dars jadvallariga qoyilgan
+              Yuksalish maktabida o'quvchilarni shaxsiy rivojlanish,ilm olish
+              sirlari,vaqtni to'g'ri sarflash,oliy maqsad qo'yish,uchun
+              "yuksalish darslari " fan sifatida qo'yilgan.
             </app-text>
           </div>
         </div>
@@ -223,7 +223,7 @@
               weight="500"
               :class="isMobile ? 'mb-10' : 'mb-20'"
             >
-              {{ item.name }}
+              {{ item[$localeKey("name")] }}
             </app-text>
             <app-text
               :size="isMobile ? 16 : 18"
@@ -231,7 +231,7 @@
               weight="400"
               max-width="336"
             >
-              {{ item.info }}
+              {{ item[$localeKey("info")] }}
             </app-text>
           </div>
         </div>
@@ -252,8 +252,8 @@
               class="mb-20 color-white"
               data-aos="fade-right"
             >
-              Qizlarimiz rivojlanishi uchun biz bir qancha amaliy togaraklar
-              yolga qoyganmiz
+              Yuksalish maktabida qizlar uchun bir qancha amaliy to'garaklar
+              yo'lga qo'yilgan
             </app-text>
             <router-link class="section__top-link" to="/about-us">
               <AppButton
@@ -273,7 +273,7 @@
           >
             <swiper class="swiper" :options="swiperOptions">
               <swiper-slide
-                v-for="(item, i) in 5"
+                v-for="(item, i) in girlsImages"
                 :key="i"
                 data-aos="fade-up"
                 :data-aos-duration="(i + 1) * 500"
@@ -284,7 +284,7 @@
                   class="mx-auto"
                 >
                   <img
-                    src="/images/girls.png"
+                    :src="item.img"
                     style="
                       width: 100%;
                       height: 100%;
@@ -394,18 +394,18 @@
         <div style="max-width: 1180px; width: 100%" class="mx-auto">
           <swiper class="swiper" :options="swiperOptions2">
             <swiper-slide
-              v-for="(item, i) in 5"
+              v-for="(item, i) in ItImages"
               :key="i"
               data-aos="fade-up"
               :data-aos-duration="(i + 1) * 500"
             >
               <div
-                style="max-width: 590px; width: 100%"
+                style="max-width: 590px; width: 100%; margin-bottom: 10px"
                 :style="isMobileSmall ? 'height:auto' : 'height: 380px;'"
                 class="mx-auto"
               >
                 <img
-                  src="/images/girls.png"
+                  :src="item.img"
                   style="
                     width: 100%;
                     height: 100%;
@@ -414,6 +414,9 @@
                   "
                 />
               </div>
+              <app-text :size="16" :line-height="24" weight="500">
+                {{ item[$localeKey("title")] }}
+              </app-text>
             </swiper-slide>
           </swiper>
         </div>
@@ -472,6 +475,8 @@ export default {
       dayList: [],
       courses: [],
       tourarac: [],
+      ItImages: [],
+      girlsImages: [],
     };
   },
   methods: {
@@ -532,11 +537,49 @@ export default {
           this.loading = false;
         });
     },
+    getItImages() {
+      this.loading = true;
+      this.$api
+        .get("gallery/?typ=5")
+        .then((data) => {
+          if (!data.error) {
+            this.ItImages = data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          this.loading = false;
+        })
+        .finally(() => {
+          console.log("im finally");
+          this.loading = false;
+        });
+    },
+    getGirlsImages() {
+      this.loading = true;
+      this.$api
+        .get("gallery/?typ=1")
+        .then((data) => {
+          if (!data.error) {
+            this.girlsImages = data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          this.loading = false;
+        })
+        .finally(() => {
+          console.log("im finally");
+          this.loading = false;
+        });
+    },
   },
   mounted() {
     this.getDay();
     this.getCourses();
     this.getTourarac();
+    this.getItImages();
+    this.getGirlsImages();
   },
 };
 </script>

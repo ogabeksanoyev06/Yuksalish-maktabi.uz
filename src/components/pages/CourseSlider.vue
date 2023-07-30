@@ -43,7 +43,7 @@
                   alt=""
                 />
               </div>
-              <p class="item__title">{{ item.info }}</p>
+              <p class="item__title">{{ item[$localeKey("info")] }}</p>
               <div class="item__info">
                 <app-text
                   :size="isMobile ? '16' : '20'"
@@ -51,7 +51,7 @@
                   weight="400"
                   class="color-white mb-10"
                 >
-                  {{ item.name }} darslari
+                  {{ item[$localeKey("name")] }} darslari
                 </app-text>
                 <!-- <app-text
                   :size="16"

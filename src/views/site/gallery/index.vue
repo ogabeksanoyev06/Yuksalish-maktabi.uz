@@ -11,18 +11,21 @@
         >
           Media
         </app-text>
-        <CoolLightBox :items="items" :index="index" @close="index = null">
-        </CoolLightBox>
-        <div class="images-wrapper">
-          <div
-            v-for="(item, imageIndex) in items"
-            @click="index = imageIndex"
-            :key="imageIndex"
-            class="images"
-            data-aos="fade-up"
-            :data-aos-duration="(imageIndex + 1) * 100"
-          >
-            <img :src="item.src" alt="" />
+        <loader v-if="loading" />
+        <div v-if="!loading">
+          <CoolLightBox :items="items" :index="index" @close="index = null">
+          </CoolLightBox>
+          <div class="images-wrapper">
+            <div
+              v-for="(item, imageIndex) in media"
+              @click="index = imageIndex"
+              :key="imageIndex"
+              class="images"
+              data-aos="fade-up"
+              :data-aos-duration="(imageIndex + 1) * 100"
+            >
+              <img :src="item.img" alt="" />
+            </div>
           </div>
         </div>
       </div>
@@ -32,27 +35,44 @@
 <script>
 import CoolLightBox from "vue-cool-lightbox";
 import "vue-cool-lightbox/dist/vue-cool-lightbox.min.css";
+import Loader from "@/components/shared-components/Loader.vue";
 export default {
   name: "AppMedia",
-  components: { CoolLightBox },
+  components: { CoolLightBox, Loader },
   data() {
     return {
-      items: [
-        {
-          src: "https://storage.kun.uz/source/9/nrXXRjw13dwfy2FrTfwdiXy_czMI6xlB.jpg",
-        },
-        {
-          src: "https://storage.kun.uz/source/9/IgHoRa0sNRyUeTHllNXaviilvWpAsGlt.jpg",
-        },
-        {
-          src: "https://storage.kun.uz/source/9/IgHoRa0sNRyUeTHllNXaviilvWpAsGlt.jpg",
-        },
-        {
-          src: "https://storage.kun.uz/source/9/IgHoRa0sNRyUeTHllNXaviilvWpAsGlt.jpg",
-        },
-      ],
+      items: [],
       index: null,
+      media: [],
+      loading: true,
     };
+  },
+  methods: {
+    getMedia() {
+      this.$api
+        .get(`gallery/?typ=6`)
+        .then((data) => {
+          if (!data.error) {
+            this.media = data;
+            this.media.forEach((el) => {
+              this.items.push({
+                src: el.img,
+              });
+            });
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          this.loading = false;
+        })
+        .finally(() => {
+          console.log("im finally");
+          this.loading = false;
+        });
+    },
+  },
+  mounted() {
+    this.getMedia();
   },
 };
 </script>
@@ -65,10 +85,9 @@ export default {
 .images {
   position: relative;
   cursor: pointer;
-
   img {
     width: 100%;
-    height: auto;
+    height: 250px;
     object-fit: cover;
     border-radius: 10px;
     transition: 0.3s ease !important;

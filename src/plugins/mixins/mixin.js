@@ -15,7 +15,7 @@ Vue.mixin({
     successNotification(message) {
       this.$notify({
         group: "admin",
-        title: "Muvaffaqiyat!",
+        title: "Muvaffaqiyatli!",
         text: message,
         closeOnClick: true,
         duration: 10000,

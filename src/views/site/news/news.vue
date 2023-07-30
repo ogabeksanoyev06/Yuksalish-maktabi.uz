@@ -26,7 +26,7 @@
             </div>
             <div class="news__wrapper-content">
               <div class="news__wrapper-title">
-                {{ item.name }}
+                {{ item[$localeKey("name")] }}
               </div>
               <div class="d-flex flex-wrap justify-space-between">
                 <span class="name">

@@ -63,7 +63,7 @@
               max-width="272"
               data-aos="fade-up"
             >
-              Qabul tartibi bilan tanishing
+              Yuksalish maktabida qabul boshqichlari
             </app-text>
           </div>
           <div
@@ -115,8 +115,8 @@
                 data-aos-duration="1000"
                 :max-width="isMobileSmall ? '400' : '302'"
               >
-                Maktabizdagi imtihonlar bolalarning yoshiga qarab bolinggan
-                bolib, unda suhbat va test orqali bolalar sinaladi
+                Maktabimizdagi imtihonlar bolalarning yoshiga qarab bo'lingan
+                bo'lib, unda suhbat va test orqali bolalar sinaladi
               </app-text>
               <!-- <app-text
                 :size="isMobile ? 16 : 22"
@@ -454,7 +454,8 @@
               class="mb-20 color-violet"
               data-aos="fade-right"
             >
-              Birinchi sinf bolalarni biz faqatgina suhbat asosida qabul qilamiz
+              Birinchi sinf o'quvchilari faqatgina suhbat asosida qabul
+              qilinadi.
             </app-text>
             <app-text
               :size="isMobile ? 16 : 22"
@@ -463,7 +464,7 @@
               class="mb-30 color-violet"
               data-aos="fade-right"
             >
-              Biz bolalarni dunyo qarashi oqishga bolgan ishtiyoqi va
+              Biz bolalarni dunyo qarashi o'qishga bolgan ishtiyoqi va
               tarbiyasiga qarab birinchi sinfga qabul qilamiz.
             </app-text>
           </div>
@@ -642,18 +643,13 @@
           <div
             v-for="item in items"
             :key="item.id"
-            style="
-              max-width: 390px;
-              width: 100%;
-
-              border-radius: 16px;
-            "
-            :style="'background-color:#' + item.background"
             :class="isMobile ? 'pa-20' : 'pa-30'"
+            class="student"
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            <div
+            <img src="/images/girls.png" alt="" />
+            <!-- <div
               style="
                 background: #fff;
                 padding: 12px;
@@ -663,7 +659,7 @@
               :class="isMobile ? 'mb-20' : 'mb-40'"
             >
               <img :src="'/icons/' + item.svg" alt="" />
-            </div>
+            </div> -->
             <app-text
               :size="isMobile ? 16 : 22"
               :line-height="isMobile ? 24 : 30"
@@ -717,7 +713,7 @@
                 :class="isMobile ? 'mb-10' : 'mb-20'"
                 max-width="420"
               >
-                {{ item.title }}
+                {{ item[$localeKey("title")] }}
               </app-text>
               <div class="d-flex align-center">
                 <img
@@ -732,10 +728,10 @@
                 />
                 <div>
                   <app-text size="16" line-height="22">
-                    {{ item.name }}
+                    {{ item[$localeKey("name")] }}
                   </app-text>
                   <app-text size="14" line-height="18">
-                    {{ item.info }}
+                    {{ item[$localeKey("info")] }}
                   </app-text>
                 </div>
               </div>
@@ -802,17 +798,17 @@ export default {
         {
           id: 0,
           title: "Matematika",
-          text: "Bolalarga o'z yoshiga mos bo'lgan matematikadan bilimni sinash uchun test beriladi.",
+          text: "Bolalarga o'z yoshiga mos bo'lgan matematikadan bilimni sinash uchun 10 ta test beriladi.",
         },
         {
           id: 1,
           title: "Ingliz tili",
-          text: "Bolalar ingliz tili darajasini sinfga qarab tuzilgan test orqali sinab olinadi.",
+          text: "Bolalar ingliz tili darajasini sinfga qarab tuzilgan 10ta test orqali sinab olinadi.",
         },
         {
           id: 2,
           title: "IQ",
-          text: "Bolalarni keng fikrlashini sinash uchun biz har biriga o'ziga mos IQ testlarni beramiz.",
+          text: "Bolalarni keng fikrlashini sinash uchun biz har biriga o'ziga mos 10 ta IQ testlarni beramiz.",
         },
         {
           id: 3,
@@ -922,6 +918,29 @@ export default {
     &.next {
       left: 70px !important;
     }
+  }
+}
+.student {
+  max-width: 390px;
+  width: 100%;
+  min-height: 260px;
+  height: 100%;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  & > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: 0.7;
   }
 }
 </style>

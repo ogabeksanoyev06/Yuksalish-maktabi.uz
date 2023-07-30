@@ -89,7 +89,7 @@
                   <el-input
                     placeholder="+998"
                     v-model="ruleForm.phone"
-                    v-mask="'998-#########'"
+                    v-mask="'#########'"
                   />
                 </div>
               </el-form-item>
@@ -158,24 +158,24 @@ export default {
       hidden: true,
       options: [
         {
-          value: "Option1",
-          label: "Option1",
+          value: "Toshkent",
+          label: "Toshkent",
         },
         {
-          value: "Option2",
-          label: "Option2",
+          value: "Farg'ona",
+          label: "Farg'ona",
         },
         {
-          value: "Option3",
-          label: "Option3",
+          value: "Samarqand",
+          label: "Samarqand",
         },
         {
-          value: "Option4",
-          label: "Option4",
+          value: "Jizzah",
+          label: "Jizzah",
         },
         {
-          value: "Option5",
-          label: "Option5",
+          value: "Andijon",
+          label: "Andijon",
         },
       ],
       ruleForm: {
@@ -226,7 +226,25 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          //
+          try {
+            this.$api
+              .post(`feedback/`, {
+                name: this.ruleForm.name,
+                message: this.ruleForm.region,
+                number: this.ruleForm.phone,
+              })
+              .then((data) => {
+                if (data.success) {
+                  this.successNotification("Yuborildi");
+                }
+              })
+              .catch((error) => {
+                console.log("Error" + ": " + error);
+              })
+              .finally(() => {});
+          } catch (e) {
+            console.log(e);
+          }
         } else {
           console.log("error submit!!");
           return false;

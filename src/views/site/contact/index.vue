@@ -73,7 +73,7 @@
               weight="600"
               class="mb-20"
             >
-              {{ item.name }}
+              {{ item[$localeKey("name")] }}
             </app-text>
             <app-text
               :size="16"
@@ -82,7 +82,7 @@
               class="mb-15 d-flex align-center"
             >
               <img src="/icons/day.svg" alt="" class="mr-10" width="24px" />
-              {{ item.title }}
+              {{ item[$localeKey("title")] }}
             </app-text>
             <app-text
               :size="16"
@@ -109,7 +109,7 @@
               class="d-flex align-center"
             >
               <img src="/icons/addres.svg" alt="" class="mr-10" width="24" />
-              {{ item.address }}
+              {{ item[$localeKey("address")] }}
             </app-text>
           </div>
         </div>
@@ -143,7 +143,7 @@
                   :line-height="isMobile ? 24 : 32"
                   weight="500"
                 >
-                  {{ sectionContent.name }}
+                  {{ sectionContent[$localeKey("name")] }}
                 </app-text>
               </div>
               <img src="/icons/plus.svg" alt="" />
@@ -158,7 +158,7 @@
                     max-width="760"
                     class="color-trans-04"
                   >
-                    {{ sectionContent.title }}
+                    {{ sectionContent[$localeKey("title")] }}
                   </app-text>
                 </div>
               </div>

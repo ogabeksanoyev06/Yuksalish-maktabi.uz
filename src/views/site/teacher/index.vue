@@ -42,14 +42,14 @@
               weight="600"
               class="mb-10"
             >
-              {{ item.name }}
+              {{ item[$localeKey("name")] }}
             </app-text>
             <app-text
               :size="isMobile ? 18 : 20"
               :line-height="isMobile ? 24 : 26"
               weight="500"
             >
-              {{ item.title }}
+              {{ item[$localeKey("title")] }}
             </app-text>
           </div>
         </div>

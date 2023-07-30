@@ -1,46 +1,83 @@
 <template>
-  <section class="about-us section">
-    <div
-      style="background-color: #fff; border-radius: 0px 0px 16px 16px"
-      class="py-60"
-    >
-      <div class="container">
-        <app-text
-          :size="isMobile ? 26 : 64"
-          :line-height="isMobile ? 30 : 78"
-          weight="500"
-          class="mb-30 mx-auto text-center"
-          maxWidth="680"
-          data-aos="fade-up"
-          data-aos-duration="500"
-        >
-          O‘zbekistondagi sifatli xususiy maktab
-        </app-text>
-        <app-text
-          :size="isMobile ? 16 : 20"
-          :line-height="isMobile ? 22 : 32"
-          weight="200"
-          class="mb-30 mx-auto text-center"
-          maxWidth="470"
-          data-aos="fade-up"
-          data-aos-duration="700"
-        >
-          Maktabimiz haqida barcha ma’lumotlar, maktabga ekskursiyalar va
-          boshqalar bilan tanishing
-        </app-text>
-        <div data-aos="fade-up" data-aos-duration="900">
-          <AppButton
-            theme="main"
-            :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
-            :sides="isMobileSmall ? '15' : '20'"
-            class="mb-30 mx-auto d-flex align-center"
-            :height="isMobileSmall ? '40' : '50'"
-          >
-            <span :class="isMobileSmall ? '' : 'mr-10'"> MAKTAB HAQIDA </span>
-            <img src="/icons/angle-right.svg" alt="" v-if="!isMobileSmall" />
-          </AppButton>
+  <section class="about-us">
+    <div style="background-color: #fff; border-radius: 0px 0px 16px 16px">
+      <div style="background-color: #f5f5f5">
+        <div class="container">
+          <div class="about__school">
+            <div class="about__school-images">
+              <div class="image" data-aos="fade-right">
+                <img src="/images/1.jpg" alt="" />
+              </div>
+              <div class="image" data-aos="fade-right">
+                <img src="/images/2.jpg" alt="" />
+              </div>
+              <div class="image" data-aos="fade-right">
+                <img src="/images/3.jpg" alt="" />
+              </div>
+              <div class="image" data-aos="fade-right">
+                <img src="/images/4.jpg" alt="" />
+              </div>
+            </div>
+            <div class="about__school-info">
+              <app-text
+                :size="isMobile ? 32 : 48"
+                :line-height="isMobile ? 46 : 54"
+                class="mb-30 color-orange"
+                weight="700"
+                data-aos="fade-up"
+              >
+                Yuksalish maktabi
+              </app-text>
+              <div class="d-flex mb-20" data-aos="fade-up">
+                <img
+                  src="/icons/1-1.png"
+                  alt=""
+                  class="mr-15"
+                  style="width: 50px; height: 50px"
+                />
+                <app-text
+                  :size="16"
+                  :line-height="22"
+                  weight="500"
+                  max-width="500"
+                >
+                  Maktabda o'zbek tilida va qadryatlarga asoslanib ta'lim
+                  beriladi.11 yillik talim tizimiga mo'ljallangan bo'lib bu vaqt
+                  davomida o'quvchilarimiz xorijiy tillardan
+                  <span class="bold-text">
+                    Ingliz tili ,arab tili, rus tili
+                  </span>
+                  shuningdek, aniq fanlar va IT sohalari chuqurlashtirib
+                  o'rgatiladi.
+                </app-text>
+              </div>
+              <div class="d-flex" data-aos="fade-up">
+                <img
+                  src="/icons/1-2.png"
+                  alt=""
+                  class="mr-15"
+                  style="width: 50px; height: 50px"
+                />
+                <app-text
+                  :size="16"
+                  :line-height="22"
+                  weight="500"
+                  max-width="500"
+                >
+                  Yuksalish maktabida o'quvchilarimiz
+                  <span class="bold-text">
+                    ta'lim va tarbiyani birlashgan xolda
+                  </span>
+                  ilm oladilar. <br />
+                  Yuksalish maktabida kitobxonlik darslariga ahlohida e'tibor
+                  beriladi
+                </app-text>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
       <YoutubeLinkBanner :topLink="false" :bgGreen="false" />
     </div>
     <div
@@ -69,17 +106,6 @@
               Yuksalish maktabi 2022 - yilda ochilgan bo'lib, uning bosh
               asoschisi Muhammadali Eshonqulov.
             </app-text>
-            <!-- <router-link class="section__top-link" to="/">
-              <AppButton
-                theme="blue"
-                :font-size="isMobileSmall ? 12 : isMobile ? 14 : 16"
-                sides="20"
-                class="mb-10"
-                :height="isMobileSmall ? '40' : '50'"
-              >
-                <span class="mr-10">BEPUL KONSULTATSIYA OLISH</span>
-              </AppButton>
-            </router-link> -->
           </div>
         </div>
       </div>
@@ -266,8 +292,8 @@
               weight="500"
               data-aos="fade-up"
             >
-              Maktabimizning <br />
-              afzalliklari
+              Yuksalish maktabidan <br />
+              kutilayotgan natijalar
             </app-text>
             <div class="section__top-details" data-aos="fade-up">
               <app-text
@@ -276,15 +302,15 @@
                 weight="400"
                 max-width="600"
               >
-                Bizning maxsus chegirmalar va imtiyozlarimiz oilangiz byudjetiga
-                foyda va yoshlarga motivatsiya bo'la oladi.
+                Yuksalish makatbida ta'lim va tarbiya birlashtirlgan xolda
+                ta'lim beriladi.
               </app-text>
             </div>
           </div>
           <div class="imkoniyat">
             <div
               class="imkoniyat__item"
-              v-for="(item, i) in 4"
+              v-for="(item, i) in afzallikImages"
               :key="i"
               data-aos="fade-right"
               :data-aos-duration="(i + 1) * 500"
@@ -315,7 +341,7 @@
                 class="mb-15"
                 weight="500"
               >
-                Qoshimcha togaraklar
+                {{ item[$localeKey("name")] }}
               </app-text>
               <app-text
                 :size="isMobile ? 14 : 18"
@@ -323,8 +349,7 @@
                 class=""
                 weight="400"
               >
-                DTS darslaridan song biz farzandlaringiz rivoji uchun qoshimcha
-                tograklar ham tashkil etganmiz
+                {{ item[$localeKey("title")] }}
               </app-text>
             </div>
           </div>
@@ -344,8 +369,8 @@
             weight="500"
             data-aos="fade-up"
           >
-            Sog'lom ovqatlanish <br />
-            ilmga quvvatdir
+            Yuksalish maktabida <br />
+            Sog'lom ovqatlanish ilmga quvvatdir.
           </app-text>
           <div class="section__top-details" data-aos="fade-up">
             <app-text
@@ -355,21 +380,21 @@
               weight="400"
               max-width="500"
             >
-              Maktabimizda bolalarimiz 3 mahal ovqatlanish imkoniyatiga ega
-              bo'ladi. Unda bolalar issiq ovqat, shirinlik va ichimliklarni
-              turli xilli turlari bilan ovqatlanishlari mumkin.
+              Yuksalish makatbida O'quvchilarimiz issiq, sifatli va tabiiy halol
+              mahsulotlardan taomlanishlari taminlanadi.Nonushta ,
+              tushlik,tolmos choy ,barchasi halol, milliy taomlar.
             </app-text>
           </div>
         </div>
         <div :class="isDesktopSmall ? '' : 'pb-120'" style="position: relative">
           <swiper class="swiper" :options="swiperOptions2">
             <swiper-slide
-              v-for="(item, index) in 10"
+              v-for="(item, index) in foodImage"
               :key="index"
               style="height: 300px; width: 250px"
             >
               <img
-                src="/images/girls.png"
+                :src="item.img"
                 style="
                   width: 100%;
                   height: 100%;
@@ -456,70 +481,16 @@
         </app-text>
       </div>
       <div style="position: relative">
-        <!-- <div class="navigation light" v-if="!isDesktopSmall">
-          <div class="slider-button swiper-button-prev prev">
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12.76 7.90662L4.66667 16L12.76 24.0933"
-                stroke="black"
-                stroke-width="2"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M27.3333 16H4.89334"
-                stroke="black"
-                stroke-width="2"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </div>
-          <div class="slider-button swiper-button-next next">
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M19.24 7.90662L27.3334 16L19.24 24.0933"
-                stroke="black"
-                stroke-width="2"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M4.66669 16H27.1067"
-                stroke="black"
-                stroke-width="2"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </div>
-        </div> -->
         <swiper class="swiper" :options="swiperOptions3">
           <swiper-slide
-            v-for="(item, i) in 10"
+            v-for="(item, i) in bookImages"
             :key="i"
             class="d-flex flex-column light"
             data-aos="fade-up"
             :data-aos-duration="(i + 1) * 500"
           >
             <img
-              src="/images/girls.png"
+              :src="item.img"
               :class="isMobile ? 'mb-20' : 'mb-30'"
               class="mx-auto"
               style="
@@ -534,22 +505,18 @@
                 :size="isMobileSmall ? '16' : '30'"
                 :line-height="isMobileSmall ? '20' : '42'"
                 weight="500"
-                max-width="730"
-                :class="isMobileSmall ? 'mb-20' : 'mb-40'"
+                :class="isMobileSmall ? 'mb-20' : 'mb-20'"
                 class="color-trans-04"
                 data-aos="fade-up"
                 data-aos-duration="500"
               >
-                Maktabimizda kutubxona mavjud bo‘lib, unda bolalar foydalanishi
-                mutloq bepul bo‘ladi va har kuni istalgancha shug’ilanishligi
-                mumkin
+                {{ item[$localeKey("title")] }}
               </app-text>
               <div
                 class="d-flex flex-wrap"
                 :style="isMobileSmall ? 'gap: 20px' : 'gap: 40px'"
               >
-                <div style="max-width: 210px" v-for="(item, i) in 3" :key="i">
-                  <app-text
+                <!-- <app-text
                     :size="isMobileSmall ? '16' : '30'"
                     :line-height="isMobileSmall ? '20' : '42'"
                     weight="600"
@@ -558,18 +525,17 @@
                     data-aos-duration="700"
                   >
                     50 dan ortiq
-                  </app-text>
-                  <app-text
-                    :size="isMobileSmall ? '14' : '20'"
-                    :line-height="isMobileSmall ? '18' : '28'"
-                    weight="500"
-                    class="color-trans-04"
-                    data-aos="fade-up"
-                    data-aos-duration="900"
-                  >
-                    Darslik va adabiyotga oid kitoblar
-                  </app-text>
-                </div>
+                  </app-text> -->
+                <app-text
+                  :size="isMobileSmall ? '14' : '20'"
+                  :line-height="isMobileSmall ? '18' : '28'"
+                  weight="500"
+                  class="color-trans-04"
+                  data-aos="fade-up"
+                  data-aos-duration="900"
+                >
+                  {{ item[$localeKey("name")] }}
+                </app-text>
               </div>
             </div>
           </swiper-slide>
@@ -758,7 +724,71 @@ export default {
         },
         spaceBetween: 12,
       },
+      foodImage: [],
+      bookImages: [],
+      afzallikImages: [],
     };
+  },
+  methods: {
+    getFoodImages() {
+      this.loading = true;
+      this.$api
+        .get("gallery/?typ=4")
+        .then((data) => {
+          if (!data.error) {
+            this.foodImage = data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          this.loading = false;
+        })
+        .finally(() => {
+          console.log("im finally");
+          this.loading = false;
+        });
+    },
+    getBookImages() {
+      this.loading = true;
+      this.$api
+        .get("gallery/?typ=7")
+        .then((data) => {
+          if (!data.error) {
+            this.bookImages = data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          this.loading = false;
+        })
+        .finally(() => {
+          console.log("im finally");
+          this.loading = false;
+        });
+    },
+    getAfzallikImages() {
+      this.loading = true;
+      this.$api
+        .get("gallery/?typ=8")
+        .then((data) => {
+          if (!data.error) {
+            this.afzallikImages = data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          this.loading = false;
+        })
+        .finally(() => {
+          console.log("im finally");
+          this.loading = false;
+        });
+    },
+  },
+  mounted() {
+    this.getFoodImages();
+    this.getBookImages();
+    this.getAfzallikImages();
   },
 };
 </script>
@@ -897,6 +927,35 @@ export default {
     border-radius: 16px;
     padding: 24px;
     min-height: 288px;
+  }
+}
+.about__school {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 20px;
+
+  padding: 60px;
+  margin-bottom: 30px;
+  &-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    .image {
+      width: 225px;
+      height: 225px;
+      background: linear-gradient(90deg, #ff6801 0.18%, #ff9e44 8.48%);
+      border-radius: 5px;
+      padding: 5px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+    }
+  }
+  &-info {
+    padding-left: 10px;
   }
 }
 
