@@ -467,6 +467,51 @@
               Biz bolalarni dunyo qarashi o'qishga bolgan ishtiyoqi va
               tarbiyasiga qarab birinchi sinfga qabul qilamiz.
             </app-text>
+            <app-text
+              :size="16"
+              :line-height="20"
+              weight="400"
+              class="mb-5 color-violet"
+              data-aos="fade-right"
+            >
+              1.Kamonbozlik
+            </app-text>
+            <app-text
+              :size="16"
+              :line-height="20"
+              weight="400"
+              class="mb-5 color-violet"
+              data-aos="fade-right"
+            >
+              2. Gimnastika
+            </app-text>
+            <app-text
+              :size="16"
+              :line-height="20"
+              weight="400"
+              class="mb-5 color-violet"
+              data-aos="fade-right"
+            >
+              3.Shahmat
+            </app-text>
+            <app-text
+              :size="16"
+              :line-height="20"
+              weight="400"
+              class="mb-5 color-violet"
+              data-aos="fade-right"
+            >
+              4. Pazandachilik
+            </app-text>
+            <app-text
+              :size="16"
+              :line-height="20"
+              weight="400"
+              class="mb-5 color-violet"
+              data-aos="fade-right"
+            >
+              5. Mohir qo'llar
+            </app-text>
           </div>
           <div
             style="position: relative; max-width: 680px; width: 100%"
