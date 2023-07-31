@@ -3,7 +3,7 @@
     <hero-banner />
     <!--  -->
     <cta-banner
-      content="Ustoz Muhammadali Eshonqulov Yuksalish maktabi asoschsi"
+      content="Ustoz Muhammadali Eshonqulov <br/> Yuksalish maktabi asoschsi"
     />
     <!--  -->
     <div :class="isMobile ? 'py-30' : 'py-60'">

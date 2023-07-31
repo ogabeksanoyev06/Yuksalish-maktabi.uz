@@ -21,7 +21,7 @@
           data-aos="fade-up"
           data-aos-duration="600"
         >
-          {{ content }}
+          <span v-html="content" />
         </app-text>
       </div>
       <div class="cta__banner-photo" data-aos="fade-up" data-aos-duration="500">
