@@ -340,7 +340,7 @@
                   :line-height="isMobile ? 20 : 24"
                   weight="400"
                 >
-                  Imkoniyatlar
+                  Natija
                 </app-text>
               </div>
               <app-text
