@@ -519,7 +519,7 @@
           >
             <swiper class="swiper" :options="swiperOptions">
               <swiper-slide
-                v-for="(item, i) in 5"
+                v-for="(item, i) in images"
                 :key="i"
                 data-aos="fade-up"
                 :data-aos-duration="(i + 1) * 500"
@@ -530,7 +530,7 @@
                   class="mx-auto"
                 >
                   <img
-                    src="/images/girls.png"
+                    :src="item.img"
                     style="
                       width: 100%;
                       height: 100%;
@@ -895,6 +895,7 @@ export default {
         },
       ],
       reviews: [],
+      images: [],
     };
   },
   methods: {
@@ -921,9 +922,27 @@ export default {
           this.loading = false;
         });
     },
+    getPazandaImages() {
+      this.$api
+        .get(`gallery/?typ=9`)
+        .then((data) => {
+          if (!data.error) {
+            this.images = data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          this.loading = false;
+        })
+        .finally(() => {
+          console.log("im finally");
+          this.loading = false;
+        });
+    },
   },
   mounted() {
     this.getReviews();
+    this.getPazandaImages();
   },
 };
 </script>
