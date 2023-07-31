@@ -165,11 +165,6 @@
                   {{ $t(child.title) }}
                 </router-link>
               </li>
-              <li>
-                <a href="">
-                  {{ $t("Online test") }}
-                </a>
-              </li>
             </ul>
             <CoolLightBox :items="items" :index="index" @close="index = null">
             </CoolLightBox>
@@ -363,6 +358,11 @@ export default {
               id: 3,
               title: "Aloqa",
               link: "/contact",
+            },
+            {
+              id: 4,
+              title: "Online test",
+              link: "/",
             },
           ],
         },

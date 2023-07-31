@@ -9,10 +9,19 @@
           class="mb-20 color-orange-gradient"
           data-aos="fade-right"
         >
-          O'qituvchilar
+          Maktab asoschisi
         </app-text>
         <div class="mb-30">
-          <cta-banner />
+          <cta-banner
+            content="Muhammad Ali Eshonqulov Jizzax viloyati, Baxmal tumanida tavallud
+          topgan. 5 yoshida Baxmal tumanidagi 1 - maktabda o'qishni boshlagan va
+          keyinchalik, 4 - iqtidorli bolalar maktabida tahsil olgan. 15 yoshida
+          Jahon iqtisidiyoti va diplomatiya universitetiga o'qishga kirgan.
+          Hozir xalqaro toifadagi iqtisodchi, tadbirkor biznes -murabbiy,
+          yuksalish ledrilar akdemiyasi, yuksalish makatbi, yuksalish choylari
+          asoschisi.Muhamadali Eshonqulov shu vaqatgacha 10 000 dan ziyot
+          shogirt chiqargan."
+          />
         </div>
         <app-text
           :size="isMobile ? 32 : 48"

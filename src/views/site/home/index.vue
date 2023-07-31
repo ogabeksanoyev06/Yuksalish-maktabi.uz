@@ -2,7 +2,9 @@
   <section class="">
     <hero-banner />
     <!--  -->
-    <cta-banner />
+    <cta-banner
+      content="Ustoz Muhammadali Eshonqulov Yuksalish maktabi asoschsi"
+    />
     <!--  -->
     <div :class="isMobile ? 'py-30' : 'py-60'">
       <div class="container">
@@ -202,7 +204,7 @@
               weight="400"
               class="color-white"
               data-aos="fade-up"
-              max-width="380"
+              max-width="500"
             >
               Yuksalish maktabida har chorakda robototexnikadan musobaqa
               bo’ladi. Unda o’quvchilarimga o’z loyihalari rivojlantirish uchun

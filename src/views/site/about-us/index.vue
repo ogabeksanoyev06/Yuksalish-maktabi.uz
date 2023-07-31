@@ -78,7 +78,15 @@
         </div>
       </div>
 
-      <YoutubeLinkBanner :topLink="false" :bgGreen="false" />
+      <div style="max-width: 1200px" class="mx-auto mb-30">
+        <video
+          style="width: 100%; height: auto"
+          poster="/images/bg_video.png"
+          controls
+        >
+          <source src="@/assets/school-video.mp4" type="video/mp4" />
+        </video>
+      </div>
     </div>
     <div
       class="py-60"
@@ -477,7 +485,7 @@
           data-aos="fade-up"
           data-aos-duration="500"
         >
-          Kitob bilim bulogi - oquvchiningg ortogi
+          Kitob bilim bulog'i - o'quvchining o'rtog'i
         </app-text>
       </div>
       <div style="position: relative">
@@ -615,7 +623,6 @@
 </template>
 <script>
 import AppButton from "@/components/shared-components/AppButton.vue";
-import YoutubeLinkBanner from "@/components/pages/YoutubeLinkBanner.vue";
 import CustomSlider from "@/components/pages/CustomSlider.vue";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
@@ -623,7 +630,6 @@ export default {
   name: "AboutAs",
   components: {
     AppButton,
-    YoutubeLinkBanner,
     CustomSlider,
     Swiper,
     SwiperSlide,

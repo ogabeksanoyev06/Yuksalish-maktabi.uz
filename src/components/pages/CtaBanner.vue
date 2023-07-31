@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="cta__banner" :class="isDesktopSmall ? 'pa-10' : 'pa-40'">
+    <div class="cta__banner" :class="isDesktopSmall ? 'pa-10' : 'pa-30'">
       <div class="cta__banner-content">
         <app-text
           :size="isMobile ? 22 : 28"
@@ -21,14 +21,7 @@
           data-aos="fade-up"
           data-aos-duration="600"
         >
-          Muhammad Ali Eshonqulov Jizzax viloyati, Baxmal tumanida tavallud
-          topgan. 5 yoshida Baxmal tumanidagi 1 - maktabda o'qishni boshlagan va
-          keyinchalik, 4 - iqtidorli bolalar maktabida tahsil olgan. 15 yoshida
-          Jahon iqtisidiyoti va diplomatiya universitetiga o'qishga kirgan.
-          Hozir xalqaro toifadagi iqtisodchi, tadbirkor biznes -murabbiy,
-          yuksalish ledrilar akdemiyasi, yuksalish makatbi, yuksalish choylari
-          asoschisi.Muhamadali Eshonqulov shu vaqatgacha 10 000 dan ziyot
-          shogirt chiqargan.
+          {{ content }}
         </app-text>
       </div>
       <div class="cta__banner-photo" data-aos="fade-up" data-aos-duration="500">

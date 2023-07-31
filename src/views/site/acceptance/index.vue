@@ -116,7 +116,7 @@
                 :max-width="isMobileSmall ? '400' : '302'"
               >
                 Maktabimizdagi imtihonlar bolalarning yoshiga qarab bo'lingan
-                bo'lib, unda suhbat va test orqali bolalar sinaladi
+                bo'lib, unda test va suhbat orqali bolalar sinaladi
               </app-text>
               <!-- <app-text
                 :size="isMobile ? 16 : 22"
@@ -627,17 +627,6 @@
           >
             Maktakgacha tayyorlov kursi
           </app-text>
-          <div class="section__top-details" data-aos="fade-up">
-            <app-text
-              :size="isMobile ? 16 : 18"
-              :line-height="isMobile ? 24 : 26"
-              weight="400"
-              max-width="600"
-            >
-              Bizning maxsus chegirmalar va imtiyozlarimiz oilangiz byudjetiga
-              foyda va yoshlarga mativatsiya bola oladi
-            </app-text>
-          </div>
         </div>
         <div class="d-flex flex-wrap justify-content-center" style="gap: 12px">
           <div
@@ -676,7 +665,7 @@
               class="d-flex align-center color-white"
             >
               <img src="/svg/okey.svg" alt="" class="mr-5" />
-              Boshlang'ich tayyorlov
+              Maktabgacha tayyorlov
             </app-text>
           </div>
         </div>

@@ -98,8 +98,8 @@
               weight="400"
               max-width="500"
             >
-              Oquvchularimizning kun davomida qilingan vazifalari va
-              mashgulotlar haqida malumot
+              O'quvchularimizning kun davomida qilingan vazifalari va
+              mashg'ulotlar haqida ma'lumot
             </app-text>
           </div>
         </div>

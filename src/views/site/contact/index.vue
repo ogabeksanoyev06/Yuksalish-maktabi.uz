@@ -39,17 +39,6 @@
     </div>
     <div style="background: #130024" :class="isMobile ? 'py-30' : 'py-60'">
       <div class="container">
-        <app-text
-          :size="isMobile ? 22 : 32"
-          :line-height="isMobile ? 28 : 44"
-          weight="500"
-          class="color-violet"
-          max-width="500"
-          :class="isMobile ? 'mb-20' : 'mb-40'"
-          data-aos="fade-right"
-        >
-          Biz bilan farzandingizni kelajagini mustahkam quring
-        </app-text>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1498.5236520612602!2d69.2180579399769!3d41.30783452689444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b1f8365179b%3A0xa2d2db9aa56870c0!2sYuksalish%20maktabi!5e0!3m2!1suz!2s!4v1687601929534!5m2!1suz!2s"
           height="550"
